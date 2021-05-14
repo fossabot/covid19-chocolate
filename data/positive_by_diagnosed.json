@@ -1795,7 +1795,15 @@
         },
         {
             "diagnosed_date": "2021-05-11",
-            "count": 7
+            "count": 34
+        },
+        {
+            "diagnosed_date": "2021-05-12",
+            "count": 21
+        },
+        {
+            "diagnosed_date": "2021-05-13",
+            "count": 4
         }
     ],
     "date": "2021\/05\/12 18:00"
