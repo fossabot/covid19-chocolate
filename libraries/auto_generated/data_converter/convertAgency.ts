@@ -1,32 +1,37 @@
 // To parse this data:
 //
-//   import { Convert, DailyPositiveDetail } from "./file";
+//   import { Convert, Agency } from "./file";
 //
-//   const dailyPositiveDetail = Convert.toDailyPositiveDetail(json);
+//   const agency = Convert.toAgency(json);
 //
 // These functions will throw an error if the JSON doesn't
 // match the expected interface, even if the JSON is valid.
 
-export interface DailyPositiveDetail {
-    data: Datum[];
-    date: string;
+export interface Agency {
+    date:     string;
+    periods:  Period[];
+    datasets: Dataset[];
 }
 
-export interface Datum {
-    diagnosedDate:      Date;
-    count:              number;
-    weeklyAverageCount: number;
+export interface Dataset {
+    label: string;
+    data:  number[];
+}
+
+export interface Period {
+    begin: Date;
+    end:   Date;
 }
 
 // Converts JSON strings to/from your types
 // and asserts the results of JSON.parse at runtime
 export class Convert {
-    public static toDailyPositiveDetail(json: string): DailyPositiveDetail {
-        return cast(JSON.parse(json), r("DailyPositiveDetail"));
+    public static toAgency(json: string): Agency {
+        return cast(JSON.parse(json), r("Agency"));
     }
 
-    public static dailyPositiveDetailToJson(value: DailyPositiveDetail): string {
-        return JSON.stringify(uncast(value, r("DailyPositiveDetail")), null, 2);
+    public static agencyToJson(value: Agency): string {
+        return JSON.stringify(uncast(value, r("Agency")), null, 2);
     }
 }
 
@@ -163,13 +168,17 @@ function r(name: string) {
 }
 
 const typeMap: any = {
-    "DailyPositiveDetail": o([
-        { json: "data", js: "data", typ: a(r("Datum")) },
+    "Agency": o([
         { json: "date", js: "date", typ: "" },
+        { json: "periods", js: "periods", typ: a(r("Period")) },
+        { json: "datasets", js: "datasets", typ: a(r("Dataset")) },
     ], false),
-    "Datum": o([
-        { json: "diagnosed_date", js: "diagnosedDate", typ: Date },
-        { json: "count", js: "count", typ: 0 },
-        { json: "weekly_average_count", js: "weeklyAverageCount", typ: 3.14 },
+    "Dataset": o([
+        { json: "label", js: "label", typ: "" },
+        { json: "data", js: "data", typ: a(0) },
+    ], false),
+    "Period": o([
+        { json: "begin", js: "begin", typ: Date },
+        { json: "end", js: "end", typ: Date },
     ], false),
 };
