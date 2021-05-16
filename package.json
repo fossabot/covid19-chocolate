@@ -49,7 +49,7 @@
     "vue-spinner": "1.0.4"
   },
   "devDependencies": {
-    "@babel/core": "7.14.0",
+    "@babel/core": "7.14.2",
     "@babel/runtime-corejs3": "7.14.0",
     "@mdi/js": "5.9.55",
     "@nuxt/typescript-build": "2.1.0",
@@ -68,7 +68,7 @@
     "eslint-plugin-prettier": "3.3.1",
     "eslint-plugin-simple-import-sort": "7.0.0",
     "eslint-plugin-tsdoc": "0.2.14",
-    "husky": "^6.0.0",
+    "husky": "6.0.0",
     "lint-staged": "10.5.4",
     "lodash": "4.17.21",
     "nuxt-property-decorator": "2.9.1",
