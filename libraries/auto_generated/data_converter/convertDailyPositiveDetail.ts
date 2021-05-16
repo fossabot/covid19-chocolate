@@ -13,15 +13,9 @@ export interface DailyPositiveDetail {
 }
 
 export interface Datum {
-    diagnosedDate:                         Date;
-    count:                                 number;
-    missingCount?:                         number | null;
-    reportedCount?:                        number | null;
-    weeklyGainRatio?:                      number | null;
-    untrackedPercent?:                     number | null;
-    weeklyAverageCount:                    number;
-    weeklyAverageUntrackedCount?:          number | null;
-    weeklyAverageUntrackedIncresePercent?: number | null;
+    diagnosedDate:      Date;
+    count:              number;
+    weeklyAverageCount: number;
 }
 
 // Converts JSON strings to/from your types
@@ -176,12 +170,6 @@ const typeMap: any = {
     "Datum": o([
         { json: "diagnosed_date", js: "diagnosedDate", typ: Date },
         { json: "count", js: "count", typ: 0 },
-        { json: "missing_count", js: "missingCount", typ: u(undefined, u(0, null)) },
-        { json: "reported_count", js: "reportedCount", typ: u(undefined, u(0, null)) },
-        { json: "weekly_gain_ratio", js: "weeklyGainRatio", typ: u(undefined, u(3.14, null)) },
-        { json: "untracked_percent", js: "untrackedPercent", typ: u(undefined, u(3.14, null)) },
         { json: "weekly_average_count", js: "weeklyAverageCount", typ: 3.14 },
-        { json: "weekly_average_untracked_count", js: "weeklyAverageUntrackedCount", typ: u(undefined, u(3.14, null)) },
-        { json: "weekly_average_untracked_increse_percent", js: "weeklyAverageUntrackedIncresePercent", typ: u(undefined, u(3.14, null)) },
     ], false),
 };
