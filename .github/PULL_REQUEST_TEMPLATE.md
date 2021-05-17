@@ -1,3 +1,4 @@
+<!-- developmentへのPRに必ず変更してください。（初期は、mainです。） -->
 <!-- Issue 番号がない PR は受け付けません。 -->
 <!-- We don't accept PRs which has no Issue ID. -->
 
