@@ -1,0 +1,13 @@
+name: Tweet Pull Request Labeler
+
+on:
+  - pull_request
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Label for auto tweet
+        if: github.actor == 'github-actions[bot]'
+        uses: actions/labeler@2
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
