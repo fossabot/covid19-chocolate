@@ -22,7 +22,7 @@ jobs:
         with:
           urls: |
             https://sagamihara-stopcovid19.com/
-            https://staging.sagamihara-stopcovid19.netlify.app/
+            https://dev-sagamihara-stopcovid19.netlify.app/
           uploadArtifacts: true
 
       - name: Use Node.js
