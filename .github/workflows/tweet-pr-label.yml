@@ -8,6 +8,6 @@ jobs:
     steps:
       - name: Label for auto tweet
         if: github.actor == 'github-actions[bot]'
-        uses: actions/labeler@2
+        uses: actions/labeler@v2
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
