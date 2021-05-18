@@ -172,14 +172,12 @@ export default Vue.extend({
         {
           svg: 'CovidIcon',
           title: this.$t('新型コロナウイルス感染症が心配なときに.nav'),
-          link:
-            'https://www.city.sagamihara.kanagawa.jp/shisei/koho/1019896.html',
+          link: 'https://www.city.sagamihara.kanagawa.jp/shisei/koho/1019896.html',
         },
         {
           iconPath: mdiAccountMultiple,
           title: this.$t('市民の皆様へ'),
-          link:
-            'https://www.city.sagamihara.kanagawa.jp/kurashi/kenko/kansenyobo/1019910/1020293.html',
+          link: 'https://www.city.sagamihara.kanagawa.jp/kurashi/kenko/kansenyobo/1019910/1020293.html',
         },
         {
           iconPath: mdiDomain,
@@ -189,19 +187,16 @@ export default Vue.extend({
         {
           iconPath: mdiNeedle,
           title: this.$t('ワクチンについて'),
-          link:
-            'https://www.city.sagamihara.kanagawa.jp/kurashi/kenko/kansenyobo/1019910/1022588/index.html',
+          link: 'https://www.city.sagamihara.kanagawa.jp/kurashi/kenko/kansenyobo/1019910/1022588/index.html',
           divider: true,
         },
         {
           title: this.$t('市民利用施設に関する情報'),
-          link:
-            'https://www.city.sagamihara.kanagawa.jp/shisei/koho/1019215.html',
+          link: 'https://www.city.sagamihara.kanagawa.jp/shisei/koho/1019215.html',
         },
         {
           title: this.$t('イベントに関する情報'),
-          link:
-            'https://www.city.sagamihara.kanagawa.jp/shisei/koho/1019175.html',
+          link: 'https://www.city.sagamihara.kanagawa.jp/shisei/koho/1019175.html',
         },
         {
           title: this.$t('相模原市医師会 新型コロナウイルス特設サイト'),
@@ -209,8 +204,7 @@ export default Vue.extend({
         },
         {
           title: this.$t('市長からのメッセージ'),
-          link:
-            'https://www.city.sagamihara.kanagawa.jp/channel/1012225/1019894/index.html',
+          link: 'https://www.city.sagamihara.kanagawa.jp/channel/1012225/1019894/index.html',
           divider: true,
         },
         {
