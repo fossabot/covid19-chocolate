@@ -172,7 +172,7 @@ export default class Default extends Vue implements NuxtConfig {
         {
           hid: 'og:image',
           property: 'og:image',
-          content: this.$tc('ogp.og:image'),
+          content: 'https://sagamihara-stopcovid19.com/ogp.png/',
         },
         {
           hid: 'apple-mobile-web-app-title',
@@ -184,7 +184,7 @@ export default class Default extends Vue implements NuxtConfig {
         {
           hid: 'twitter:image',
           name: 'twitter:image',
-          content: this.$tc('ogp.og:image'),
+          content: 'https://sagamihara-stopcovid19.com/ogp.png/',
         },
       ],
     }
