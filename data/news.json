@@ -1,6 +1,12 @@
 {
     "newsItems": [
         {
+            "date": "2021\/05\/19",
+            "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/05\/0519_02.pdf",
+            "text": "新型コロナウイルスワクチン個別接種における予約方法等について （PDF 223.3KB）"
+        },
+
+        {
             "date": "2021\/05\/17",
             "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/05\/0517.pdf",
             "text": "新型コロナウイルスワクチン集団接種の実施結果等について （PDF 210.7KB）"
@@ -16,12 +22,6 @@
             "date": "2021\/05\/13",
             "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/05\/0513_02.pdf",
             "text": "新型コロナウイルスワクチン接種の予約受付状況について （PDF 209.2KB）"
-        },
-
-        {
-            "date": "2021\/05\/12",
-            "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/05\/0512_02.pdf",
-            "text": "市設置施設の利用情報について"
         }
     ]
 }
