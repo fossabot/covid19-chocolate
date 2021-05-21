@@ -27,12 +27,11 @@
         </summary>
         <div class="fade">
           <ul>
-            <li>
+            <li class="margin-b">
               {{
                 $t('5月24日（月曜日）から6月6日（日曜日）までの接種予約の受付')
               }}
             </li>
-            <br />
             <p>
               {{
                 $t('集団接種：5月13日の受付は終了しました。※予約者数：10,260人')
@@ -84,8 +83,9 @@
           <div class="bold">
             {{ $t('「同じ会場、同じ時間」') }}
           </div>
+          <div class="margin-b">
           {{ $t('で2回目の予約をお取りします。') }}
-          <br />
+          </div>
           <span>{{ $t('（注）') }}</span>
           <ul>
             <li>
@@ -128,7 +128,7 @@
                 )
               }}
             </li>
-            <li>
+            <li class="margin-b">
               {{
                 $t(
                   '「病院や診療所」「市役所の窓口」では、予約を受け付けておりません。'
@@ -136,7 +136,6 @@
               }}
             </li>
           </ul>
-          <br />
           <p>
             {{
               $t(
@@ -230,6 +229,10 @@ export default Vue.extend({
     }
 
     margin: 0 10px;
+  }
+
+  .margin-b {
+      margin-bottom: 10px;
   }
 
   .Attention {
