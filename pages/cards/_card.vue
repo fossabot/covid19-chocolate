@@ -23,11 +23,11 @@ import PositiveNumberByDiagnosedDateCard from '@/components/cards/PositiveNumber
 // 発症日別による陽性者数の推移
 import PositiveNumberByDevelopedDateCard from '@/components/cards/PositiveNumberByDevelopedDateCard.vue'
 
-import type { NuxtConfig } from '@nuxt/types'
+import { Vue, Component } from 'nuxt-property-decorator'
 import { getLinksLanguageAlternative } from '@/utils/i18nUtils'
 import { convertDateToSimpleFormat } from '@/utils/formatDate'
-import { Vue, Component } from 'nuxt-property-decorator'
 import type { NuxtOptionsHead as MetaInfo } from '@nuxt/types/config/head'
+import type { NuxtConfig } from '@nuxt/types'
 
 @Component({
   components: {
