@@ -6,17 +6,22 @@
       </h3>
     </div>
     <div class="VaccineInfo-description">
-      <v-icon color="#D9D9D9">{{ mdiChevronRight }}</v-icon>
-      <app-link
-        to="https://www.city.sagamihara.kanagawa.jp/kurashi/kenko/kansenyobo/1019910/1022588/index.html"
-      >
-        {{ $t('新型コロナウイルスワクチンについて') }}
+      <div class="margin-b">
+        <v-icon color="#D9D9D9">{{ mdiChevronRight }}</v-icon>
+        <app-link
+          to="https://www.city.sagamihara.kanagawa.jp/kurashi/kenko/kansenyobo/1019910/1022588/index.html"
+        >
+          {{ $t('新型コロナウイルスワクチンについて') }}
+        </app-link>
+      </div>
+      <div class="margin-b">
+        <v-icon color="#D9D9D9">{{ mdiChevronRight }}</v-icon>
+        <app-link to="https://jump.mrso.jp/141500/">
+          {{
+            $t('相模原市ワクチン接種web予約【次回の受付：5月27日（集団接種）】')
+          }}
       </app-link>
-      <app-link to="https://jump.mrso.jp/141500/">
-        {{
-          $t('相模原市ワクチン接種web予約【次回の受付：5月27日（集団接種）】')
-        }}
-      </app-link>
+      </div>
       <details>
         <summary>
           {{
@@ -27,7 +32,7 @@
         </summary>
         <div class="fade">
           <ul>
-            <li class="margin-b">
+            <li class="margin-ub">
               {{
                 $t('5月24日（月曜日）から6月6日（日曜日）までの接種予約の受付')
               }}
@@ -53,10 +58,9 @@
             </p>
           </ul>
           <ul>
-            <li>
+            <li class="margin-b">
               {{ $t('次回の予約受付について') }}
             </li>
-            <br />
             <p>
               {{
                 $t(
@@ -64,7 +68,7 @@
                 )
               }}
             </p>
-            <p>
+            <p class="margin-b">
               {{
                 $t(
                   '個別接種：5月31日（月曜日）午前8時30分から【6月7日（月曜日）以降分の接種 ※接種期間は調整中】'
@@ -72,7 +76,6 @@
               }}
             </p>
           </ul>
-          <br />
           <p>
             {{ $t('※今後のスケジュールについても決定次第お知らせします。') }}
           </p>
@@ -94,14 +97,14 @@
           <ul>
             <li>
               {{ $t('5月29日（土曜日）に接種を受けられる方へ') }}
-              <br />
+              <div class="margin-ab">
               {{
                 $t(
                   '5月29日（土曜日）は、ツアー・オブ・ジャパン相模原ステージ（国際自転車ロードレース）開催のため、午前8時30分から正午頃（予定）まで、コースおよび周辺道路は交通規制が実施されます。接種場所へ行かれる際は、交通規制がかかっている場合がありますので、ご注意ください。'
                 )
               }}
+              </div>
             </li>
-            <br />
             <p>
               {{
                 $t(
@@ -117,8 +120,7 @@
             </app-link>
           </ul>
           <ul class="Attention">
-            <br />
-            <li>
+            <li class="margin-a">
               {{
                 $t(
                   'ご予約の際は電話番号を今一度お確かめいただき、おかけ間違いには、十分ご注意ください。'
@@ -147,13 +149,14 @@
               )
             }}
           </p>
-          <v-icon color="#D9D9D9">{{ mdiChevronRight }}</v-icon>
-          <app-link
-            to="https://www.city.sagamihara.kanagawa.jp/kurashi/kenko/kansenyobo/1019910/1022588/index.html"
-          >
-            {{ $t('新型コロナウイルスワクチンについて') }} （{{ date }}更新）
-          </app-link>
-          <br />
+          <div class="margin-b">
+            <v-icon color="#D9D9D9">{{ mdiChevronRight }}</v-icon>
+            <app-link
+              to="https://www.city.sagamihara.kanagawa.jp/kurashi/kenko/kansenyobo/1019910/1022588/index.html"
+            >
+              {{ $t('新型コロナウイルスワクチンについて') }} （{{ date }}更新）
+            </app-link>
+          </div>
           <p>
             {{
               $t(
@@ -235,7 +238,16 @@ export default Vue.extend({
     margin: 0 10px;
   }
 
+  .margin-a {
+    margin-top: 5px;
+  }
+
   .margin-b {
+    margin-bottom: 5px;
+  }
+
+  .margin-ab {
+    margin-top: 5px;
     margin-bottom: 10px;
   }
 
