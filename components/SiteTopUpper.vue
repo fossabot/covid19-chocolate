@@ -21,7 +21,13 @@
     <detail-a />
     <detail-data />
     <VaccineInfoCard />
-    <consultation />
+    <lazy-static-info
+      v-if="$vuetify.breakpoint.smAndUp || showStaticInfo"
+      class="mb-4"
+      :url="'https://www.city.sagamihara.kanagawa.jp/shisei/koho/1019896.html'"
+      :text="$t('自分や家族の症状に不安や心配があれば、まずは電話相談をどうぞ')"
+      :btn-text="$t('相談の手順を見る')"
+    />
   </div>
 </template>
 
@@ -74,6 +80,7 @@ export default Vue.extend<Data, Methods, Computed, Props>({
         iconPath: mdiChartTimelineVariant,
         title: this.$t('市内の最新感染動向') as string,
       },
+      showStaticInfo: true,
     }
   },
   computed: {
