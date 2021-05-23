@@ -246,9 +246,9 @@ export default Vue.extend({
     margin-bottom: 5px;
   }
 
-  .margin-ab {
+  .margin-ub {
     margin-top: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
 
   .Attention {
