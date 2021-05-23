@@ -26,7 +26,7 @@
       class="mb-4"
       :url="'https://www.city.sagamihara.kanagawa.jp/shisei/koho/1019896.html'"
       :text="
-        $t('自分や家族の症状に不安や心配があれば、/nまずは電話相談をどうぞ')
+        $t(' 自分や家族の症状に不安や心配があれば、\n まずは電話相談をどうぞ')
       "
       :btn-text="$t('相談の手順を見る')"
     />
