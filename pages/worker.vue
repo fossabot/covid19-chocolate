@@ -91,6 +91,46 @@
         }}
       </p>
     </static-card>
+    <static-card>
+      <h3>
+        <app-link
+          to="https://www.pref.kanagawa.jp/docs/jf2/coronavirus/kyoryokukin_10th.html"
+          :icon-size="24"
+          >{{
+            $t(
+              '新型コロナウイルス感染症拡大防止協力金（第10弾）（時短営業要請期間：令和3年5月12日から5月31日まで）'
+            )
+          }}
+        </app-link>
+      </h3>
+      <p>
+        {{
+          $t(
+            '県の要請に応じて、夜間営業時間の短縮にご協力いただいた事業者に対する協力金（時短営業要請期間：令和3年5月12日から5月31日まで）'
+          )
+        }}
+      </p>
+    </static-card>
+    <static-card>
+      <h3>
+        <app-link
+          to="https://70cp.pref.kanagawa.jp/"
+          :icon-size="24"
+          >{{
+            $t(
+              'かながわPayキャンペーン'
+            )
+          }}
+        </app-link>
+      </h3>
+      <p>
+        {{
+          $t(
+            'かながわPayアプリを通じてQRコード決済をした場合、利用者に最大20％のポイントが還元されるキャンペーン ※事前に加盟店登録が必要（加盟店登録期限：令和3年7月31日）'
+          )
+        }}
+      </p>
+    </static-card>
   </div>
 </template>
 
