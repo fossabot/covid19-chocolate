@@ -24,10 +24,10 @@ import PositiveNumberByDiagnosedDateCard from '@/components/cards/PositiveNumber
 import PositiveNumberByDevelopedDateCard from '@/components/cards/PositiveNumberByDevelopedDateCard.vue'
 
 import { Vue, Component } from 'nuxt-property-decorator'
-import type { NuxtOptionsHead as MetaInfo } from '@nuxt/types/config/head'
-import type { NuxtConfig } from '@nuxt/types'
 import { getLinksLanguageAlternative } from '@/utils/i18nUtils'
 import { convertDateToSimpleFormat } from '@/utils/formatDate'
+import type { NuxtOptionsHead as MetaInfo } from '@nuxt/types/config/head'
+import type { NuxtConfig } from '@nuxt/types'
 
 @Component({
   components: {
