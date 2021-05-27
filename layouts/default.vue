@@ -140,7 +140,7 @@ export default class Default extends Vue implements NuxtConfig {
           content: `${this.$t('{date} 更新', {
             date: convertDateToSimpleFormat(lastUpdate),
           })}: ${this.$tc(
-            '当サイトは、相模原市の新型コロナウイルス感染症 (COVID-19) に関する最新情報を提供しております。'
+            '当サイトは、相模原市の新型コロナウイルス感染症 (COVID-19) に関する最新情報をグラフ化して提供しております。'
           )}`,
         },
         {
@@ -169,9 +169,8 @@ export default class Default extends Vue implements NuxtConfig {
           content: `${this.$t('{date} 更新', {
             date: convertDateToSimpleFormat(lastUpdate),
           })}: ${this.$tc(
-            '当サイトは、相模原市の新型コロナウイルス感染症 (COVID-19) に関する最新情報を提供しております。
-'
-          )}`,
+            '当サイトは、相模原市の新型コロナウイルス感染症 (COVID-19) に関する最新情報をグラフ化して提供しております。'
+          )},
         },
         {
           hid: 'og:image',
