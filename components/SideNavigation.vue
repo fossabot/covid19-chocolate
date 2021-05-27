@@ -205,6 +205,10 @@ export default Vue.extend({
         {
           title: this.$t('市長からのメッセージ'),
           link: 'https://www.city.sagamihara.kanagawa.jp/channel/1012225/1019894/index.html',
+        },
+        {
+          title: this.$t('神奈川県内の最新感染動向'),
+          link: 'https://www.pref.kanagawa.jp/osirase/1369/',
           divider: true,
         },
         {
