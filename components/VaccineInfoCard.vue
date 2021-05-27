@@ -65,7 +65,7 @@
               </ul>
             </li>
           </ul>
-          <ul>
+          <ul class="margin-b">
           <ii>
             {{
               $t(
