@@ -65,8 +65,8 @@
               </ul>
             </li>
           </ul>
-          <ul class="margin-b">
-          <li>
+          <ul>
+          <li class="margin-b">
             {{
               $t(
                 '個別接種：5月20日（木曜日）の受付は終了しました。※予約者数：14,151人'
@@ -81,9 +81,8 @@
               )
             }}
           </p>
-          </ul>
           <ul>
-            <li class="margin-b">
+            <li class="margin-ub">
               {{ $t('次回の予約受付について') }}
             </li>
             <p>
