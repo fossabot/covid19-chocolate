@@ -113,14 +113,8 @@
     </static-card>
     <static-card>
       <h3>
-        <app-link
-          to="https://70cp.pref.kanagawa.jp/"
-          :icon-size="24"
-          >{{
-            $t(
-              'かながわPayキャンペーン'
-            )
-          }}
+        <app-link to="https://70cp.pref.kanagawa.jp/" :icon-size="24"
+          >{{ $t('かながわPayキャンペーン') }}
         </app-link>
       </h3>
       <p>

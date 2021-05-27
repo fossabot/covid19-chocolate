@@ -1831,12 +1831,32 @@
         },
         {
             "diagnosed_date": "2021-05-20",
-            "count": 14
+            "count": 15
         },
         {
             "diagnosed_date": "2021-05-21",
-            "count": 8
+            "count": 14
+        },
+        {
+            "diagnosed_date": "2021-05-22",
+            "count": 18
+        },
+        {
+            "diagnosed_date": "2021-05-23",
+            "count": 17
+        },
+        {
+            "diagnosed_date": "2021-05-24",
+            "count": 13
+        },
+        {
+            "diagnosed_date": "2021-05-25",
+            "count": 38
+        },
+        {
+            "diagnosed_date": "2021-05-26",
+            "count": 15
         }
     ],
-    "date": "2021\/05\/22 18:00"
+    "date": "2021\/05\/27 18:00"
 }
