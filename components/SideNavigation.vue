@@ -114,6 +114,10 @@
         <small class="SideNavigation-Copyright">
           &copy; 2020 Yu Muramatsu
         </small>
+        <span id="ss_img_wrapper_2021gmogs_100-50_ja_t">
+        <a href="https://jp.globalsign.com/" target="_blank" rel="nofollow"><img alt="SSL　GMOグローバルサインのサイトシール" border="0" id="ss_img" src="//seal.globalsign.com/SiteSeal/images/gs_noscript_100-50_ja.gif"></a>
+        </span>
+        <script type="text/javascript" src="//seal.globalsign.com/SiteSeal/2021gmogs_100-50_ja_t.js" defer="defer"></script>
       </footer>
     </div>
   </div>
