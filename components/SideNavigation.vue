@@ -118,7 +118,7 @@
           <a href="https://jp.globalsign.com/" target="_blank" rel="nofollow"
             ><img
               id="ss_img"
-              alt="SSL　GMOグローバルサインのサイトシール"
+              alt="SSL GMOグローバルサインのサイトシール"
               border="0"
               src="//seal.globalsign.com/SiteSeal/images/gs_noscript_100-50_ja.gif"
           /></a>
