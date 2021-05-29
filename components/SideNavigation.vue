@@ -114,6 +114,7 @@
         <small class="SideNavigation-Copyright">
           &copy; 2020 Yu Muramatsu
         </small>
+        <br />
         <span id="ss_img_wrapper_2021gmogs_100-50_ja_t">
           <a href="https://jp.globalsign.com/" target="_blank" rel="nofollow"
             ><img
