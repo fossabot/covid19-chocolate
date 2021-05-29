@@ -21,7 +21,6 @@ import Vue from 'vue'
 
 import DetailA from '@/components/DetailA.vue'
 import DetailData from '@/components/DetailData.vue'
-import PageHeader from '@/components/PageHeader.vue'
 import VaccineInfoCard from '@/components/VaccineInfoCard.vue'
 import WhatsNew from '@/components/WhatsNew.vue'
 import {
