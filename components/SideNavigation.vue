@@ -472,6 +472,7 @@ export default Vue.extend({
   line-height: 1.3;
   font-weight: 600;
   @include font-size(10);
+  margin-bottom: 1px;
 }
 
 .SideNavigation-LicenseLink {
