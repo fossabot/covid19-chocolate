@@ -128,7 +128,7 @@
           src="//seal.globalsign.com/SiteSeal/2021gmogs_100-50_ja_t.js"
           defer="defer"
         >
-        // eslint-disable-next-line vue/html-self-closing
+          // eslint-disable-next-line vue/html-self-closing
         </script>
       </footer>
     </div>
