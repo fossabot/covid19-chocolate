@@ -114,7 +114,6 @@
         <small class="SideNavigation-Copyright">
           &copy; 2020 Yu Muramatsu
         </small>
-        // eslint-disable vue/html-self-closing
         <span id="ss_img_wrapper_2021gmogs_100-50_ja_t">
           <a href="https://jp.globalsign.com/" target="_blank" rel="nofollow"
             ><img
@@ -128,8 +127,9 @@
           type="text/javascript"
           src="//seal.globalsign.com/SiteSeal/2021gmogs_100-50_ja_t.js"
           defer="defer"
-        ></script>
-        // eslint-enable vue/html-self-closing
+        >
+        // eslint-disable-next-line vue/html-self-closing
+        </script>
       </footer>
     </div>
   </div>
