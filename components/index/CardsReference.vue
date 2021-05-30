@@ -8,15 +8,15 @@ import Vue from 'vue'
 
 // モニタリング項目
 const ConfirmedCasesDetailsCard = () =>
-  import('@/components/cards/ConfirmedCasesDetailsCard.vue')
+  import('@/components/index/CardsReference/ConfirmedCasesDetails/Card.vue')
 const ConfirmedCasesByMunicipalitiesCard = () =>
-  import('@/components/cards/ConfirmedCasesByMunicipalitiesCard.vue')
+  import('@/components/index/CardsReference/ConfirmedCasesByMunicipalities/Card.vue')
 const DeathsByDeathDateCard = () =>
-  import('@/components/cards/DeathsByDeathDateCard.vue')
+  import('@/components/index/CardsReference/DeathsByDeathDate/Card.vue')
 const PositiveNumberByDiagnosedDateCard = () =>
-  import('@/components/cards/PositiveNumberByDiagnosedDateCard.vue')
+  import('@/components/index/CardsReference/PositiveNumberByDiagnosedDate/Card.vue')
 const PositiveNumberByDevelopedDateCard = () =>
-  import('@/components/cards/PositiveNumberByDevelopedDateCard.vue')
+  import('@/components/index/CardsReference/PositiveNumberByDevelopedDate/Card.vue')
 /* eslint-enable simple-import-sort/imports */
 
 export default Vue.extend({
