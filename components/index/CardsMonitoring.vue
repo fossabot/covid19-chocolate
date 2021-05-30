@@ -8,12 +8,13 @@ import Vue from 'vue'
 
 // 報告日別陽性者数
 const ConfirmedCasesNumberCard = () =>
-  import('@/components/cards/ConfirmedCasesNumberCard.vue')
+  import('@/components/index/CardsMonitoring/ConfirmedCasesNumber/Card.vue')
+// 新規陽性者数
 const MonitoringConfirmedCasesNumberCard = () =>
-  import('@/components/cards/MonitoringConfirmedCasesNumberCard.vue')
+  import('@/components/index/CardsMonitoring/MonitoringConfirmedCasesNumber/Card.vue')
 // モニタリング項目
 const MonitoringItemsOverviewCard = () =>
-  import('@/components/cards/MonitoringItemsOverviewCard.vue')
+  import('@/components/index/CardsMonitoring/MonitoringItemsOverview/Card.vue')
 /* eslint-enable simple-import-sort/imports */
 
 export default Vue.extend({
