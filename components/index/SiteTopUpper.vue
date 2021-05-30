@@ -19,11 +19,11 @@
 <script lang="ts">
 import Vue from 'vue'
 
-import DetailA from '@/components/DetailA.vue'
-import DetailData from '@/components/DetailData.vue'
-import PageHeader from '@/components/PageHeader.vue'
-import VaccineInfoCard from '@/components/VaccineInfoCard.vue'
-import WhatsNew from '@/components/WhatsNew.vue'
+import DetailA from '@/components/index/SiteTopUpper/DetailA.vue'
+import DetailData from '@/components/index/SiteTopUpper/DetailData.vue'
+import PageHeader from '@/components/_shared/PageHeader.vue'
+import VaccineInfoCard from '@/components/index/SiteTopUpper/VaccineInfoCard.vue'
+import WhatsNew from '@/components/index/SiteTopUpper/WhatsNew.vue'
 import {
   News as INews,
   NewsItem as INewsItem,
