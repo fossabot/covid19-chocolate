@@ -18,7 +18,7 @@
 import { mdiBullhorn } from '@mdi/js'
 import Vue from 'vue'
 
-import AppLink from '@/components/AppLink.vue'
+import AppLink from '@/components/_shared/AppLink.vue'
 
 export default Vue.extend({
   components: { AppLink },
