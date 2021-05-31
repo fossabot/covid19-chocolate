@@ -1,22 +1,22 @@
 {
     "newsItems": [
         {
+            "date": "2021\/05\/28",
+            "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/05\/0528_02.pdf",
+            "text": "新型コロナウイルス感染症に係るまん延防止等重点措置の再延長に対する市長コメント （PDF 323.0KB）"
+        },
+
+
+        {
+            "date": "2021\/05\/27",
+            "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/05\/0527_02.pdf",
+            "text": "新型コロナウイルスワクチン接種の予約受付状況について （PDF 214.6KB）"
+        },
+
+        {
             "date": "2021\/05\/26",
             "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/shisei\/koho\/1019175.html",
             "text": "イベント中止等のお知らせ"
-        },
-
-        {
-            "date": "2021\/05\/21",
-            "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/05\/0521_02.pdf",
-            "text": "新型コロナウイルスワクチン接種専用コールセンターの電話番号増設について （PDF 189.0KB）"
-        },
-
-
-        {
-            "date": "2021\/05\/20",
-            "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/05\/0520_02.pdf",
-            "text": "新型コロナウイルスワクチン接種の予約受付状況について （PDF 191.6KB）"
         }
     ]
 }
