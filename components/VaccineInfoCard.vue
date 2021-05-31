@@ -43,7 +43,7 @@
           }}
         </summary>
         <div class="fade">
-          <p class="margin-ub">
+          <p class="margin-ub-under">
             {{
               $t('予約受付終了')
             }}
@@ -92,11 +92,10 @@
               }}
             </li>
           </ul>
-          <ul>
-            <li class="margin-ub">
+            <p class="margin-ub-under">
               {{ $t('次回の予約受付について') }}
-            </li>
-            <table border="1">
+            </p>
+            <table border="1" class="border">
               <tr>
                 <th>{{ $t('予約受付開始日（受付開始時間：午前8時30分から）') }}</th>
                 <th>{{ $t('実施方式') }}</th>
@@ -118,8 +117,10 @@
                 <th>{{ $t('個別接種・集団接種とも受付') }}</th>
               </tr>
             </table>
-          </ul>
-          <p>
+          <p class="margin-u">
+            {{ $t('※個別接種、集団接種ともに、予約受付日によって医療機関や集団接種会場の接種日が異なります。') }}
+          </p>
+          <p class="margin-b">
             {{ $t('※今後のスケジュールについても決定次第お知らせします。') }}
           </p>
           <p>
@@ -267,6 +268,12 @@ export default Vue.extend({
     margin-bottom: 5px;
   }
 
+  .margin-ub-under {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-decoration: underline;
+  }
+
   .Attention {
     color: red;
   }
@@ -275,6 +282,9 @@ export default Vue.extend({
     font-weight: bold;
   }
 
+  .border {
+    border-collapse: collapse;
+  }
   details[open] .fade {
     animation: fadeIn 0.7s ease;
   }
