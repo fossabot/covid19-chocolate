@@ -104,17 +104,17 @@
 <script>
 import dayjs from 'dayjs'
 
-import DataView from '@/components/DataView.vue'
-import MonitoringItemsOverviewTableInfectionStatus from '@/components/MonitoringItemsOverviewTableInfectionStatus.vue'
-import MonitoringItemsOverviewTableMedicalSystem from '@/components/MonitoringItemsOverviewTableMedicalSystem.vue'
+import DataView from '@/components/index/_shared/DataView.vue'
+import InfectionStatus from '@/components/index/CardsMonitoring/MonitoringItemsOverview/Table/InfectionStatus.vue'
+import MedicalSystem from '@/components/index/CardsMonitoring/MonitoringItemsOverview/Table/MedicalSystem.vue'
 import monitoringItemsData from '@/data/monitoring_items.json'
 import { formatMonitoringItems } from '@/utils/formatMonitoringItems'
 
 export default {
   components: {
     DataView,
-    MonitoringItemsOverviewTableInfectionStatus,
-    MonitoringItemsOverviewTableMedicalSystem,
+    InfectionStatus,
+    MedicalSystem,
   },
   data() {
     const monitoringItems = formatMonitoringItems(monitoringItemsData.data)
