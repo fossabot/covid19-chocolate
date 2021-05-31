@@ -89,13 +89,13 @@ import Vue from 'vue'
 import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
 import { TranslateResult } from 'vue-i18n'
 
-import DataView from '@/components/DataView.vue'
-import DataViewDataSetPanel from '@/components/DataViewDataSetPanel.vue'
+import DataView from '@/components/index/_shared/DataView.vue'
+import DataViewDataSetPanel from '@/components/index/_shared/DataViewDataSetPanel.vue'
 import DataViewTable, {
   TableHeader,
   TableItem,
-} from '@/components/DataViewTable.vue'
-import ScrollableChart from '@/components/ScrollableChart.vue'
+} from '@/components/index/_shared/DataViewTable.vue'
+import ScrollableChart from '@/components/index/_shared/ScrollableChart.vue'
 import { DisplayData, yAxesBgPlugin } from '@/plugins/vue-chart'
 import calcDayBeforeRatio from '@/utils/calcDayBeforeRatio'
 import { getGraphSeriesColor, SurfaceStyle } from '@/utils/colors'
