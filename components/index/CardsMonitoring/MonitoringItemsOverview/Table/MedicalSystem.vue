@@ -8,7 +8,7 @@
         <li :class="[$style.box, $style.parent]">
           <div :class="$style.content">
             <span>{{ $t('（４）陽性率') }}</span>
-            <monitoring-items-overview-table-value-with-translatable-unit
+            <value-with-translatable-unit
               :value="items['陽性率'].value"
               :unit="items['陽性率'].unit"
             />
@@ -32,7 +32,7 @@
         <li :class="[$style.box, $style.parent]">
           <div :class="$style.content">
             <span>{{ $t('（５）病床の逼迫具合') }}</span>
-            <monitoring-items-overview-table-value-with-translatable-unit
+            <value-with-translatable-unit
               :value="items['病床の逼迫具合'].value"
               :unit="items['病床の逼迫具合'].unit"
             />
@@ -49,7 +49,7 @@
         <li :class="[$style.box, $style.parent]">
           <div :class="$style.content">
             <span>{{ $t('（６）重症者用病床の逼迫具合') }}</span>
-            <monitoring-items-overview-table-value-with-translatable-unit
+            <value-with-translatable-unit
               :value="items['重症者用病床の逼迫具合'].value"
               :unit="items['重症者用病床の逼迫具合'].unit"
             />
@@ -68,7 +68,7 @@
         <li :class="[$style.box, $style.parent]">
           <div :class="$style.content">
             <span>{{ $t('（７）人口10万人当たりの療養者数') }}</span>
-            <monitoring-items-overview-table-value-with-translatable-unit
+            <value-with-translatable-unit
               :value="items['人口10万人当たりの療養者数'].value"
               :unit="items['人口10万人当たりの療養者数'].unit"
             />
@@ -92,12 +92,12 @@
 <script lang="ts">
 import Vue, { PropType } from 'vue'
 
-import MonitoringItemsOverviewTableValueWithTranslatableUnit from '@/components/MonitoringItemsOverviewTableValueWithTranslatableUnit.vue'
+import ValueWithTranslatableUnit from '@/components/index/CardsMonitoring/MonitoringItemsOverview/Table/ValueWithTranslatableUnit.vue'
 import { MonitoringItems } from '@/utils/formatMonitoringItems'
 
 export default Vue.extend({
   components: {
-    MonitoringItemsOverviewTableValueWithTranslatableUnit,
+    ValueWithTranslatableUnit,
   },
   props: {
     items: {
