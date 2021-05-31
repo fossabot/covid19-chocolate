@@ -93,7 +93,7 @@ export default class CardContainer extends Vue implements NuxtConfig {
   head() {
     const url = 'https://sagamihara-stopcovid19.com'
     const timestamp = new Date().getTime()
-    const defaultTitle = `${this.$t('相模原市')} ${this.$t(
+    const defaultTitle = ` ${this.$t(
       '新型コロナウイルス感染症'
     )}${this.$t('対策サイト')}`
     const ogpImage =
