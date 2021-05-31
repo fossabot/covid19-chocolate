@@ -34,7 +34,7 @@
 import { mdiInformation } from '@mdi/js'
 import Vue from 'vue'
 
-import AppLink from '@/components/AppLink.vue'
+import AppLink from '@/components/_shared/AppLink.vue'
 import { convertDateToISO8601Format } from '@/utils/formatDate'
 
 export default Vue.extend({
