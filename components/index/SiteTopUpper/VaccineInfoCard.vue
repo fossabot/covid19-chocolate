@@ -187,7 +187,7 @@ import { mdiChevronRight } from '@mdi/js'
 import dayjs from 'dayjs'
 import Vue from 'vue'
 
-import AppLink from '@/components/AppLink.vue'
+import AppLink from '@/components/_shared/AppLink.vue'
 import InfectionMedicalcareprovisionStatus from '@/data/infection_medicalcareprovision_status.json'
 
 export default Vue.extend({
