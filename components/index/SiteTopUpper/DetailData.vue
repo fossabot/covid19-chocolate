@@ -27,7 +27,7 @@
       >
         <template #todayPCRP>
           <span>
-            {{ statuses['1日当たりの検査人数'].toLocaleString() }}
+            {{ statuses['うち1日当たりの検査人数'].toLocaleString() }}
           </span>
         </template>
         <template #allPCRP>
@@ -37,7 +37,7 @@
         </template>
        <template #todayPCRT>
           <span>
-            {{ statuses['1日当たりの検査件数'].toLocaleString() }}
+            {{ statuses['うち1日当たりの検査件数'].toLocaleString() }}
           </span>
         </template>
         <template #allPCRT>
@@ -75,57 +75,57 @@
         </template>
         <template #u10>
           <span>
-            {{ statuses['10歳未満'].toLocaleString() }}
+            {{ statuses['うち10歳未満'].toLocaleString() }}
           </span>
         </template>
         <template #10>
           <span>
-            {{ statuses['10代'].toLocaleString() }}
+            {{ statuses['うち10代'].toLocaleString() }}
           </span>
         </template>
         <template #20>
           <span>
-            {{ statuses['20代'].toLocaleString() }}
+            {{ statuses['うち20代'].toLocaleString() }}
           </span>
         </template>
         <template #30>
           <span>
-            {{ statuses['30代'].toLocaleString() }}
+            {{ statuses['うち30代'].toLocaleString() }}
           </span>
         </template>
         <template #40>
           <span>
-            {{ statuses['40代'].toLocaleString() }}
+            {{ statuses['うち40代'].toLocaleString() }}
           </span>
         </template>
         <template #50>
           <span>
-            {{ statuses['50代'].toLocaleString() }}
+            {{ statuses['うち50代'].toLocaleString() }}
           </span>
         </template>
         <template #60>
           <span>
-            {{ statuses['60代'].toLocaleString() }}
+            {{ statuses['うち60代'].toLocaleString() }}
           </span>
         </template>
         <template #70>
           <span>
-            {{ statuses['70代'].toLocaleString() }}
+            {{ statuses['うち70代'].toLocaleString() }}
           </span>
         </template>
         <template #80>
           <span>
-            {{ statuses['80代'].toLocaleString() }}
+            {{ statuses['うち80代'].toLocaleString() }}
           </span>
         </template>
         <template #90>
           <span>
-            {{ statuses['90代'].toLocaleString() }}
+            {{ statuses['うち90代'].toLocaleString() }}
           </span>
         </template>
         <template #100>
           <span>
-            {{ statuses['100歳以上'].toLocaleString() }}
+            {{ statuses['うち100歳以上'].toLocaleString() }}
           </span>
         </template>
       </i18n>
