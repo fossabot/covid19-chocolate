@@ -6,22 +6,22 @@
 /* eslint-disable simple-import-sort/imports -- ブラウザでの表示順に合わせて各 card の component を import する */
 // ---- モニタリング項目
 // 報告日別による陽性者数の推移
-import ConfirmedCasesNumberCard from '@/components/cards/ConfirmedCasesNumberCard.vue'
+import ConfirmedCasesNumberCard from '@/components/index/CardsMonitoring/ConfirmedCasesNumber/Card.vue'
 // 新規陽性者数
-import MonitoringConfirmedCasesNumberCard from '@/components/cards/MonitoringConfirmedCasesNumberCard.vue'
+import MonitoringConfirmedCasesNumberCard from '@/components/index/CardsMonitoring/MonitoringConfirmedCasesNumber/Card.vue'
 // モニタリング状況
-import MonitoringItemsOverviewCard from '@/components/cards/MonitoringItemsOverviewCard.vue'
+import MonitoringItemsOverviewCard from '@/components/index/CardsMonitoring/MonitoringItemsOverview/Card.vue'
 // ---- その他 参考指標
 // 検査陽性者の状況
-import ConfirmedCasesDetailsCard from '@/components/cards/ConfirmedCasesDetailsCard.vue'
+import ConfirmedCasesDetailsCard from '@/components/index/CardsReference/ConfirmedCasesDetails/Card.vue'
 // 陽性者数（区別・週報）
-import ConfirmedCasesByMunicipalitiesCard from '@/components/cards/ConfirmedCasesByMunicipalitiesCard.vue'
+import ConfirmedCasesByMunicipalitiesCard from '@/components/index/CardsReference/ConfirmedCasesByMunicipalities/Card.vue'
 // 死亡日別による死亡者数の推移
-import DeathsByDeathDateCard from '@/components/cards/DeathsByDeathDateCard.vue'
+import DeathsByDeathDateCard from '@/components/index/CardsReference/DeathsByDeathDate/Card.vue'
 // 確定日別による陽性者数の推移
-import PositiveNumberByDiagnosedDateCard from '@/components/cards/PositiveNumberByDiagnosedDateCard.vue'
+import PositiveNumberByDiagnosedDateCard from '@/components/index/CardsReference/PositiveNumberByDiagnosedDate/Card.vue'
 // 発症日別による陽性者数の推移
-import PositiveNumberByDevelopedDateCard from '@/components/cards/PositiveNumberByDevelopedDateCard.vue'
+import PositiveNumberByDevelopedDateCard from '@/components/index/CardsReference/PositiveNumberByDevelopedDate/Card.vue'
 
 import { Vue, Component } from 'nuxt-property-decorator'
 import { getLinksLanguageAlternative } from '@/utils/i18nUtils'
