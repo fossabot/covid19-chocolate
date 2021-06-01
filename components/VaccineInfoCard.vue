@@ -44,33 +44,6 @@
         </summary>
         <div class="fade">
           <p class="margin-ub-under">
-            {{ $t('予約受付終了') }}
-          </p>
-          <ul>
-            <li>
-              {{ $t('集団接種：') }}
-              <ul>
-                <li class="margin-ub">
-                  {{ $t('5月13日（木曜日）') }}
-                </li>
-                <p>
-                  {{ $t('※予約者数：10,260人') }}
-                </p>
-                <li class="margin-ub">
-                  {{ $t('5月27日（木曜日）') }}
-                </li>
-                <p>
-                  {{ $t('※予約者数：9,450人') }}
-                </p>
-              </ul>
-            </li>
-          </ul>
-          <ul>
-            <li class="margin-b">
-              {{ $t('個別接種：5月20日（木曜日）※予約者数：14,151人') }}
-            </li>
-          </ul>
-          <p class="margin-ub-under">
             {{ $t('次回の予約受付について') }}
           </p>
           <table border="1" class="border">
