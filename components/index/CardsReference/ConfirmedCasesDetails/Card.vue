@@ -26,9 +26,9 @@
 <script>
 import dayjs from 'dayjs'
 
+import DataView from '@/components/index/_shared/DataView.vue'
 // table タグとの衝突を避けるため ConfirmedCasesDetailsTable とする
 import ConfirmedCasesDetailsTable from '@/components/index/CardsReference/ConfirmedCasesDetails/Table.vue'
-import DataView from '@/components/index/_shared/DataView.vue'
 import Data from '@/data/data.json'
 import formatConfirmedCases from '@/utils/formatConfirmedCases'
 
