@@ -24,25 +24,25 @@ export interface Data {
     軽症:            number;
     中症:            number;
     重症:            number;
-    pcR更新日時:       Date;
-    the1日当たりの検査人数: number;
+    PCR更新日時:       Date;
+    1日当たりの検査人数: number;
     累計検査人数:        number;
-    the1日当たりの検査件数: number;
+    1日当たりの検査件数: number;
     累計検査件数:        number;
     男性:            number;
     女性:            number;
     累計陽性者数:        number;
-    the10歳未満:      number;
-    the10代:        number;
-    the20代:        number;
-    the30代:        number;
-    the40代:        number;
-    the50代:        number;
-    the60代:        number;
-    the70代:        number;
-    the80代:        number;
-    the90代:        number;
-    the100歳以上:     number;
+    10歳未満:      number;
+    10代:        number;
+    20代:        number;
+    30代:        number;
+    40代:        number;
+    50代:        number;
+    60代:        number;
+    70代:        number;
+    80代:        number;
+    90代:        number;
+    100歳以上:     number;
 }
 
 // Converts JSON strings to/from your types
@@ -206,24 +206,24 @@ const typeMap: any = {
         { json: "軽症", js: "軽症", typ: 0 },
         { json: "中症", js: "中症", typ: 0 },
         { json: "重症", js: "重症", typ: 0 },
-        { json: "PCR更新日時", js: "pcR更新日時", typ: Date },
-        { json: "1日当たりの検査人数", js: "the1日当たりの検査人数", typ: 0 },
+        { json: "PCR更新日時", js: "PCR更新日時", typ: Date },
+        { json: "1日当たりの検査人数", js: "1日当たりの検査人数", typ: 0 },
         { json: "累計検査人数", js: "累計検査人数", typ: 0 },
-        { json: "1日当たりの検査件数", js: "the1日当たりの検査件数", typ: 0 },
+        { json: "1日当たりの検査件数", js: "1日当たりの検査件数", typ: 0 },
         { json: "累計検査件数", js: "累計検査件数", typ: 0 },
         { json: "男性", js: "男性", typ: 0 },
         { json: "女性", js: "女性", typ: 0 },
         { json: "累計陽性者数", js: "累計陽性者数", typ: 0 },
-        { json: "10歳未満", js: "the10歳未満", typ: 0 },
-        { json: "10代", js: "the10代", typ: 0 },
-        { json: "20代", js: "the20代", typ: 0 },
-        { json: "30代", js: "the30代", typ: 0 },
-        { json: "40代", js: "the40代", typ: 0 },
-        { json: "50代", js: "the50代", typ: 0 },
-        { json: "60代", js: "the60代", typ: 0 },
-        { json: "70代", js: "the70代", typ: 0 },
-        { json: "80代", js: "the80代", typ: 0 },
-        { json: "90代", js: "the90代", typ: 0 },
-        { json: "100歳以上", js: "the100歳以上", typ: 0 },
+        { json: "10歳未満", js: "10歳未満", typ: 0 },
+        { json: "10代", js: "10代", typ: 0 },
+        { json: "20代", js: "20代", typ: 0 },
+        { json: "30代", js: "30代", typ: 0 },
+        { json: "40代", js: "40代", typ: 0 },
+        { json: "50代", js: "50代", typ: 0 },
+        { json: "60代", js: "60代", typ: 0 },
+        { json: "70代", js: "70代", typ: 0 },
+        { json: "80代", js: "80代", typ: 0 },
+        { json: "90代", js: "90代", typ: 0 },
+        { json: "100歳以上", js: "100歳以上", typ: 0 },
     ], false),
 };
