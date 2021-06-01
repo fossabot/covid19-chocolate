@@ -3,18 +3,18 @@ import { default as rawData } from '@/data/data.json'
 import {
   Convert,
   InfectionMedicalcareprovisionStatus,
-} from '@/libraries/auto_generated/data_converter/convertInfectionMedicalcareprovisionStatus'
+} from '@/libraries/auto_generated/data_converter/DetailA'
 import {
   BaseRepository,
   IBaseRepository,
 } from '@/libraries/repositories/BaseRepository'
 
-export interface IInfectionMedicalcareprovisionStatusRepository
-  extends IBaseRepository<InfectionMedicalcareprovisionStatus> {}
+export interface IDetailARepository
+  extends IBaseRepository<DetailA> {}
 
-export class InfectionMedicalcareprovisionStatusRepository
-  extends BaseRepository<InfectionMedicalcareprovisionStatus>
-  implements IInfectionMedicalcareprovisionStatusRepository
+export class DetailAepository
+  extends BaseRepository<DetailA>
+  implements DetailARepository
 {
   /**
    * 使用箇所
@@ -23,7 +23,7 @@ export class InfectionMedicalcareprovisionStatusRepository
    */
   constructor() {
     super(
-      Convert.toInfectionMedicalcareprovisionStatus(JSON.stringify(rawData))
+      Convert.toDetailA(JSON.stringify(rawData))
     )
   }
 }
