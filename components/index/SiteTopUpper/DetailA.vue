@@ -2,8 +2,11 @@
   <div class="InfectionMedicalCareProvisionStatus">
     <div class="InfectionMedicalCareProvisionStatus-heading">
       <h3 class="InfectionMedicalCareProvisionStatus-title">
-        {{ $t('本日の感染状況') }}
-        {{ formatDate(date) }}時点
+        {{
+          $t('本日の感染状況 {date}時点', {
+            date: formatDate(date),
+          })
+        }}
       </h3>
     </div>
     <div class="InfectionMedicalCareProvisionStatus-Box">
@@ -14,21 +17,42 @@
           {{ $t('感染状況') }}
         </app-link>
       </div>
-      <div class="InfectionMedicalCareProvisionStatus-description">
-        {{ $t('新規陽性者')
-        }}<span>{{ statuses['新規陽性者'].toLocaleString() }}人</span>（
-        {{ $t('濃厚接触者・接触者')
-        }}<span
-          >{{ statuses['濃厚接触者・接触者'].toLocaleString() }}人</span
-        >、{{ $t('海外渡航歴あり')
-        }}<span>{{ statuses['海外渡航歴あり'].toLocaleString() }}人</span
-        >、{{ $t('不明')
-        }}<span>{{ statuses['不明'].toLocaleString() }}人</span>、
-        {{ $t('調査中')
-        }}<span>{{ statuses['調査中'].toLocaleString() }}人</span>）、
-        {{ $t('死亡者数')
-        }}<span>{{ statuses['死亡者数'].toLocaleString() }}人</span>
-      </div>
+      <i18n
+        tag="p"
+        class="InfectionMedicalCareProvisionStatus-description"
+        path="新規陽性者{newPositiveCases}人（濃厚接触者・接触者{n}人、海外渡航歴あり{k}人、不明{f}人、調査中{t}人）、死亡者数{d}人"
+      >
+        <template #newPositiveCases>
+          <span>
+            {{ statuses['新規陽性者'].toLocaleString() }}
+          </span>
+        </template>
+        <template #n>
+          <span>
+            {{ statuses['濃厚接触者・接触者'].toLocaleString() }}
+          </span>
+        </template>
+        <template #k>
+          <span>
+            {{ statuses['海外渡航歴あり'].toLocaleString() }}
+          </span>
+        </template>
+        <template #f>
+          <span>
+            {{ statuses['不明'].toLocaleString() }}
+          </span>
+        </template>
+        <template #t>
+          <span>
+            {{ statuses['調査中'].toLocaleString() }}
+          </span>
+        </template>
+        <template #d>
+          <span>
+            {{ statuses['死亡者数'].toLocaleString() }}
+          </span>
+        </template>
+      </i18n>
     </div>
     <div class="InfectionMedicalCareProvisionStatus-Box">
       <div class="InfectionMedicalCareProvisionStatus-Headline">
@@ -38,16 +62,32 @@
           {{ $t('症状') }}
         </app-link>
       </div>
-      <div class="InfectionMedicalCareProvisionStatus-description">
-        {{ $t('無症状')
-        }}<span>{{ statuses['無症状'].toLocaleString() }}人</span>、
-        {{ $t('軽症')
-        }}<span>{{ statuses['軽症'].toLocaleString() }}人</span>、
-        {{ $t('中等症')
-        }}<span>{{ statuses['中症'].toLocaleString() }}人</span>、
-        {{ $t('重症')
-        }}<span>{{ statuses['重症'].toLocaleString() }}人</span>
-      </div>
+      <i18n
+        tag="p"
+        class="InfectionMedicalCareProvisionStatus-description"
+        path="無症状{mp}人、軽症{kp}人、中等症{tk}人、重症{jk}人"
+      >
+        <template #mp>
+          <span>
+            {{ statuses['無症状'].toLocaleString() }}
+          </span>
+        </template>
+        <template #kp>
+          <span>
+            {{ statuses['軽症'].toLocaleString() }}
+          </span>
+        </template>
+        <template #tk>
+          <span>
+            {{ statuses['中症'].toLocaleString() }}
+          </span>
+        </template>
+        <template #jk>
+          <span>
+            {{ statuses['重症'].toLocaleString() }}
+          </span>
+        </template>
+      </i18n>
     </div>
   </div>
 </template>
@@ -68,7 +108,6 @@ type Methods = {
 type Computed = {
   statuses: IInfectionMedicalCareProvisionStatusData
   date: Date
-  statisticDate: Date
   infectionMedicalCareProvisionStatus: IInfectionMedicalCareProvisionStatus
 }
 type Props = {}
@@ -84,9 +123,6 @@ export default Vue.extend<Data, Methods, Computed, Props>({
     date() {
       return new Date(this.infectionMedicalCareProvisionStatus.date)
     },
-    statisticDate() {
-      return this.infectionMedicalCareProvisionStatus.data['検査統計日時']
-    },
     infectionMedicalCareProvisionStatus() {
       return this.$store.state.infectionMedicalCareProvisionStatus
     },
@@ -99,7 +135,7 @@ export default Vue.extend<Data, Methods, Computed, Props>({
 })
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .InfectionMedicalCareProvisionStatus {
   @include card-container();
 
@@ -145,7 +181,7 @@ export default Vue.extend<Data, Methods, Computed, Props>({
       margin: 0;
 
       > span {
-        color: #053c47;
+        color: $green-1;
       }
 
       > a {
