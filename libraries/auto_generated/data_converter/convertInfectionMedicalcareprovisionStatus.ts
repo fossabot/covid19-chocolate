@@ -9,9 +9,40 @@
 
 export interface InfectionMedicalcareprovisionStatus {
     date:        string;
-    pcrdate:     string;
     vaccinedate: string;
-    data:        { [key: string]: number };
+    data:        Data;
+}
+
+export interface Data {
+    新規陽性者:         number;
+    濃厚接触者・接触者:     number;
+    海外渡航歴あり:       number;
+    不明:            number;
+    調査中:           number;
+    死亡者数:          number;
+    無症状:           number;
+    軽症:            number;
+    中症:            number;
+    重症:            number;
+    pcR更新日時:       Date;
+    the1日当たりの検査人数: number;
+    累計検査人数:        number;
+    the1日当たりの検査件数: number;
+    累計検査件数:        number;
+    男性:            number;
+    女性:            number;
+    累計陽性者数:        number;
+    the10歳未満:      number;
+    the10代:        number;
+    the20代:        number;
+    the30代:        number;
+    the40代:        number;
+    the50代:        number;
+    the60代:        number;
+    the70代:        number;
+    the80代:        number;
+    the90代:        number;
+    the100歳以上:     number;
 }
 
 // Converts JSON strings to/from your types
@@ -161,8 +192,38 @@ function r(name: string) {
 const typeMap: any = {
     "InfectionMedicalcareprovisionStatus": o([
         { json: "date", js: "date", typ: "" },
-        { json: "pcrdate", js: "pcrdate", typ: "" },
         { json: "vaccinedate", js: "vaccinedate", typ: "" },
-        { json: "data", js: "data", typ: m(0) },
+        { json: "data", js: "data", typ: r("Data") },
+    ], false),
+    "Data": o([
+        { json: "新規陽性者", js: "新規陽性者", typ: 0 },
+        { json: "濃厚接触者・接触者", js: "濃厚接触者・接触者", typ: 0 },
+        { json: "海外渡航歴あり", js: "海外渡航歴あり", typ: 0 },
+        { json: "不明", js: "不明", typ: 0 },
+        { json: "調査中", js: "調査中", typ: 0 },
+        { json: "死亡者数", js: "死亡者数", typ: 0 },
+        { json: "無症状", js: "無症状", typ: 0 },
+        { json: "軽症", js: "軽症", typ: 0 },
+        { json: "中症", js: "中症", typ: 0 },
+        { json: "重症", js: "重症", typ: 0 },
+        { json: "PCR更新日時", js: "pcR更新日時", typ: Date },
+        { json: "1日当たりの検査人数", js: "the1日当たりの検査人数", typ: 0 },
+        { json: "累計検査人数", js: "累計検査人数", typ: 0 },
+        { json: "1日当たりの検査件数", js: "the1日当たりの検査件数", typ: 0 },
+        { json: "累計検査件数", js: "累計検査件数", typ: 0 },
+        { json: "男性", js: "男性", typ: 0 },
+        { json: "女性", js: "女性", typ: 0 },
+        { json: "累計陽性者数", js: "累計陽性者数", typ: 0 },
+        { json: "10歳未満", js: "the10歳未満", typ: 0 },
+        { json: "10代", js: "the10代", typ: 0 },
+        { json: "20代", js: "the20代", typ: 0 },
+        { json: "30代", js: "the30代", typ: 0 },
+        { json: "40代", js: "the40代", typ: 0 },
+        { json: "50代", js: "the50代", typ: 0 },
+        { json: "60代", js: "the60代", typ: 0 },
+        { json: "70代", js: "the70代", typ: 0 },
+        { json: "80代", js: "the80代", typ: 0 },
+        { json: "90代", js: "the90代", typ: 0 },
+        { json: "100歳以上", js: "the100歳以上", typ: 0 },
     ], false),
 };
