@@ -1,71 +1,134 @@
 <template>
-  <div class="InfectionMedicalcareprovisionStatus">
-    <div class="InfectionMedicalcareprovisionStatus-heading">
-      <h3 class="InfectionMedicalcareprovisionStatus-title">
-        {{ $t('検査数・陽性者の詳細') }}
-        {{ formatDate(date) }}時点
+  <div class="InfectionMedicalCareProvisionStatus">
+    <div class="InfectionMedicalCareProvisionStatus-heading">
+      <h3 class="InfectionMedicalCareProvisionStatus-title">
+        {{
+          $t('検査数・陽性者の詳細 {date}時点', {
+            date: formatDate(date),
+          })
+        }}
       </h3>
-      <!--<h4 class="InfectionMedicalcareprovisionStatus-title">
+      <h4 class="InfectionMedicalCareProvisionStatus-title">
         {{ $t('このデータは、平日のみ更新') }}
-      </h4>-->
+      </h4>
     </div>
-    <div class="InfectionMedicalcareprovisionStatus-Box">
-      <div class="InfectionMedicalcareprovisionStatus-Headline">
+    <div class="InfectionMedicalCareProvisionStatus-Box">
+      <div class="InfectionMedicalCareProvisionStatus-Headline">
         <app-link
           to="https://www.city.sagamihara.kanagawa.jp/kurashi/kenko/kansenyobo/1019910/1020286.html"
         >
           {{ $t('PCR検査実績') }}
         </app-link>
       </div>
-      <div class="InfectionMedicalcareprovisionStatus-description">
-        {{ $t('1日当たりの検査人数')
-        }}<span>{{ statuses['1日当たりの検査人数'].toLocaleString() }}人</span
-        >、{{ $t('累計検査人数')
-        }}<span>{{ statuses['累計検査人数'].toLocaleString() }}人</span>、
-        {{ $t('1日当たりの検査件数')
-        }}<span>{{ statuses['1日当たりの検査件数'].toLocaleString() }}件</span
-        >、{{ $t('累計検査件数')
-        }}<span>{{ statuses['累計検査件数'].toLocaleString() }}件</span>
-        {{ $t('（PCR検査更新日時') }}
-        {{ pcrdate }}更新）
-      </div>
+      <i18n
+        tag="p"
+        class="InfectionMedicalCareProvisionStatus-description"
+        path="1日当たりの検査人数{todayPCRP}人、累計検査人数{allPCRP}人、1日当たりの検査件数{todayPCRT}人、累計検査件数{allPCRT}人、（PCR検査更新日時：{PCRDate}）"
+      >
+        <template #todayPCRP>
+          <span>
+            {{ statuses['1日当たりの検査人数'].toLocaleString() }}
+          </span>
+        </template>
+        <template #allPCRP>
+          <span>
+            {{ statuses['累計検査人数'].toLocaleString() }}
+          </span>
+        </template>
+       <template #todayPCRT>
+          <span>
+            {{ statuses['1日当たりの検査件数'].toLocaleString() }}
+          </span>
+        </template>
+        <template #allPCRT>
+          <span>
+            {{ statuses['累計検査件数'].toLocaleString() }}
+          </span>
+        </template>
+        <template #PCRDate>
+          {{ formatDate(PCRDate) }}
+        </template>
+      </i18n>
     </div>
-    <div class="InfectionMedicalcareprovisionStatus-Box">
-      <div class="InfectionMedicalcareprovisionStatus-Headline">
+    <div class="InfectionMedicalCareProvisionStatus-Box">
+      <div class="InfectionMedicalCareProvisionStatus-Headline">
         <app-link
           to="https://www.city.sagamihara.kanagawa.jp/kurashi/kenko/kansenyobo/1019910/1020286.html"
         >
           {{ $t('性別・年齢別(累計)') }}
         </app-link>
       </div>
-      <div class="InfectionMedicalcareprovisionStatus-description">
-        {{ $t('男性') }}<span>{{ statuses['男性'].toLocaleString() }}人</span>、
-        {{ $t('女性') }}<span>{{ statuses['女性'].toLocaleString() }}人</span>、
-        {{ $t('累計陽性者数')
-        }}<span>{{ statuses['累計陽性者数'].toLocaleString() }}人</span><br />
-        {{ $t('10歳未満：')
-        }}<span>{{ statuses['10歳未満'].toLocaleString() }}人</span>、
-        {{ $t('10代：')
-        }}<span>{{ statuses['10代'].toLocaleString() }}人</span>、
-        {{ $t('20代：')
-        }}<span>{{ statuses['20代'].toLocaleString() }}人</span>、
-        {{ $t('30代：')
-        }}<span>{{ statuses['30代'].toLocaleString() }}人</span>、
-        {{ $t('40代：')
-        }}<span>{{ statuses['40代'].toLocaleString() }}人</span>、
-        {{ $t('50代：')
-        }}<span>{{ statuses['50代'].toLocaleString() }}人</span>、
-        {{ $t('60代：')
-        }}<span>{{ statuses['60代'].toLocaleString() }}人</span>、
-        {{ $t('70代：')
-        }}<span>{{ statuses['70代'].toLocaleString() }}人</span>、
-        {{ $t('80代：')
-        }}<span>{{ statuses['80代'].toLocaleString() }}人</span>、
-        {{ $t('90代：')
-        }}<span>{{ statuses['90代'].toLocaleString() }}人</span>、
-        {{ $t('100歳以上：')
-        }}<span>{{ statuses['100歳以上'].toLocaleString() }}人</span>
-      </div>
+      <i18n
+        tag="p"
+        class="InfectionMedicalCareProvisionStatus-description"
+        path="男性{men}人、女性{women}人、累計陽性者数{all}人 <br /> 10歳未満{u10}人、20代{20}人、30代{30}人、40代{40}人、50代{50}人、60代{60}人、70代{70}人、80代{80}人、90代{90}人、100歳以上{100}人"
+      >
+        <template #men>
+          <span>
+            {{ statuses['男性'].toLocaleString() }}
+          </span>
+        </template>
+        <template #women>
+          <span>
+            {{ statuses['女性'].toLocaleString() }}
+          </span>
+        </template>
+        <template #u10>
+          <span>
+            {{ statuses['10歳未満'].toLocaleString() }}
+          </span>
+        </template>
+        <template #10>
+          <span>
+            {{ statuses['10代'].toLocaleString() }}
+          </span>
+        </template>
+        <template #20>
+          <span>
+            {{ statuses['20代'].toLocaleString() }}
+          </span>
+        </template>
+        <template #30>
+          <span>
+            {{ statuses['30代'].toLocaleString() }}
+          </span>
+        </template>
+        <template #40>
+          <span>
+            {{ statuses['40代'].toLocaleString() }}
+          </span>
+        </template>
+        <template #50>
+          <span>
+            {{ statuses['50代'].toLocaleString() }}
+          </span>
+        </template>
+        <template #60>
+          <span>
+            {{ statuses['60代'].toLocaleString() }}
+          </span>
+        </template>
+        <template #70>
+          <span>
+            {{ statuses['70代'].toLocaleString() }}
+          </span>
+        </template>
+        <template #80>
+          <span>
+            {{ statuses['80代'].toLocaleString() }}
+          </span>
+        </template>
+        <template #90>
+          <span>
+            {{ statuses['90代'].toLocaleString() }}
+          </span>
+        </template>
+        <template #100>
+          <span>
+            {{ statuses['100歳以上'].toLocaleString() }}
+          </span>
+        </template>
+      </i18n>
     </div>
   </div>
 </template>
@@ -73,6 +136,7 @@
 <script lang="ts">
 import Vue from 'vue'
 
+import AppLink from '@/components/_shared/AppLink.vue'
 import {
   Data as IInfectionMedicalCareProvisionStatusData,
   InfectionMedicalcareprovisionStatus as IInfectionMedicalCareProvisionStatus,
@@ -85,12 +149,15 @@ type Methods = {
 type Computed = {
   statuses: IInfectionMedicalCareProvisionStatusData
   date: Date
-  statisticDate: Date
+  PCRDate: Date
   infectionMedicalCareProvisionStatus: IInfectionMedicalCareProvisionStatus
 }
 type Props = {}
 
 export default Vue.extend<Data, Methods, Computed, Props>({
+  components: {
+    AppLink,
+  },
   computed: {
     statuses() {
       return this.infectionMedicalCareProvisionStatus.data
@@ -98,7 +165,7 @@ export default Vue.extend<Data, Methods, Computed, Props>({
     date() {
       return new Date(this.infectionMedicalCareProvisionStatus.date)
     },
-    statisticDate() {
+    PCRDate() {
       return this.infectionMedicalCareProvisionStatus.data['検査統計日時']
     },
     infectionMedicalCareProvisionStatus() {
@@ -113,20 +180,20 @@ export default Vue.extend<Data, Methods, Computed, Props>({
 })
 </script>
 
-<style lang="scss">
-.InfectionMedicalcareprovisionStatus {
+<style scoped lang="scss">
+.InfectionMedicalCareProvisionStatus {
   @include card-container();
 
   padding: 8px 18px;
   margin-bottom: 10px;
 
-  .InfectionMedicalcareprovisionStatus-heading {
+  .InfectionMedicalCareProvisionStatus-heading {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
 
-    .InfectionMedicalcareprovisionStatus-title {
+    .InfectionMedicalCareProvisionStatus-title {
       display: flex;
       align-items: center;
       padding: 0 0 4px 0;
@@ -137,10 +204,10 @@ export default Vue.extend<Data, Methods, Computed, Props>({
     }
   }
 
-  .InfectionMedicalcareprovisionStatus-Box {
+  .InfectionMedicalCareProvisionStatus-Box {
     overflow: hidden;
 
-    .InfectionMedicalcareprovisionStatus-Headline {
+    .InfectionMedicalCareProvisionStatus-Headline {
       float: left;
       text-align: center;
       width: 10em;
@@ -152,14 +219,14 @@ export default Vue.extend<Data, Methods, Computed, Props>({
       @include font-size(12);
     }
 
-    .InfectionMedicalcareprovisionStatus-description {
+    .InfectionMedicalCareProvisionStatus-description {
       @include font-size(12);
 
       padding: 3px 0 0 0;
       margin: 0;
 
       > span {
-        color: #053c47;
+        color: $green-1;
       }
 
       > a {
