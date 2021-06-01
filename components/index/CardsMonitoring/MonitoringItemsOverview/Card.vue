@@ -84,14 +84,14 @@
         </template>
         <section>
           <h4>{{ $t('感染状況') }}</h4>
-          <monitoring-items-overview-table-infection-status
+          <infection-status
             :aria-label="$t('感染状況')"
             :items="monitoringItems"
           />
         </section>
         <section>
           <h4>{{ $t('医療提供体制') }}</h4>
-          <monitoring-items-overview-table-medical-system
+          <medical-system
             :aria-label="$t('医療提供体制')"
             :items="monitoringItems"
           />
