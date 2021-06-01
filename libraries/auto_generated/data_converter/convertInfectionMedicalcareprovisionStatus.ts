@@ -10,7 +10,7 @@
 export interface InfectionMedicalcareprovisionStatus {
     date:        string;
     vaccinedate: string;
-    data:        Data;
+    data:        { [key: string]: number };
 }
 
 // Converts JSON strings to/from your types
@@ -161,6 +161,6 @@ const typeMap: any = {
     "InfectionMedicalcareprovisionStatus": o([
         { json: "date", js: "date", typ: "" },
         { json: "vaccinedate", js: "vaccinedate", typ: "" },
-        { json: "data", js: "data", typ: r("Data") },
+        { json: "data", js: "data", typ: m(0) },
     ], false),
 };
