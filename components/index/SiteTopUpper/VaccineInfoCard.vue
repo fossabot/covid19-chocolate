@@ -148,11 +148,10 @@
 </template>
 
 <script lang="ts">
-import { mdiChevronRight } from '@mdi/js'
-import dayjs from 'dayjs'
 import Vue from 'vue'
 
 import AppLink from '@/components/_shared/AppLink.vue'
+// eslint-disable-next-line typescript-eslint/no-unused-vars
 import { InfectionMedicalcareprovisionStatus as IInfectionMedicalCareProvisionStatus } from '@/libraries/auto_generated/data_converter/convertInfectionMedicalcareprovisionStatus'
 
 type Methods = {
