@@ -157,18 +157,26 @@ import {
   InfectionMedicalcareprovisionStatus as IInfectionMedicalCareProvisionStatus,
 } from '@/libraries/auto_generated/data_converter/convertInfectionMedicalcareprovisionStatus'
 
+type Methods = {
+  formatDate(date: Date): string
+}
 type Computed = {
   VaccineDate: Date
 }
 type Props = {}
 
-export default Vue.extend<Computed, Props>({
+export default Vue.extend<Methods, Computed, Props>({
   components: {
     AppLink,
   },
   computed: {
     VaccineDate() {
       return this.infectionMedicalCareProvisionStatus.data['ワクチン更新日時']
+    },
+  },
+  methods: {
+    formatDate(date) {
+      return this.$d(date, 'date') as string
     },
   },
 })
