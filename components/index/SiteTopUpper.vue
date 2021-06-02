@@ -19,8 +19,6 @@
 <script lang="ts">
 import Vue from 'vue'
 
-
-
 import DetailA from '@/components/index/SiteTopUpper/DetailA.vue'
 import DetailData from '@/components/index/SiteTopUpper/DetailData.vue'
 import VaccineInfoCard from '@/components/index/SiteTopUpper/VaccineInfoCard.vue'
