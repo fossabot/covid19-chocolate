@@ -160,6 +160,7 @@ type Methods = {
 }
 type Computed = {
   VaccineDate: Date
+  infectionMedicalCareProvisionStatus: IInfectionMedicalCareProvisionStatus
 }
 type Props = {}
 
@@ -169,7 +170,7 @@ export default Vue.extend<Methods, Computed, Props>({
   },
   computed: {
     VaccineDate() {
-      return this.InfectionMedicalCareProvisionStatus['ワクチン更新日時']
+      return this.infectionMedicalCareProvisionStatus['ワクチン更新日時']
     },
   },
   methods: {
