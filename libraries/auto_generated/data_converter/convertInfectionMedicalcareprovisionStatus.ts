@@ -9,7 +9,7 @@
 
 export interface InfectionMedicalcareprovisionStatus {
     date:        string;
-    pcrdate:     string;
+    検査統計日時:   Date;
     vaccinedate: string;
     data:        { [key: string]: number };
 }
@@ -161,7 +161,7 @@ function r(name: string) {
 const typeMap: any = {
     "InfectionMedicalcareprovisionStatus": o([
         { json: "date", js: "date", typ: "" },
-        { json: "pcrdate", js: "pcrdate", typ: "" },
+        { json: "検査統計日時", js: "検査統計日時", typ: Date },
         { json: "vaccinedate", js: "vaccinedate", typ: "" },
         { json: "data", js: "data", typ: m(0) },
     ], false),
