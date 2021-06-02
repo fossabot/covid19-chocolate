@@ -3,8 +3,8 @@
     <div class="VaccineInfo-heading">
       <h3 class="VaccineInfo-title">
         {{
-          $t('ワクチンについて {date}更新', {
-            date: formatDate(date),
+          $t('ワクチンについて {Vaccinedate}更新', {
+            date: formatDate(Vaccinedate),
           })
         }}
       </h3>
@@ -128,8 +128,8 @@
               to="https://www.city.sagamihara.kanagawa.jp/kurashi/kenko/kansenyobo/1019910/1022588/index.html"
             >
               {{
-                $t('ワクチンについて {date}更新', {
-                  date: formatDate(date),
+                $t('ワクチンについて {Vaccinedate}更新', {
+                  date: formatDate(Vaccinedate),
                 })
               }}
             </app-link>
@@ -154,30 +154,21 @@ import Vue from 'vue'
 
 import AppLink from '@/components/_shared/AppLink.vue'
 import {
-  Data as IInfectionMedicalCareProvisionStatusData,
   InfectionMedicalcareprovisionStatus as IInfectionMedicalCareProvisionStatus,
 } from '@/libraries/auto_generated/data_converter/convertInfectionMedicalcareprovisionStatus'
 
-type Methods = {
-  formatDate(date: Date): string
-}
 type Computed = {
-  date: Date
+  VaccineDate: Date
 }
 type Props = {}
 
-export default Vue.extend<Methods, Computed, Props>({
+export default Vue.extend<Computed, Props>({
   components: {
     AppLink,
   },
   computed: {
-    date() {
-      return new Date(this.infectionMedicalCareProvisionStatus.vaccinedate)
-    },
-  },
-  methods: {
-    formatDate(date) {
-      return this.$d(date, 'date') as string
+    VaccineDate() {
+      return this.infectionMedicalCareProvisionStatus.data['ワクチン更新日時']
     },
   },
 })
