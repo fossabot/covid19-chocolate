@@ -2,7 +2,11 @@
   <div class="VaccineInfo">
     <div class="VaccineInfo-heading">
       <h3 class="VaccineInfo-title">
-        {{ $t('ワクチンについて') }} （{{ date }}更新）
+        {{
+          $t('ワクチンについて {date}更新', {
+            date: formatDate(date),
+          })
+        }}
       </h3>
     </div>
     <div class="VaccineInfo-description">
@@ -43,41 +47,43 @@
           }}
         </summary>
         <div class="fade">
-          <p class="margin-ub">
+          <p class="margin-ub-under">
+            {{ $t('次回の予約受付について') }}
+          </p>
+          <table border="1" class="border">
+            <tr>
+              <th>
+                {{ $t('予約受付開始日（受付開始時間：午前8時30分から）') }}
+              </th>
+              <th>{{ $t('実施方式') }}</th>
+            </tr>
+            <tr>
+              <th>{{ $t('6月8日（火曜日）') }}</th>
+              <th>{{ $t('個別接種・集団接種とも受付') }}</th>
+            </tr>
+            <tr>
+              <th>{{ $t('6月10日（木曜日）') }}</th>
+              <th>{{ $t('個別接種・集団接種とも受付') }}</th>
+            </tr>
+            <tr>
+              <th>{{ $t('6月17日（木曜日）') }}</th>
+              <th>{{ $t('個別接種・集団接種とも受付') }}</th>
+            </tr>
+            <tr>
+              <th>{{ $t('6月24日（木曜日）') }}</th>
+              <th>{{ $t('個別接種・集団接種とも受付') }}</th>
+            </tr>
+          </table>
+          <p class="margin-u">
             {{
-              $t('5月24日（月曜日）から6月27日（日曜日）までの接種予約の受付')
+              $t(
+                '※個別接種、集団接種ともに、予約受付日によって医療機関や集団接種会場の接種日が異なります。'
+              )
             }}
           </p>
-          <ul>
-            <li>
-              {{ $t('集団接種') }}
-              <ul>
-                <li class="margin-ub">
-                  {{
-                    $t(
-                      '5月13日（木曜日）の受付は終了しました。※予約者数：10,260人'
-                    )
-                  }}
-                </li>
-                <li class="margin-ub">
-                  {{
-                    $t(
-                      '5月27日（木曜日）の受付は終了しました。※予約者数：9,450人'
-                    )
-                  }}
-                </li>
-              </ul>
-            </li>
-          </ul>
-          <ul>
-            <li class="margin-b">
-              {{
-                $t(
-                  '個別接種：5月20日（木曜日）の受付は終了しました。※予約者数：14,151人'
-                )
-              }}
-            </li>
-          </ul>
+          <p class="margin-b">
+            {{ $t('※今後のスケジュールについても決定次第お知らせします。') }}
+          </p>
           <p>
             {{
               $t(
@@ -85,52 +91,7 @@
               )
             }}
           </p>
-          <ul>
-            <li class="margin-ub">
-              {{ $t('次回の予約受付について') }}
-            </li>
-            <p>
-              {{
-                $t('集団接種：現在、調整中のため、決まり次第お知らせします。')
-              }}
-            </p>
-            <p class="margin-bb">
-              {{
-                $t(
-                  '個別接種：5月31日（月曜日）午前8時30分から【6月7日（月曜日）から6月20日（日曜日）の接種】'
-                )
-              }}
-            </p>
-          </ul>
-          <p>
-            {{ $t('※今後のスケジュールについても決定次第お知らせします。') }}
-          </p>
           <span>{{ $t('（注）') }}</span>
-          <ul>
-            <li>
-              {{ $t('5月29日（土曜日）に接種を受けられる方へ') }}
-              <div class="margin-ab">
-                {{
-                  $t(
-                    '5月29日（土曜日）は、ツアー・オブ・ジャパン相模原ステージ（国際自転車ロードレース）開催のため、午前8時30分から正午頃（予定）まで、コースおよび周辺道路は交通規制が実施されます。接種場所へ行かれる際は、交通規制がかかっている場合がありますので、ご注意ください。'
-                  )
-                }}
-              </div>
-            </li>
-            <p>
-              {{
-                $t(
-                  '交通規制に関する詳細は、次のページからご確認していただけます。'
-                )
-              }}
-            </p>
-            <v-icon color="#D9D9D9">{{ mdiChevronRight }}</v-icon>
-            <app-link
-              to="https://www.city.sagamihara.kanagawa.jp/_res/projects/default_project/_page_/001/020/723/kisei.pdf"
-            >
-              {{ $t('交通規制のお知らせ') }}
-            </app-link>
-          </ul>
           <ul class="Attention">
             <li class="margin-a">
               {{
@@ -188,19 +149,32 @@ import dayjs from 'dayjs'
 import Vue from 'vue'
 
 import AppLink from '@/components/_shared/AppLink.vue'
-import InfectionMedicalcareprovisionStatus from '@/data/infection_medicalcareprovision_status.json'
+import {
+  Data as IInfectionMedicalCareProvisionStatusData,
+  InfectionMedicalcareprovisionStatus as IInfectionMedicalCareProvisionStatus,
+} from '@/libraries/auto_generated/data_converter/convertInfectionMedicalcareprovisionStatus'
 
-export default Vue.extend({
+type Methods = {
+  formatDate(date: Date): string
+}
+type Computed = {
+  date: Date
+}
+type Props = {}
+
+export default Vue.extend<Methods, Computed, Props>({
   components: {
     AppLink,
   },
-  data() {
-    return {
-      mdiChevronRight,
-      date: dayjs(InfectionMedicalcareprovisionStatus.vaccinedate).format(
-        'YYYY年MM月DD日'
-      ),
-    }
+  computed: {
+    date() {
+      return new Date(this.infectionMedicalCareProvisionStatus.date)
+    },
+  },
+  methods: {
+    formatDate(date) {
+      return this.$d(date, 'date') as string
+    },
   },
 })
 </script>
@@ -268,6 +242,12 @@ export default Vue.extend({
     margin-bottom: 5px;
   }
 
+  .margin-ub-under {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-decoration: underline;
+  }
+
   .Attention {
     color: red;
   }
@@ -276,6 +256,9 @@ export default Vue.extend({
     font-weight: bold;
   }
 
+  .border {
+    border-collapse: collapse;
+  }
   details[open] .fade {
     animation: fadeIn 0.7s ease;
   }
