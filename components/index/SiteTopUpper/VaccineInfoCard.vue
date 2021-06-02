@@ -22,7 +22,9 @@
         <v-icon color="#D9D9D9">{{ mdiChevronRight }}</v-icon>
         <app-link to="https://jump.mrso.jp/141500/">
           {{
-            $t('相模原市ワクチン接種web予約【次回の受付：6月8日（集団接種・個別接種）】')
+            $t(
+              '相模原市ワクチン接種web予約【次回の受付：6月8日（集団接種・個別接種）】'
+            )
           }}
         </app-link>
       </div>
