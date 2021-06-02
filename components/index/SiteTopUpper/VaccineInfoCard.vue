@@ -127,7 +127,11 @@
             <app-link
               to="https://www.city.sagamihara.kanagawa.jp/kurashi/kenko/kansenyobo/1019910/1022588/index.html"
             >
-              {{ $t('新型コロナウイルスワクチンについて') }} （{{ date }}更新）
+              {{
+                $t('ワクチンについて {date}更新', {
+                  date: formatDate(date),
+                })
+              }}
             </app-link>
           </div>
           <p>
@@ -168,7 +172,7 @@ export default Vue.extend<Methods, Computed, Props>({
   },
   computed: {
     date() {
-      return new Date(this.infectionMedicalCareProvisionStatus.date)
+      return new Date(this.infectionMedicalCareProvisionStatus.vaccinedate)
     },
   },
   methods: {
