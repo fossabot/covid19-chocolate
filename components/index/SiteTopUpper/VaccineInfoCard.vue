@@ -153,7 +153,6 @@
 import Vue from 'vue'
 
 import AppLink from '@/components/_shared/AppLink.vue'
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { InfectionMedicalcareprovisionStatus as IInfectionMedicalCareProvisionStatus } from '@/libraries/auto_generated/data_converter/convertInfectionMedicalcareprovisionStatus'
 
 type Methods = {
@@ -170,7 +169,7 @@ export default Vue.extend<Methods, Computed, Props>({
   },
   computed: {
     VaccineDate() {
-      return this.infectionMedicalCareProvisionStatus['ワクチン更新日時']
+      return this.InfectionMedicalCareProvisionStatus['ワクチン更新日時']
     },
   },
   methods: {
