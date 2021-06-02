@@ -6,6 +6,8 @@
 /* eslint-disable simple-import-sort/imports -- ブラウザでの表示順に合わせて各 card の component を import する */
 import Vue from 'vue'
 
+import CardsLazyRow from '@/components/index/_shared/CardsLazyRow.vue'
+
 // モニタリング項目
 const ConfirmedCasesDetailsCard = () =>
   import('@/components/index/CardsReference/ConfirmedCasesDetails/Card.vue')
@@ -20,6 +22,9 @@ const PositiveNumberByDevelopedDateCard = () =>
 /* eslint-enable simple-import-sort/imports */
 
 export default Vue.extend({
+  components: {
+    CardsLazyRow,
+  },
   data() {
     return {
       rows: [
