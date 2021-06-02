@@ -19,9 +19,9 @@
 <script lang="ts">
 import Vue from 'vue'
 
+import PageHeader from '@/components/_shared/PageHeader.vue'
 import DetailA from '@/components/index/SiteTopUpper/DetailA.vue'
 import DetailData from '@/components/index/SiteTopUpper/DetailData.vue'
-import PageHeader from '@/components/_shared/PageHeader.vue'
 import VaccineInfoCard from '@/components/index/SiteTopUpper/VaccineInfoCard.vue'
 import WhatsNew from '@/components/index/SiteTopUpper/WhatsNew.vue'
 import {

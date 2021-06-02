@@ -153,9 +153,7 @@ import dayjs from 'dayjs'
 import Vue from 'vue'
 
 import AppLink from '@/components/_shared/AppLink.vue'
-import {
-  InfectionMedicalcareprovisionStatus as IInfectionMedicalCareProvisionStatus,
-} from '@/libraries/auto_generated/data_converter/convertInfectionMedicalcareprovisionStatus'
+import { InfectionMedicalcareprovisionStatus as IInfectionMedicalCareProvisionStatus } from '@/libraries/auto_generated/data_converter/convertInfectionMedicalcareprovisionStatus'
 
 type Methods = {
   formatDate(date: Date): string

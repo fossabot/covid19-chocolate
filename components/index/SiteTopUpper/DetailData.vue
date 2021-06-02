@@ -35,7 +35,7 @@
             {{ statuses['累計検査人数'].toLocaleString() }}
           </span>
         </template>
-       <template #todayPCRT>
+        <template #todayPCRT>
           <span>
             {{ statuses['うち1日当たりの検査件数'].toLocaleString() }}
           </span>
