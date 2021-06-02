@@ -4,7 +4,7 @@
       <h3 class="VaccineInfo-title">
         {{
           $t('ワクチンについて {Vaccinedate}更新', {
-            date: formatDate(Vaccinedate),
+            Vaccinedate: formatDate(Vaccinedate),
           })
         }}
       </h3>
@@ -129,7 +129,7 @@
             >
               {{
                 $t('ワクチンについて {Vaccinedate}更新', {
-                  date: formatDate(Vaccinedate),
+                  Vaccinedate: formatDate(Vaccinedate),
                 })
               }}
             </app-link>
