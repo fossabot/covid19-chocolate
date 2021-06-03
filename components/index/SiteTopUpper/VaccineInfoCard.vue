@@ -13,24 +13,24 @@
       <div class="margin-b">
         <ul>
           <li>
-          <app-link
-            to="https://www.city.sagamihara.kanagawa.jp/kurashi/kenko/kansenyobo/1019910/1022588/index.html"
-          >
-            {{ $t('新型コロナウイルスワクチンについて') }}
-          </app-link>
+            <app-link
+              to="https://www.city.sagamihara.kanagawa.jp/kurashi/kenko/kansenyobo/1019910/1022588/index.html"
+            >
+              {{ $t('新型コロナウイルスワクチンについて') }}
+            </app-link>
           </li>
         </ul>
-        </div>
-        <div class="margin-b">
+      </div>
+      <div class="margin-b">
         <ul>
           <li>
-          <app-link to="https://jump.mrso.jp/141500/">
-            {{
-              $t(
-                '相模原市ワクチン接種web予約【次回の受付：6月8日（集団接種・個別接種）】'
-              )
-            }}
-          </app-link>
+            <app-link to="https://jump.mrso.jp/141500/">
+              {{
+                $t(
+                  '相模原市ワクチン接種web予約【次回の受付：6月8日（集団接種・個別接種）】'
+                )
+              }}
+            </app-link>
           </li>
         </ul>
       </div>
