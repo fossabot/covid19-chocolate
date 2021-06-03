@@ -19,8 +19,10 @@
             {{ $t('新型コロナウイルスワクチンについて') }}
           </app-link>
           </li>
+        </ul>
         </div>
         <div class="margin-b">
+        <ul>
           <li>
           <app-link to="https://jump.mrso.jp/141500/">
             {{
@@ -30,7 +32,6 @@
             }}
           </app-link>
           </li>
-         </div>
         </ul>
       </div>
       <div class="bold">
@@ -227,7 +228,7 @@ export default Vue.extend<Data, Methods, Computed, Props>({
   .VaccineInfo-description {
     padding: 3px 0 0 0;
 
-    @include font-size(12);
+    @include font-size(13);
     > a {
       text-decoration: none;
       @include text-link();
