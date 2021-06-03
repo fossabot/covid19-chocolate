@@ -12,13 +12,19 @@ import CardsLazyRow from '@/components/index/_shared/CardsLazyRow.vue'
 const ConfirmedCasesDetailsCard = () =>
   import('@/components/index/CardsReference/ConfirmedCasesDetails/Card.vue')
 const ConfirmedCasesByMunicipalitiesCard = () =>
-  import('@/components/index/CardsReference/ConfirmedCasesByMunicipalities/Card.vue')
+  import(
+    '@/components/index/CardsReference/ConfirmedCasesByMunicipalities/Card.vue'
+  )
 const DeathsByDeathDateCard = () =>
   import('@/components/index/CardsReference/DeathsByDeathDate/Card.vue')
 const PositiveNumberByDiagnosedDateCard = () =>
-  import('@/components/index/CardsReference/PositiveNumberByDiagnosedDate/Card.vue')
+  import(
+    '@/components/index/CardsReference/PositiveNumberByDiagnosedDate/Card.vue'
+  )
 const PositiveNumberByDevelopedDateCard = () =>
-  import('@/components/index/CardsReference/PositiveNumberByDevelopedDate/Card.vue')
+  import(
+    '@/components/index/CardsReference/PositiveNumberByDevelopedDate/Card.vue'
+  )
 /* eslint-enable simple-import-sort/imports */
 
 export default Vue.extend({

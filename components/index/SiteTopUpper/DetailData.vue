@@ -35,7 +35,7 @@
             {{ statuses['累計検査人数'].toLocaleString() }}
           </span>
         </template>
-       <template #todayPCRT>
+        <template #todayPCRT>
           <span>
             {{ statuses['うち1日当たりの検査件数'].toLocaleString() }}
           </span>
@@ -61,7 +61,7 @@
       <i18n
         tag="p"
         class="InfectionMedicalCareProvisionStatus-description"
-        path="男性{men}人、女性{women}人、累計陽性者数{all}人 <br /> 10歳未満{u10}人、20代{20}人、30代{30}人、40代{40}人、50代{50}人、60代{60}人、70代{70}人、80代{80}人、90代{90}人、100歳以上{100}人"
+        path="男性{men}人、女性{women}人、累計陽性者数{all}人 / 10歳未満{u10}人、20代{20}人、30代{30}人、40代{40}人、50代{50}人、60代{60}人、70代{70}人、80代{80}人、90代{90}人、100歳以上{100}人"
       >
         <template #men>
           <span>
@@ -166,7 +166,7 @@ export default Vue.extend<Data, Methods, Computed, Props>({
       return new Date(this.infectionMedicalCareProvisionStatus.date)
     },
     PCRDate() {
-      return this.infectionMedicalCareProvisionStatus.data['PCR更新日時']
+      return this.infectionMedicalCareProvisionStatus['検査統計日時']
     },
     infectionMedicalCareProvisionStatus() {
       return this.$store.state.infectionMedicalCareProvisionStatus
