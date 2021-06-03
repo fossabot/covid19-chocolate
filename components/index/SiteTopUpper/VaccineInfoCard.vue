@@ -3,8 +3,8 @@
     <div class="VaccineInfo-heading">
       <h3 class="VaccineInfo-title">
         {{
-          $t('ワクチンについて {Vaccinedate}更新', {
-            Vaccinedate: formatDate(Vaccinedate),
+          $t('ワクチンについて {VaccineDate}更新', {
+            VaccineDate: formatDate(VaccineDate),
           })
         }}
       </h3>
@@ -130,8 +130,8 @@
               to="https://www.city.sagamihara.kanagawa.jp/kurashi/kenko/kansenyobo/1019910/1022588/index.html"
             >
               {{
-                $t('ワクチンについて （{Vaccinedate}更新）', {
-                  Vaccinedate: formatDate(Vaccinedate),
+                $t('ワクチンについて （{VaccineDate}更新）', {
+                  VaccineDate: formatDate(VaccineDate),
                 })
               }}
             </app-link>
