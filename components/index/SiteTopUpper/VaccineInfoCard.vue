@@ -130,7 +130,7 @@
               to="https://www.city.sagamihara.kanagawa.jp/kurashi/kenko/kansenyobo/1019910/1022588/index.html"
             >
               {{
-                $t('ワクチンについて （{VaccineDate}更新）', {
+                $t('新型コロナウイルスワクチンについて （{VaccineDate}更新）', {
                   VaccineDate: formatDate(VaccineDate),
                 })
               }}
@@ -212,7 +212,7 @@ export default Vue.extend<Data, Methods, Computed, Props>({
     .VaccineInfo-title {
       display: flex;
       align-items: center;
-      padding: 12px;
+      padding: 5px;
       color: $gray-2;
       @include card-h2();
       @include font-size(14);
