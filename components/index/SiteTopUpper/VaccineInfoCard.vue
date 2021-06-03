@@ -30,6 +30,7 @@
             }}
           </app-link>
           </li>
+         </div>
         </ul>
       </div>
       <div class="bold">
