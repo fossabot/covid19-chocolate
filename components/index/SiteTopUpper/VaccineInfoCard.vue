@@ -220,9 +220,9 @@ export default Vue.extend<Data, Methods, Computed, Props>({
   }
 
   .VaccineInfo-description {
-    padding: 12px;
+    padding: 3px 0 0 0;
 
-    @include font-size(14);
+    @include font-size(12);
     > a {
       text-decoration: none;
       @include text-link();
