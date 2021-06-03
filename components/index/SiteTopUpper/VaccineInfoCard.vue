@@ -172,6 +172,9 @@ export default Vue.extend<Methods, Computed, Props>({
     VaccineDate() {
       return this.infectionMedicalCareProvisionStatus['ワクチン更新日時']
     },
+    infectionMedicalCareProvisionStatus() {
+      return this.$store.state.infectionMedicalCareProvisionStatus
+    },
   },
   methods: {
     formatDate(date) {
