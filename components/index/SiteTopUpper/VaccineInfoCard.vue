@@ -200,8 +200,8 @@ export default Vue.extend<Data, Methods, Computed, Props>({
 .VaccineInfo {
   @include card-container();
 
-  padding: 10px;
-  margin-bottom: 20px;
+  padding: 8px 18px;
+  margin-bottom: 10px;
 
   .VaccineInfo-heading {
     display: flex;
@@ -212,7 +212,7 @@ export default Vue.extend<Data, Methods, Computed, Props>({
     .VaccineInfo-title {
       display: flex;
       align-items: center;
-      padding: 5px;
+      padding: 0 0 4px 0;
       color: $gray-2;
       @include card-h2();
       @include font-size(14);
