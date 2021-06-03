@@ -11,22 +11,26 @@
     </div>
     <div class="VaccineInfo-description">
       <div class="margin-b">
-        <v-icon color="#D9D9D9">{{ mdiChevronRight }}</v-icon>
-        <app-link
-          to="https://www.city.sagamihara.kanagawa.jp/kurashi/kenko/kansenyobo/1019910/1022588/index.html"
-        >
-          {{ $t('新型コロナウイルスワクチンについて') }}
-        </app-link>
-      </div>
-      <div class="margin-b">
-        <v-icon color="#D9D9D9">{{ mdiChevronRight }}</v-icon>
-        <app-link to="https://jump.mrso.jp/141500/">
-          {{
-            $t(
-              '相模原市ワクチン接種web予約【次回の受付：6月8日（集団接種・個別接種）】'
-            )
-          }}
-        </app-link>
+        <ul>
+          <li>
+          <app-link
+            to="https://www.city.sagamihara.kanagawa.jp/kurashi/kenko/kansenyobo/1019910/1022588/index.html"
+          >
+            {{ $t('新型コロナウイルスワクチンについて') }}
+          </app-link>
+          </li>
+        </div>
+        <div class="margin-b">
+          <li>
+          <app-link to="https://jump.mrso.jp/141500/">
+            {{
+              $t(
+                '相模原市ワクチン接種web予約【次回の受付：6月8日（集団接種・個別接種）】'
+              )
+            }}
+          </app-link>
+          </li>
+        </ul>
       </div>
       <div class="bold">
         {{
