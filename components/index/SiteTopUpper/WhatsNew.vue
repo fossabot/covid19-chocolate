@@ -7,9 +7,18 @@
         </v-icon>
         {{ $t('最新のお知らせ') }}
       </h3>
-      <!-- 緊急事態宣言及びまん延防止等重点措置を管理している。現在:On -->
       <div class="WhatsNew-linkGroup">
-        <lazy-link-to-information-about-emergency-measure v-if="isEmergency" />
+        <app-link
+          class="WhatsNew-linkButton"
+          to="https://www.city.sagamihara.kanagawa.jp/shisei/seisaku/1023033.html"
+        >
+          <span class="WhatsNew-linkButton-inner">
+            <v-icon size="1em" class="WhatsNew-linkButton-v-icon">
+              {{ mdiBullhorn }}
+            </v-icon>
+            {{ $t('まん延防止等重点措置 発令中') }}
+          </span>
+        </app-link>
       </div>
     </div>
     <ul class="WhatsNew-list">
@@ -31,7 +40,7 @@
 </template>
 
 <script lang="ts">
-import { mdiInformation } from '@mdi/js'
+import { mdiBullhorn, mdiInformation } from '@mdi/js'
 import Vue from 'vue'
 
 import AppLink from '@/components/_shared/AppLink.vue'
@@ -46,14 +55,10 @@ export default Vue.extend({
       type: Array,
       required: true,
     },
-    isEmergency: {
-      type: Boolean,
-      required: false,
-      default: false,
-    },
   },
   data() {
     return {
+      mdiBullhorn,
       mdiInformation,
     }
   },
@@ -99,6 +104,24 @@ export default Vue.extend({
 
       @include lessThan($medium) {
         justify-content: flex-start;
+      }
+    }
+
+    .WhatsNew-linkButton {
+      margin: 8px 12px 8px 0;
+      @include button-text('sm');
+      &-inner {
+        display: inline-flex;
+        align-items: center;
+      }
+      &-icon {
+        width: 1em;
+        height: 1em;
+        margin-right: 4px;
+      }
+      &-v-icon {
+        color: currentColor;
+        margin-right: 4px;
       }
     }
   }

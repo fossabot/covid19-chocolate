@@ -55,7 +55,7 @@ const config: NuxtConfig = {
       },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon-v2.ico' },
       { rel: 'apple-touch-icon', href: '/apple-touch-icon-precomposed.png' },
     ],
     script: [
