@@ -233,6 +233,10 @@ export default Vue.extend({
           link: this.localePath('/contacts'),
         },
         {
+          title: this.$t('当サイトの開発情報'),
+          link: 'https://note.com/murayu0225/m/m6c7a40a8fcf9',
+        },
+        {
           title: this.$t(
             '改善・アンケートフォームはこちら（外部サービスを使用しています）'
           ),
