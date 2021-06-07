@@ -171,7 +171,7 @@
           </p>
         </div>
       </details>
-      <p class="margin-ub">
+      <p class="margin-lb">
         {{
           $t(
             '→ 国が設置する「大規模接種センター」で接種を希望される方は次のページをご確認ください。'
@@ -295,6 +295,10 @@ export default Vue.extend<Data, Methods, Computed, Props>({
     margin-bottom: 5px;
   }
 
+  .margin-lb {
+    margin-bottom: 7.5px;
+  }
+
   .margin-bb {
     margin-bottom: 5px;
     font-weight: bold;
@@ -324,8 +328,8 @@ export default Vue.extend<Data, Methods, Computed, Props>({
   }
 
   .border-a {
-    border: 3px solid;
-    border-radius: 2px;
+    border: 0.5px solid;
+    border-radius: 5px;
     border-color: red;
   }
 
@@ -345,6 +349,7 @@ export default Vue.extend<Data, Methods, Computed, Props>({
 
   details[open] summary {
     color: gray;
+    outline: none;
   }
 }
 </style>
