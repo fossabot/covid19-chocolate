@@ -79,6 +79,7 @@
             </span>
           </div>
         </li>
+      </ul>
         <li :class="[$style.box]">
           <div :class="$style.content">
             <span>{{ $t('市内在住') }}</span>
@@ -94,6 +95,7 @@
             </span>
           </div>
         </li>
+    </li>
         <li :class="[$style.box]">
           <div :class="$style.content">
             <span>{{ $t('市外在住') }}</span>
@@ -109,8 +111,6 @@
             </span>
           </div>
         </li>
-      </ul>
-    </li>
   </ul>
 </template>
 
