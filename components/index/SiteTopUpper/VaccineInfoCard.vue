@@ -47,7 +47,7 @@
         {{ $t('で2回目の予約をお取りします。') }}
       </div>
       <details>
-        <summary class="bold">
+        <summary class="bold border-a">
           {{
             $t(
               ' 新型コロナウイルスワクチン接種を希望する市民の方へ（ここをクリックして詳細を確認出来ます）'
@@ -322,6 +322,13 @@ export default Vue.extend<Data, Methods, Computed, Props>({
   .border {
     border-collapse: collapse;
   }
+
+  .border-a {
+    border: 3px solid;
+    border-radius: 2px;
+    border-color: red;
+  }
+
   details[open] .fade {
     animation: fadeIn 0.7s ease;
   }
