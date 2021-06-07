@@ -296,7 +296,7 @@ export default Vue.extend<Data, Methods, Computed, Props>({
   }
 
   .margin-lb {
-    margin-bottom: 7.5px;
+    margin-top: 7px;
   }
 
   .margin-bb {
@@ -328,7 +328,7 @@ export default Vue.extend<Data, Methods, Computed, Props>({
   }
 
   .border-a {
-    border: 0.5px solid;
+    border: 1.5px solid;
     border-radius: 5px;
     border-color: red;
   }
