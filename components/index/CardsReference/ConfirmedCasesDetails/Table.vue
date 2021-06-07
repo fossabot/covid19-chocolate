@@ -86,7 +86,9 @@
               <strong>{{ 市内在住.toLocaleString() }}</strong>
               <span :class="$style.unit">{{ $t('人') }}</span>
               <div>
-                (<strong>{{ ((市内在住 / 陽性患者数) * 100).toFixed(2) }}</strong>
+                (<strong>{{
+                  ((市内在住 / 陽性患者数) * 100).toFixed(2)
+                }}</strong>
                 <span :class="$style.unit">%</span>)
               </div>
             </span>
@@ -99,7 +101,9 @@
               <strong>{{ 市外在住.toLocaleString() }}</strong>
               <span :class="$style.unit">{{ $t('人') }}</span>
               <div>
-                (<strong>{{ ((市外在住 / 陽性患者数) * 100).toFixed(2) }}</strong>
+                (<strong>{{
+                  ((市外在住 / 陽性患者数) * 100).toFixed(2)
+                }}</strong>
                 <span :class="$style.unit">%</span>)
               </div>
             </span>
