@@ -150,15 +150,18 @@
           <div class="margin-b">
             <ul>
               <li>
-              <app-link
-                to="https://www.city.sagamihara.kanagawa.jp/kurashi/kenko/kansenyobo/1019910/1022588/index.html"
-              >
-                {{
-                  $t('新型コロナウイルスワクチンについて （{VaccineDate}更新）', {
-                    VaccineDate: formatDate(VaccineDate),
-                  })
-                }}
-              </app-link>
+                <app-link
+                  to="https://www.city.sagamihara.kanagawa.jp/kurashi/kenko/kansenyobo/1019910/1022588/index.html"
+                >
+                  {{
+                    $t(
+                      '新型コロナウイルスワクチンについて （{VaccineDate}更新）',
+                      {
+                        VaccineDate: formatDate(VaccineDate),
+                      }
+                    )
+                  }}
+                </app-link>
               </li>
             </ul>
           </div>
@@ -180,15 +183,18 @@
       </p>
       <ul>
         <li>
-        <app-link
-          to="https://www.city.sagamihara.kanagawa.jp/kurashi/kenko/kansenyobo/1019910/1022588/1023442.html"
-        >
-          {{
-           $t('国が設置する「大規模接種センター」で接種を希望される方へ （{VaccineDate}更新）', {
-             VaccineDate: formatDate(VaccineDate),
-            })
-          }}
-        </app-link>
+          <app-link
+            to="https://www.city.sagamihara.kanagawa.jp/kurashi/kenko/kansenyobo/1019910/1022588/1023442.html"
+          >
+            {{
+              $t(
+                '国が設置する「大規模接種センター」で接種を希望される方へ （{VaccineDate}更新）',
+                {
+                  VaccineDate: formatDate(VaccineDate),
+                }
+              )
+            }}
+          </app-link>
         </li>
       </ul>
     </div>
