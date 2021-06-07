@@ -47,7 +47,7 @@
         {{ $t('で2回目の予約をお取りします。') }}
       </div>
       <details>
-        <summary>
+        <summary class="bold">
           {{
             $t(
               ' 新型コロナウイルスワクチン接種を希望する市民の方へ（ここをクリックして詳細を確認出来ます）'
@@ -89,13 +89,13 @@
             <tr>
               <th>{{ $t('6月17日（木曜日）') }}</th>
               <th>{{ $t('69歳以上') }}</th>
-              <th>{{ $t('個別接種・集団接種【追加分】とも受付') }}</th>
+              <th>{{ $t('個別接種・集団接種') }}</th>
               <th>{{ $t('6月28日（月曜日）～7月4日（日曜日') }}</th>
             </tr>
             <tr>
               <th>{{ $t('6月24日（木曜日）') }}</th>
               <th>{{ $t('65歳以上') }}</th>
-              <th>{{ $t('個別接種・集団接種とも受付') }}</th>
+              <th>{{ $t('個別接種・集団接種') }}</th>
               <th>{{ $t('7月5日（月曜日）～7月11日（日曜日') }}</th>
             </tr>
           </table>
@@ -148,16 +148,19 @@
             }}
           </p>
           <div class="margin-b">
-            <v-icon color="#D9D9D9">{{ mdiChevronRight }}</v-icon>
-            <app-link
-              to="https://www.city.sagamihara.kanagawa.jp/kurashi/kenko/kansenyobo/1019910/1022588/index.html"
-            >
-              {{
-                $t('新型コロナウイルスワクチンについて （{VaccineDate}更新）', {
-                  VaccineDate: formatDate(VaccineDate),
-                })
-              }}
-            </app-link>
+            <ul>
+              <li>
+              <app-link
+                to="https://www.city.sagamihara.kanagawa.jp/kurashi/kenko/kansenyobo/1019910/1022588/index.html"
+              >
+                {{
+                  $t('新型コロナウイルスワクチンについて （{VaccineDate}更新）', {
+                    VaccineDate: formatDate(VaccineDate),
+                  })
+                }}
+              </app-link>
+              </li>
+            </ul>
           </div>
           <p>
             {{
@@ -168,6 +171,26 @@
           </p>
         </div>
       </details>
+      <p class="margin-ub">
+        {{
+          $t(
+            '→ 国が設置する「大規模接種センター」で接種を希望される方は次のページをご確認ください。'
+          )
+        }}
+      </p>
+      <ul>
+        <li>
+        <app-link
+          to="https://www.city.sagamihara.kanagawa.jp/kurashi/kenko/kansenyobo/1019910/1022588/1023442.html"
+        >
+          {{
+           $t('国が設置する「大規模接種センター」で接種を希望される方へ （{VaccineDate}更新）', {
+             VaccineDate: formatDate(VaccineDate),
+            })
+          }}
+        </app-link>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
