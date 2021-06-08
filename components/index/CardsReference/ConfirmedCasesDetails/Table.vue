@@ -80,36 +80,34 @@
           </div>
         </li>
       </ul>
-        <li :class="[$style.box]">
-          <div :class="$style.content">
-            <span>{{ $t('市内在住') }}</span>
-            <span>
-              <strong>{{ 市内在住.toLocaleString() }}</strong>
-              <span :class="$style.unit">{{ $t('人') }}</span>
-              <div>
-                (<strong>{{
-                  ((市内在住 / 陽性患者数) * 100).toFixed(2)
-                }}</strong>
-                <span :class="$style.unit">%</span>)
-              </div>
-            </span>
+    </li>
+
+    <li :class="[$style.box]">
+      <div :class="$style.content">
+        <span>{{ $t('市内在住') }}</span>
+        <span>
+          <strong>{{ 市内在住.toLocaleString() }}</strong>
+          <span :class="$style.unit">{{ $t('人') }}</span>
+          <div>
+            (<strong>{{ ((市内在住 / 陽性患者数) * 100).toFixed(2) }}</strong>
+            <span :class="$style.unit">%</span>)
           </div>
-        </li>
-        <li :class="[$style.box]">
-          <div :class="$style.content">
-            <span>{{ $t('市外在住') }}</span>
-            <span>
-              <strong>{{ 市外在住.toLocaleString() }}</strong>
-              <span :class="$style.unit">{{ $t('人') }}</span>
-              <div>
-                (<strong>{{
-                  ((市外在住 / 陽性患者数) * 100).toFixed(2)
-                }}</strong>
-                <span :class="$style.unit">%</span>)
-              </div>
-            </span>
+        </span>
+      </div>
+    </li>
+    <li :class="[$style.box]">
+      <div :class="$style.content">
+        <span>{{ $t('市外在住') }}</span>
+        <span>
+          <strong>{{ 市外在住.toLocaleString() }}</strong>
+          <span :class="$style.unit">{{ $t('人') }}</span>
+          <div>
+            (<strong>{{ ((市外在住 / 陽性患者数) * 100).toFixed(2) }}</strong>
+            <span :class="$style.unit">%</span>)
           </div>
-        </li>
+        </span>
+      </div>
+    </li>
   </ul>
 </template>
 
