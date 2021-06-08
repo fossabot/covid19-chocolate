@@ -15,6 +15,10 @@
             <span>
               <strong>{{ 治療中.toLocaleString() }}</strong>
               <span :class="$style.unit">{{ $t('人') }}</span>
+              <div>
+                (<strong>{{ ((治療中 / 陽性患者数) * 100).toFixed(2) }}</strong>
+                <span :class="$style.unit">%</span>)
+              </div>
             </span>
           </div>
           <ul :class="$style.group">
@@ -55,6 +59,10 @@
             <span>
               <strong>{{ 死亡.toLocaleString() }}</strong>
               <span :class="$style.unit">{{ $t('人') }}</span>
+              <div>
+                (<strong>{{ ((死亡 / 陽性患者数) * 100).toFixed(2) }}</strong>
+                <span :class="$style.unit">%</span>)
+              </div>
             </span>
           </div>
         </li>
@@ -64,28 +72,41 @@
             <span>
               <strong>{{ 回復.toLocaleString() }}</strong>
               <span :class="$style.unit">{{ $t('人') }}</span>
-            </span>
-          </div>
-        </li>
-        <li :class="[$style.box]">
-          <div :class="$style.content">
-            <span>{{ $t('市内在住') }}</span>
-            <span>
-              <strong>{{ 市内在住.toLocaleString() }}</strong>
-              <span :class="$style.unit">{{ $t('人') }}</span>
-            </span>
-          </div>
-        </li>
-        <li :class="[$style.box]">
-          <div :class="$style.content">
-            <span>{{ $t('市外在住') }}</span>
-            <span>
-              <strong>{{ 市外在住.toLocaleString() }}</strong>
-              <span :class="$style.unit">{{ $t('人') }}</span>
+              <div>
+                (<strong>{{ ((回復 / 陽性患者数) * 100).toFixed(2) }}</strong>
+                <span :class="$style.unit">%</span>)
+              </div>
             </span>
           </div>
         </li>
       </ul>
+    </li>
+
+    <li :class="[$style.box]">
+      <div :class="$style.content">
+        <span>{{ $t('市内在住') }}</span>
+        <span>
+          <strong>{{ 市内在住.toLocaleString() }}</strong>
+          <span :class="$style.unit">{{ $t('人') }}</span>
+          <div>
+            (<strong>{{ ((市内在住 / 陽性患者数) * 100).toFixed(2) }}</strong>
+            <span :class="$style.unit">%</span>)
+          </div>
+        </span>
+      </div>
+    </li>
+    <li :class="[$style.box]">
+      <div :class="$style.content">
+        <span>{{ $t('市外在住') }}</span>
+        <span>
+          <strong>{{ 市外在住.toLocaleString() }}</strong>
+          <span :class="$style.unit">{{ $t('人') }}</span>
+          <div>
+            (<strong>{{ ((市外在住 / 陽性患者数) * 100).toFixed(2) }}</strong>
+            <span :class="$style.unit">%</span>)
+          </div>
+        </span>
+      </div>
     </li>
   </ul>
 </template>
@@ -139,20 +160,19 @@ export default Vue.extend({
 <style lang="scss" module>
 $default-bdw: 3px;
 $default-boxdiff: 35px;
-
 // .container > .box > (.group > .box > ...) .pillar > .content
 
 .container {
-  width: 100%;
   box-sizing: border-box;
-  color: $green-1;
+  width: 100%;
+  // override default styles
+  padding-left: 0 !important;
   line-height: 1.35;
+  color: $green-1;
 
   * {
     box-sizing: border-box;
   }
-  // override default styles
-  padding-left: 0 !important;
 
   ul {
     padding-left: 0;
@@ -167,11 +187,11 @@ $default-boxdiff: 35px;
 }
 
 .content {
-  padding: 5px 10px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
+  padding: 5px 10px;
   border: $default-bdw solid $green-1;
 
   > span {
@@ -180,20 +200,25 @@ $default-boxdiff: 35px;
     @include font-size(14);
 
     &:first-child {
-      text-align: left;
-      margin-top: 1px;
       flex-shrink: 2;
+      margin-top: 1px;
+      text-align: left;
     }
 
     &:last-child {
-      margin-left: 10px;
-      text-align: right;
       // white-space: nowrap;
       flex-shrink: 1;
+      margin-left: 10px;
+      text-align: right;
     }
 
     &:not(:last-child) {
       overflow-wrap: break-word;
+    }
+
+    div {
+      display: inline-block;
+      width: 7rem;
     }
   }
 
@@ -211,31 +236,30 @@ $default-boxdiff: 35px;
   margin-top: $default-bdw;
 
   &.parent {
-    border-top: $default-bdw solid $green-1;
-    border-left: $default-bdw solid $green-1;
     position: relative;
     padding-left: $default-boxdiff - $default-bdw * 2;
+    border-top: $default-bdw solid $green-1;
+    border-left: $default-bdw solid $green-1;
 
     &::after {
-      content: '';
-      display: block;
       position: absolute;
-      left: -1px;
       bottom: 0;
+      left: -1px;
+      display: block;
       width: $default-boxdiff - $default-bdw - 2;
+      content: '';
       border-bottom: $default-bdw solid $green-1;
     }
 
     > .content {
-      margin-left: -($default-boxdiff - $default-bdw * 2);
       width: calc(100% + #{($default-boxdiff - $default-bdw * 2)});
+      margin-left: -($default-boxdiff - $default-bdw * 2);
       border-top: none;
-      border-left: none;
       border-bottom: none;
+      border-left: none;
     }
   }
 }
-
 @function px2vw($px, $vw: 0) {
   @if $vw > 0 {
     @return ceil($px / $vw * 100000vw) / 1000;
@@ -280,9 +304,9 @@ $default-boxdiff: 35px;
     margin-top: px2vw($bdw, $vw);
 
     &.parent {
+      padding-left: px2vw($boxdiff, $vw) - px2vw($bdw, $vw) * 2;
       border-top: px2vw($bdw, $vw) solid $green-1;
       border-left: px2vw($bdw, $vw) solid $green-1;
-      padding-left: px2vw($boxdiff, $vw) - px2vw($bdw, $vw) * 2;
 
       &::after {
         width: px2vw($boxdiff - $bdw, $vw);
@@ -290,8 +314,8 @@ $default-boxdiff: 35px;
       }
 
       > .content {
-        margin-left: -(px2vw($boxdiff, $vw) - px2vw($bdw, $vw) * 2);
         width: calc(100% + #{(px2vw($boxdiff, $vw) - px2vw($bdw, $vw) * 2)});
+        margin-left: -(px2vw($boxdiff, $vw) - px2vw($bdw, $vw) * 2);
       }
     }
   }

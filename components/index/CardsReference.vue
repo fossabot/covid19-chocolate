@@ -9,8 +9,6 @@ import Vue from 'vue'
 import CardsLazyRow from '@/components/index/_shared/CardsLazyRow.vue'
 
 // モニタリング項目
-const ConfirmedCasesDetailsCard = () =>
-  import('@/components/index/CardsReference/ConfirmedCasesDetails/Card.vue')
 const ConfirmedCasesByMunicipalitiesCard = () =>
   import(
     '@/components/index/CardsReference/ConfirmedCasesByMunicipalities/Card.vue'
@@ -34,8 +32,7 @@ export default Vue.extend({
   data() {
     return {
       rows: [
-        [ConfirmedCasesDetailsCard, ConfirmedCasesByMunicipalitiesCard],
-        [DeathsByDeathDateCard],
+        [ConfirmedCasesByMunicipalitiesCard, DeathsByDeathDateCard],
         [PositiveNumberByDiagnosedDateCard, PositiveNumberByDevelopedDateCard],
       ],
     }
