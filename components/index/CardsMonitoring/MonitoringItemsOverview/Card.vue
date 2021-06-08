@@ -167,4 +167,22 @@ dfn {
   font-style: normal;
   font-weight: 600;
 }
+
+details[open] .fade {
+  animation: fadeIn 0.7s ease;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+details[open] summary {
+  color: gray;
+}
 </style>
