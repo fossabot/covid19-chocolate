@@ -6,7 +6,7 @@
 /* eslint-disable simple-import-sort/imports -- ブラウザでの表示順に合わせて各 card の component を import する */
 // ---- モニタリング項目
 // 検査陽性者の状況
-import ConfirmedCasesDetailsCard from '@/components/index/CardsReference/ConfirmedCasesDetails/Card.vue'
+import ConfirmedCasesDetailsCard from '@/components/index/CardsMonitoring/ConfirmedCasesDetails/Card.vue'
 // モニタリング状況
 import MonitoringItemsOverviewCard from '@/components/index/CardsMonitoring/MonitoringItemsOverview/Card.vue'
 // 報告日別による陽性者数の推移
