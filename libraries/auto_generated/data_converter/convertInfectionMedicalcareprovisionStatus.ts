@@ -13,7 +13,7 @@ export interface InfectionMedicalcareprovisionStatus {
     検査統計日時:    Date;
     ワクチン更新日時:  Date;
     data:      { [key: string]: number };
-    date:      string;
+    agedate:      string;
     datasets:  Datasets;
 }
 
@@ -178,7 +178,7 @@ const typeMap: any = {
         { json: "検査統計日時", js: "検査統計日時", typ: Date },
         { json: "ワクチン更新日時", js: "ワクチン更新日時", typ: Date },
         { json: "data", js: "data", typ: m(0) },
-        { json: "date", js: "agedate", typ: "" },
+        { json: "agedate", js: "agedate", typ: "" },
         { json: "datasets", js: "datasets", typ: r("Datasets") },
     ], false),
     "Datasets": o([
