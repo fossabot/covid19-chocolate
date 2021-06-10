@@ -45,7 +45,10 @@
         <slot name="additionalDescription" />
       </div>
 
-      <expantion-panel v-if="$slots.dataTable" class="DataView-ExpantionPanel">
+      <expantion-panel
+        v-if="$slots.dataTable"
+        class="DataView-ExpantionPanel"
+      >
         <slot name="dataTable" />
       </expantion-panel>
 
@@ -150,8 +153,8 @@ export default Vue.extend({
 
   &-Header {
     display: flex;
-    align-items: flex-start;
     flex-flow: column;
+    align-items: flex-start;
     padding: 0 10px;
 
     @include largerThan($medium) {
@@ -159,8 +162,8 @@ export default Vue.extend({
     }
 
     @include largerThan($large) {
-      justify-content: space-between;
       flex-flow: row;
+      justify-content: space-between;
       padding: 0;
 
       &.with-dataSetPanel {
@@ -172,15 +175,15 @@ export default Vue.extend({
   &-Inner {
     display: flex;
     flex-flow: column;
-    padding: 22px;
     height: 100%;
+    padding: 22px;
   }
 
   &-Title {
     width: 100%;
     margin-bottom: 10px;
-    line-height: 1.5;
     font-weight: normal;
+    line-height: 1.5;
     color: $gray-2;
     @include font-size(20);
 
@@ -226,8 +229,8 @@ export default Vue.extend({
 
     ul,
     ol {
-      list-style: disc inside;
       padding-left: 1em;
+      list-style: disc inside;
 
       li {
         margin-left: 1.5em;
@@ -236,8 +239,8 @@ export default Vue.extend({
     }
 
     .ListStyleNone {
-      list-style: none;
       padding-left: 0;
+      list-style: none;
 
       li {
         margin-left: 0;
@@ -257,6 +260,7 @@ export default Vue.extend({
       .text-end {
         text-align: right;
       }
+
       .text-nowrap {
         white-space: nowrap;
       }
@@ -276,8 +280,8 @@ export default Vue.extend({
 
     ul,
     ol {
-      list-style-type: none;
       padding: 0;
+      list-style-type: none;
     }
 
     .Permalink {
@@ -291,11 +295,11 @@ export default Vue.extend({
   }
 
   &-AttentionNote {
-    margin: 10px 0;
     padding: 12px;
+    margin: 10px 0;
+    color: $gray-2;
     background-color: $emergency;
     border-radius: 4px;
-    color: $gray-2;
     @include font-size(12);
 
     p {
