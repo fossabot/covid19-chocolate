@@ -36,9 +36,9 @@ export default {
     ConfirmedCasesByAgeTable,
   },
   data() {
-    const { datasets, date } = Data
+    const { datasets, agedate } = Data
 
-    const formattedDate = dayjs(date).format('YYYY/MM/DD HH:mm')
+    const formattedDate = dayjs(agedate).format('YYYY/MM/DD HH:mm')
 
     // 年齢別の陽性者数
     const ageTable = {
