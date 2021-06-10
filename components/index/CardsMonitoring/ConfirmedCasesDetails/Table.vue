@@ -81,7 +81,6 @@
         </li>
       </ul>
     </li>
-
     <li :class="[$style.box]">
       <div :class="$style.content">
         <span>{{ $t('市内在住') }}</span>
@@ -104,10 +103,51 @@
           <div>
             (<strong>{{ ((市外在住 / 陽性患者数) * 100).toFixed(2) }}</strong>
             <span :class="$style.unit">%</span>)
+            <div><!--余白用のdiv--></div>
           </div>
         </span>
       </div>
     </li>
+    <ul :class="$style.group">
+      <li :class="[$style.box, $style.parent]">
+        <div :class="$style.content">
+          <span>{{ $t('陽性患者数') }}</span>
+          <span>
+            <strong>{{ 陽性患者数.toLocaleString() }}</strong>
+            <span :class="$style.unit">{{ $t('人') }}</span>
+          </span>
+        </div>
+        <ul :class="$style.group">
+          <li :class="[$style.box]">
+            <div :class="$style.content">
+              <!-- eslint-disable vue/no-v-html-->
+              <span v-html="$t('男性')" />
+              <!-- eslint-enable vue/no-v-html-->
+              <span>
+                <strong>{{ 男性.toLocaleString() }}</strong>
+                <span :class="$style.unit">{{ $t('人') }}</span>
+                <div>
+                  (<strong>{{ ((男性 / 陽性患者数) * 100).toFixed(2) }}</strong>
+                  <span :class="$style.unit">%</span>)
+                </div>
+              </span>
+            </div>
+          </li>
+          <li :class="[$style.box]">
+            <div :class="$style.content">
+              <span>{{ $t('女性') }}</span>
+              <span>
+                <strong>{{ 女性.toLocaleString() }}</strong>
+                <span :class="$style.unit">{{ $t('人') }}</span>
+                <div>
+                  (<strong>{{ ((女性 / 陽性患者数) * 100).toFixed(2) }}</strong>
+                  <span :class="$style.unit">%</span>)
+                </div>
+              </span>
+            </div>
+          </li>
+        </ul>
+     </li>
   </ul>
 </template>
 
@@ -150,6 +190,14 @@ export default Vue.extend({
       required: true,
     },
     市外在住: {
+      type: Number,
+      required: true,
+    },
+    男性: {
+      type: Number,
+      required: true,
+    },
+    女性: {
       type: Number,
       required: true,
     },
