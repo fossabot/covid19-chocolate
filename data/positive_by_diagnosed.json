@@ -1899,8 +1899,20 @@
         },
         {
             "diagnosed_date": "2021-06-06",
-            "count": 3
+            "count": 9
+        },
+        {
+            "diagnosed_date": "2021-06-07",
+            "count": 12
+        },
+        {
+            "diagnosed_date": "2021-06-08",
+            "count": 14
+        },
+        {
+            "diagnosed_date": "2021-06-09",
+            "count": 2
         }
     ],
-    "date": "2021\/06\/07 18:00"
+    "date": "2021\/06\/10 18:00"
 }
