@@ -24,9 +24,7 @@ const PositiveNumberByDevelopedDateCard = () =>
     '@/components/index/CardsReference/PositiveNumberByDevelopedDate/Card.vue'
   )
 const ConfirmedCasesByAgeCard = () =>
-  import(
-    '@/components/index/CardsReference/ConfirmedCasesByAge/Card.vue'
-  )
+  import('@/components/index/CardsReference/ConfirmedCasesByAge/Card.vue')
 /* eslint-enable simple-import-sort/imports */
 
 export default Vue.extend({
