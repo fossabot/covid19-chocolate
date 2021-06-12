@@ -13,8 +13,29 @@ export interface InfectionMedicalcareprovisionStatus {
     検査統計日時:    Date;
     ワクチン更新日時:  Date;
     data:      { [key: string]: number };
+    mainSummary:     MainSummary;
     agedate:      string;
     datasets:  Datasets;
+}
+
+export interface MainSummary {
+    children: MainSummaryChild[];
+}
+
+export interface MainSummaryChild {
+    date:     string;
+    children: PurpleChild[];
+}
+
+export interface PurpleChild {
+    attr:      string;
+    value:     number;
+    children?: FluffyChild[];
+}
+
+export interface FluffyChild {
+    attr:  string;
+    value: number;
 }
 
 export interface Datasets {
@@ -180,6 +201,22 @@ const typeMap: any = {
         { json: "data", js: "data", typ: m(0) },
         { json: "agedate", js: "agedate", typ: "" },
         { json: "datasets", js: "datasets", typ: r("Datasets") },
+    ], false),
+    "MainSummary": o([
+        { json: "children", js: "children", typ: a(r("MainSummaryChild")) },
+    ], false),
+    "MainSummaryChild": o([
+        { json: "date", js: "date", typ: "" },
+        { json: "children", js: "children", typ: a(r("PurpleChild")) },
+    ], false),
+    "PurpleChild": o([
+        { json: "attr", js: "attr", typ: "" },
+        { json: "value", js: "value", typ: 0 },
+        { json: "children", js: "children", typ: u(undefined, a(r("FluffyChild"))) },
+    ], false),
+    "FluffyChild": o([
+        { json: "attr", js: "attr", typ: "" },
+        { json: "value", js: "value", typ: 0 },
     ], false),
     "Datasets": o([
         { json: "date", js: "date", typ: "" },
