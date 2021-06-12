@@ -25,7 +25,7 @@
         <span>{{ $t('累計検査件数') }}</span>
         <span>
           <strong>{{ 累計検査件数.toLocaleString() }}</strong>
-          <span :class="$style.unit">{{ $t('件') }}</span>
+          <span :class="$style.unit">{{ $t('件 ') }}</span>
         </span>
       </div>
       <ul :class="$style.group">
@@ -34,7 +34,7 @@
             <span>{{ $t('1日当たりの検査件数') }}</span>
             <span>
               <strong>{{ うち1日当たりの検査件数.toLocaleString() }}</strong>
-              <span :class="$style.unit">{{ $t('件') }}</span>
+              <span :class="$style.unit">{{ $t('件 ') }}</span>
             </span>
           </div>
         </li>
