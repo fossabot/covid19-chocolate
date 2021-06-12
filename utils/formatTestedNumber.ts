@@ -5,7 +5,7 @@ type DataType = {
       value: number
       children: [
         {
-          attr: '1日当たりの検査人数'
+          attr: 'うち1日当たりの検査人数'
           value: number
         }
       ]
@@ -15,7 +15,7 @@ type DataType = {
       value: number
       children: [
         {
-          attr: '1日当たりの検査件数'
+          attr: 'うち1日当たりの検査件数'
           value: number
         }
       ]
@@ -25,9 +25,9 @@ type DataType = {
 
 type PCRType = {
   累計検査人数: number
-  1日当たりの検査人数: number
+  うち1日当たりの検査人数: number
   累計検査件数: number
-  1日当たりの検査件数: number
+  うち1日当たりの検査件数: number
 }
 
 interface ChildData {
@@ -71,8 +71,8 @@ function getSelectedItem(data: DataType, key: string) {
 export default (data: DataType) => {
   return {
     累計検査人数: getSelectedItem(data, '累計検査人数'),
-    1日当たりの検査人数: getSelectedItem(data, '1日当たりの検査人数'),
+    うち1日当たりの検査人数: getSelectedItem(data, 'うち1日当たりの検査人数'),
     累計検査件数: getSelectedItem(data, '累計検査件数'),
-    1日当たりの検査件数: getSelectedItem(data, '1日当たりの検査件数'),
+    うち1日当たりの検査件数: getSelectedItem(data, 'うち1日当たりの検査件数'),
   } as PCRType
 }
