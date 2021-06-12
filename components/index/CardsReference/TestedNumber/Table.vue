@@ -13,7 +13,7 @@
           <div :class="$style.content">
             <span>{{ $t('1日当たりの検査人数') }}</span>
             <span>
-              <strong>{{ 1日当たりの検査人数.toLocaleString() }}</strong>
+              <strong>{{ うち1日当たりの検査人数.toLocaleString() }}</strong>
               <span :class="$style.unit">{{ $t('人') }}</span>
             </span>
           </div>
@@ -33,7 +33,7 @@
           <div :class="$style.content">
             <span>{{ $t('1日当たりの検査件数') }}</span>
             <span>
-              <strong>{{ 1日当たりの検査件数.toLocaleString() }}</strong>
+              <strong>{{ うち1日当たりの検査件数.toLocaleString() }}</strong>
               <span :class="$style.unit">{{ $t('件') }}</span>
             </span>
           </div>
@@ -53,7 +53,7 @@ export default Vue.extend({
       type: Number,
       required: true,
     },
-    1日当たりの検査人数: {
+    うち1日当たりの検査人数: {
       type: Number,
       required: true,
     },
@@ -61,7 +61,7 @@ export default Vue.extend({
       type: Number,
       required: true,
     },
-    1日当たりの検査件数: {
+    うち1日当たりの検査件数: {
       type: Number,
       required: true,
     },
