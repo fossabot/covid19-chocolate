@@ -7,19 +7,21 @@
         </v-icon>
         {{ $t('最新のお知らせ') }}
       </h3>
-      <div class="WhatsNew-linkGroup">
-        <app-link
-          class="WhatsNew-linkButton"
-          to="https://www.city.sagamihara.kanagawa.jp/shisei/seisaku/1023033.html"
-        >
-          <span class="WhatsNew-linkButton-inner">
-            <v-icon size="1em" class="WhatsNew-linkButton-v-icon">
-              {{ mdiBullhorn }}
-            </v-icon>
-            {{ $t('まん延防止等重点措置 発令中') }}
-          </span>
-        </app-link>
-      </div>
+      <ul class="WhatsNew-linkGroup">
+        <li>
+          <app-link
+            class="WhatsNew-linkButton"
+            to="https://www.city.sagamihara.kanagawa.jp/shisei/seisaku/1023033.html"
+          >
+            <span class="WhatsNew-linkButton-inner">
+              <v-icon size="1em" class="WhatsNew-linkButton-v-icon">
+                {{ mdiBullhorn }}
+              </v-icon>
+              {{ $t('まん延防止等重点措置 発令中') }}
+            </span>
+          </app-link>
+        </li>
+      </ul>
     </div>
     <ul class="WhatsNew-list">
       <li v-for="(item, i) in items" :key="i" class="WhatsNew-list-item">
@@ -101,6 +103,8 @@ export default Vue.extend({
       flex-wrap: wrap;
       align-items: center;
       justify-content: flex-end;
+      list-style: none;
+      padding: 0;
 
       @include lessThan($medium) {
         justify-content: flex-start;
