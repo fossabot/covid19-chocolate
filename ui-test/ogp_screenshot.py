@@ -17,6 +17,7 @@ PATHS = {
     "/cards/positive-number-by-developed-date": (959, 570),
     "/cards/deaths-by-death-date": (959, 570),
     "/cards/number-of-confirmed-cases-by-age": (959, 570),
+    "/cards/tested-number": (959, 570),
 }
 
 options = webdriver.ChromeOptions()
