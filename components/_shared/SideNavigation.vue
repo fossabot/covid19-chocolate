@@ -237,6 +237,10 @@ export default Vue.extend({
           link: 'https://note.com/murayu0225/m/m6c7a40a8fcf9',
         },
         {
+          title: this.$t('当サイトの稼働状況'),
+          link: 'https://sagamiharastopcivid19.statuspage.io/',
+        },
+        {
           title: this.$t(
             '改善・アンケートフォームはこちら（外部サービスを使用しています）'
           ),
