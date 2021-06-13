@@ -1,62 +1,40 @@
 // To parse this data:
 //
-//   import { Convert, InfectionMedicalcareprovisionStatus } from "./file";
+//   import { Convert, Detail } from "./file";
 //
-//   const infectionMedicalcareprovisionStatus = Convert.toInfectionMedicalcareprovisionStatus(json);
+//   const detail = Convert.toDetail(json);
 //
 // These functions will throw an error if the JSON doesn't
 // match the expected interface, even if the JSON is valid.
 
-export interface InfectionMedicalcareprovisionStatus {
-    date:        string;
-    todaydate:   string;
-    検査統計日時:      Date;
-    ワクチン更新日時:    Date;
-    data:        { [key: string]: number };
-    mainSummary: MainSummary;
-    agedate:     string;
-    datasets:    Datasets;
-}
-
-export interface Datasets {
+export interface Detail {
     date: string;
-    data: Datum[];
+    data: Data;
 }
 
-export interface Datum {
-    age:   string;
-    count: number;
-}
-
-export interface MainSummary {
-    children: MainSummaryChild[];
-}
-
-export interface MainSummaryChild {
-    date:     string;
-    children: PurpleChild[];
-}
-
-export interface PurpleChild {
-    attr:     string;
-    value:    number;
-    children: FluffyChild[];
-}
-
-export interface FluffyChild {
-    attr:  string;
-    value: number;
+export interface Data {
+    陽性患者数: string;
+    治療中:   string;
+    医療機関:  string;
+    宿泊療養:  string;
+    自宅療養:  string;
+    死亡:    string;
+    回復:    string;
+    市内在住:  string;
+    市外在住:  string;
+    男性:    string;
+    女性:    string;
 }
 
 // Converts JSON strings to/from your types
 // and asserts the results of JSON.parse at runtime
 export class Convert {
-    public static toInfectionMedicalcareprovisionStatus(json: string): InfectionMedicalcareprovisionStatus {
-        return cast(JSON.parse(json), r("InfectionMedicalcareprovisionStatus"));
+    public static toDetail(json: string): Detail {
+        return cast(JSON.parse(json), r("Detail"));
     }
 
-    public static infectionMedicalcareprovisionStatusToJson(value: InfectionMedicalcareprovisionStatus): string {
-        return JSON.stringify(uncast(value, r("InfectionMedicalcareprovisionStatus")), null, 2);
+    public static detailToJson(value: Detail): string {
+        return JSON.stringify(uncast(value, r("Detail")), null, 2);
     }
 }
 
@@ -193,38 +171,21 @@ function r(name: string) {
 }
 
 const typeMap: any = {
-    "InfectionMedicalcareprovisionStatus": o([
+    "Detail": o([
         { json: "date", js: "date", typ: "" },
-        { json: "todaydate", js: "todaydate", typ: "" },
-        { json: "検査統計日時", js: "検査統計日時", typ: Date },
-        { json: "ワクチン更新日時", js: "ワクチン更新日時", typ: Date },
-        { json: "data", js: "data", typ: m(0) },
-        { json: "main_summary", js: "mainSummary", typ: r("MainSummary") },
-        { json: "agedate", js: "agedate", typ: "" },
-        { json: "datasets", js: "datasets", typ: r("Datasets") },
+        { json: "data", js: "data", typ: r("Data") },
     ], false),
-    "Datasets": o([
-        { json: "date", js: "date", typ: "" },
-        { json: "data", js: "data", typ: a(r("Datum")) },
-    ], false),
-    "Datum": o([
-        { json: "age", js: "age", typ: "" },
-        { json: "count", js: "count", typ: 0 },
-    ], false),
-    "MainSummary": o([
-        { json: "children", js: "children", typ: a(r("MainSummaryChild")) },
-    ], false),
-    "MainSummaryChild": o([
-        { json: "date", js: "date", typ: "" },
-        { json: "children", js: "children", typ: a(r("PurpleChild")) },
-    ], false),
-    "PurpleChild": o([
-        { json: "attr", js: "attr", typ: "" },
-        { json: "value", js: "value", typ: 0 },
-        { json: "children", js: "children", typ: a(r("FluffyChild")) },
-    ], false),
-    "FluffyChild": o([
-        { json: "attr", js: "attr", typ: "" },
-        { json: "value", js: "value", typ: 0 },
+    "Data": o([
+        { json: "陽性患者数", js: "陽性患者数", typ: "" },
+        { json: "治療中", js: "治療中", typ: "" },
+        { json: "医療機関", js: "医療機関", typ: "" },
+        { json: "宿泊療養", js: "宿泊療養", typ: "" },
+        { json: "自宅療養", js: "自宅療養", typ: "" },
+        { json: "死亡", js: "死亡", typ: "" },
+        { json: "回復", js: "回復", typ: "" },
+        { json: "市内在住", js: "市内在住", typ: "" },
+        { json: "市外在住", js: "市外在住", typ: "" },
+        { json: "男性", js: "男性", typ: "" },
+        { json: "女性", js: "女性", typ: "" },
     ], false),
 };

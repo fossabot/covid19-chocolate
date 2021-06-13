@@ -2,7 +2,6 @@
   <div class="SiteTopUpper">
     <whats-new :items="newsItems" :is-emergency="true" />
     <detail-a />
-    <detail-data />
     <VaccineInfoCard />
     <lazy-static-info
       v-if="$vuetify.breakpoint.smAndUp || showStaticInfo"
@@ -20,7 +19,6 @@
 import Vue from 'vue'
 
 import DetailA from '@/components/index/SiteTopUpper/DetailA.vue'
-import DetailData from '@/components/index/SiteTopUpper/DetailData.vue'
 import VaccineInfoCard from '@/components/index/SiteTopUpper/VaccineInfoCard.vue'
 import WhatsNew from '@/components/index/SiteTopUpper/WhatsNew.vue'
 import {
@@ -40,7 +38,6 @@ export default Vue.extend<Data, Methods, Computed, Props>({
   components: {
     WhatsNew,
     VaccineInfoCard,
-    DetailData,
     DetailA,
   },
   computed: {
