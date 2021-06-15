@@ -27,3 +27,12 @@ jobs:
       - name: Run auto-generate.py
         run: |
           python auto-generate.py
+
+      - name: Commit and Push
+        run: |
+          git config user.name "Murayu0225"
+          git config user.email "murayu@assistant-app.com"
+          git add .
+          git commit -m "Tweet Created!"
+          git pull
+          git push origin data
