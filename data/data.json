@@ -1987,11 +1987,11 @@
                     },
                     {
                         "attr": "男性",
-                        "value": 2277,
+                        "value": 2282,
                         "children": [
                             {
                                 "attr": "女性",
-                                "value": 2047
+                                "value": 2054
                             }
                         ]
                     },
