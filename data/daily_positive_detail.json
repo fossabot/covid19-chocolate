@@ -2409,7 +2409,12 @@
             "diagnosed_date": "2021-06-16",
             "count": 7,
             "weekly_average_count": 14.1
+        },
+        {
+            "diagnosed_date": "2021-06-17",
+            "count": 13,
+            "weekly_average_count": 14.4
         }
     ],
-    "date": "2021\/06\/16 18:00"
+    "date": "2021\/06\/17 18:00"
 }
