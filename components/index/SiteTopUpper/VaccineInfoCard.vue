@@ -13,7 +13,7 @@
               to="https://www.city.sagamihara.kanagawa.jp/kurashi/kenko/kansenyobo/1019910/1022588/index.html"
             >
               {{
-                $t('新型コロナウイルスワクチンについて {VaccineDate}更新', {
+                $t('新型コロナウイルスワクチンについて ({VaccineDate}更新)', {
                   VaccineDate: formatDate(VaccineDate),
                 })
               }}
