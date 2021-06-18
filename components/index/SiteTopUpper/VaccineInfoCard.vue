@@ -14,8 +14,8 @@
             >
               {{
                 $t('新型コロナウイルスワクチンについて {VaccineDate}更新', {
-            VaccineDate: formatDate(VaccineDate),
-                }) 
+                  VaccineDate: formatDate(VaccineDate),
+               }) 
               }}
             </app-link>
           </li>
