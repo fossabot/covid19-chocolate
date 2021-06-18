@@ -35,10 +35,12 @@
     </static-card>
     <static-card>
       <h3>
-        <app-link
-          to="https://cbc.city.sagamihara.kanagawa.jp/"
-          :icon-size="24"
-          >{{ $t('「あらっいいお店♪感謝(サンキュー)を込めて！さがみはら・みんなのキャッシュバックキャンペーン（通称：サンキューキャンペーン）」') }}
+        <app-link to="https://cbc.city.sagamihara.kanagawa.jp/" :icon-size="24"
+          >{{
+            $t(
+              '「あらっいいお店♪感謝(サンキュー)を込めて！さがみはら・みんなのキャッシュバックキャンペーン（通称：サンキューキャンペーン）」'
+            )
+          }}
         </app-link>
       </h3>
       <p>
