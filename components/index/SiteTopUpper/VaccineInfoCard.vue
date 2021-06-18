@@ -2,11 +2,7 @@
   <div class="VaccineInfo">
     <div class="VaccineInfo-heading">
       <h3 class="VaccineInfo-title">
-        {{
-          $t('ワクチンについて {VaccineDate}更新', {
-            VaccineDate: formatDate(VaccineDate),
-          })
-        }}
+        {{ $t('ワクチンについて') }}
       </h3>
     </div>
     <div class="VaccineInfo-description">
@@ -16,7 +12,11 @@
             <app-link
               to="https://www.city.sagamihara.kanagawa.jp/kurashi/kenko/kansenyobo/1019910/1022588/index.html"
             >
-              {{ $t('新型コロナウイルスワクチンについて') }}
+              {{
+                $t('新型コロナウイルスワクチンについて {VaccineDate}更新', {
+            VaccineDate: formatDate(VaccineDate),
+                }) 
+              }}
             </app-link>
           </li>
         </ul>
@@ -30,11 +30,11 @@
           </li>
         </ul>
       </div>
-      <div class="margin-b border">
+      <div class="margin-b">
         <p>
           {{
             $t(
-              'このカード内における継続的な翻訳技術の提供が難しいため、詳細の表示を当サイトにて中止しました。今後は、上記の「新型コロナウイルスワクチンについて」(相模原市公式サイト)から確認をお願いします。'
+              'このカード内における継続的な翻訳技術の提供が難しいため、詳細の表示を当サイトにて中止しました。今後は、上記の「新型コロナウイルスワクチンについて」(相模原市公式サイト)から確認をお願いします。今現在、当サイトにてワクチン接種率に関する表を作成中です。完成までもうしばらくお待ちください。'
             )
           }}
         </p>
