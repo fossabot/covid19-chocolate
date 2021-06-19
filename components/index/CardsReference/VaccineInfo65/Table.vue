@@ -17,7 +17,7 @@
               <span :class="$style.unit">{{ $t('人') }}</span>
               <div>
                 (<strong
-                  >{{ ((うち1回接種済み + うち2回接種済み) / (うち1回接種済み + うち2回接種済み + 未接種)) * 100).toFixed(2) }}</strong
+                  >{{ (((うち1回接種済み + うち2回接種済み) / (うち1回接種済み + うち2回接種済み + 未接種)) * 100).toFixed(2) }}</strong
                 >
                 <span :class="$style.unit">%</span>)
               </div>
@@ -34,7 +34,7 @@
                   <span :class="$style.unit">{{ $t('人') }}</span>
                   <div>
                     (<strong
-                      >{{ (うち1回接種済み / (うち1回接種済み + うち2回接種済み)) * 100).toFixed(2) }}</strong
+                      >{{ ((うち1回接種済み / (うち1回接種済み + うち2回接種済み)) * 100).toFixed(2) }}</strong
                     >
                     <span :class="$style.unit">%</span>)
                   </div>
@@ -61,7 +61,7 @@
               <span :class="$style.unit">{{ $t('人') }}</span>
               <div>
                 (<strong
-                  >{{ (未接種 / (うち1回接種済み + うち2回接種済み + 未接種)) * 100).toFixed(2) }}</strong
+                  >{{ ((未接種 / (うち1回接種済み + うち2回接種済み + 未接種)) * 100).toFixed(2) }}</strong
                 >
                 <span :class="$style.unit">%</span>)
               </div>
