@@ -34,12 +34,6 @@ type VaccineType = {
   未接種: number
 }
 
-function getSelectedItem(data: DataType, key: string) {
-  let result: number | undefined
-
-  return result || 0
-}
-
 /**
  * Format for *Chart component
  *
