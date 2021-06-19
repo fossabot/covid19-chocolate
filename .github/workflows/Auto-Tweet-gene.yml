@@ -28,9 +28,8 @@ jobs:
 
       - name: Commit and Push
         run: |
-          git config --global user.name "Murayu0225"
-          git config --global user.email "murayu@assistant-app.com"
-          git checkout data
+          git config user.name "Murayu0225"
+          git config user.email "murayu@assistant-app.com"
           git add .
           git commit -m "Tweet Created!"
           git pull origin data
