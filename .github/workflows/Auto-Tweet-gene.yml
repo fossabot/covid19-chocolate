@@ -1,9 +1,9 @@
 name: Auto Tweet Generate
 
 on:
-  pull_request:
+  push:
     branches:
-      - main
+      - data
 
 jobs:
   build:
@@ -30,9 +30,7 @@ jobs:
         run: |
           git config user.name "Murayu0225"
           git config user.email "murayu@assistant-app.com"
-          git config --global pull.rebase false
-          git checkout --ours .
           git add .
           git commit -m "Tweet Created!" || echo "No changes to commit"
-          git pull --allow-unrelated-histories origin HEAD:data
-          git push origin HEAD:data
+          git pull  origin data
+          git push origin data
