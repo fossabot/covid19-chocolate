@@ -36,7 +36,6 @@ type VaccineType = {
 
 function getSelectedItem(data: DataType, key: string) {
   let result: number | undefined
-  }
   recursiveSearch(data)
 
   return result || 0
