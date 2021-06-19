@@ -29,7 +29,7 @@ import dayjs from 'dayjs'
 import DataView from '@/components/index/_shared/DataView.vue'
 // table タグとの衝突を避けるため VaccineTable とする
 import VaccineTable from '@/components/index/CardsMonitoring/VaccineInfo65/Table.vue'
-import Data from '@/data/vaccinedata.json'
+import Data from '@/data/vaccine.json'
 import formatVaccine from '@/utils/formatVaccine'
 
 const options = {
