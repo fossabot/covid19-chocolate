@@ -1,68 +1,68 @@
 <template>
-  <v-col cols="12" md="6" class="DataCard ConfirmedCasesNumberCard">
+  <v-col cols="12" md="6" class="DataCard VaccineCard">
     <client-only>
-      <time-bar-chart
+      <data-view
         :title="$t('65歳以上のワクチン接種状況')"
-        :title-id="'vaccine-info-65'"
-        :chart-id="'doughnut-chart-vaccine'"
-        :chart-data="vaccineGraph"
+        :title-id="'vaccine'"
         :date="date"
-        :unit="$t('人')"
-        :by-date="true"
       >
         <template #additionalDescription>
-          <div class="Description-ExternalLink">
-            <app-link
-              to="https://www.city.sagamihara.kanagawa.jp/shisei/koho/1019191.html"
-            >
-              {{
-                $t(
-                  '新型コロナウイルス感染症に関する相模原市発表資料（発生状況等）'
-                )
-              }}
-            </app-link>
-          </div>
           <span>{{ $t('（注）') }}</span>
           <ul>
             <li>
-              {{ $t('在日米陸軍関係者は含めない') }}
+              {{ $t('このデータの更新は、土・日・祝日は行わない') }}
             </li>
           </ul>
         </template>
-      </time-bar-chart>
+        <vaccine-table
+          :aria-label="$t('65歳以上のワクチン接種状況')"
+          v-bind="vaccine"
+        />
+      </data-view>
     </client-only>
   </v-col>
 </template>
 
 <script>
-import AppLink from '@/components/_shared/AppLink.vue'
-import doughnutChart from '@/components/index/_shared/doughnutChart.vue'
-import Data from '@/data/vaccinedata.json'
+import dayjs from 'dayjs'
 
-export default {
+import DataView from '@/components/index/_shared/DataView.vue'
+// table タグとの衝突を避けるため VaccineTable とする
+import VaccineTable from '@/components/index/CardsMonitoring/VaccineInfo65/Table.vue'
+import Data from '@/data/vaccinedata.json'
+import formatVaccine from '@/utils/formatVaccine'
+
+const options = {
   components: {
-    doughnutChart,
-    AppLink,
+    DataView,
+    VaccineTable,
   },
   data() {
-    // ワクチン接種率グラフ
-    const vaccineGraph = formatGraph(Data.vaccine_summary.data)
-    const date = Data.vaccine_summary.date
+    const mainSummary = Data.main_summary
+    // 65歳以上のワクチン接種状況
+    const vaccine = formatVaccine(mainSummary)
+
+    const date = dayjs(mainSummary.children[0].date).format('YYYY/MM/DD HH:mm')
 
     return {
-      vaccineGraph,
+      vaccine,
       date,
     }
   },
 }
+
+export default options
 </script>
 
-<style lang="scss" scoped>
-.Description-Link {
+<style lang="scss" module>
+.button {
+  margin: 20px 0 0;
+  color: $green-1 !important;
   text-decoration: none;
+  &:hover {
+    color: $white !important;
+  }
+
   @include button-text('sm');
-}
-.Description-ExternalLink {
-  margin-bottom: 10px;
 }
 </style>
