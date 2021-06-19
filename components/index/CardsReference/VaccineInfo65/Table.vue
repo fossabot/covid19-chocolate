@@ -4,7 +4,7 @@
       <div :class="$style.content">
         <span> {{ $t('65歳以上') }} ({{ $t('累計') }}) </span>
         <span>
-          <strong>{{ (うち1回接種済み + うち2回接種済み + 未接種) }}</strong>
+          <strong>{{ うち1回接種済み + うち2回接種済み + 未接種 }}</strong>
           <span :class="$style.unit">{{ $t('人') }}</span>
         </span>
       </div>
@@ -13,10 +13,12 @@
           <div :class="$style.content">
             <span>{{ $t('接種済み') }}</span>
             <span>
-              <strong>{{ (うち1回接種済み + うち2回接種済み) }}</strong>
+              <strong>{{ うち1回接種済み + うち2回接種済み }}</strong>
               <span :class="$style.unit">{{ $t('人') }}</span>
               <div>
-                (<strong>{{ ((うち1回接種済み + うち2回接種済み) / (うち1回接種済み + うち2回接種済み + 未接種)) * 100).toFixed(2) }}</strong>
+                (<strong
+                  >{{ ((うち1回接種済み + うち2回接種済み) / (うち1回接種済み + うち2回接種済み + 未接種)) * 100).toFixed(2) }}</strong
+                >
                 <span :class="$style.unit">%</span>)
               </div>
             </span>
@@ -31,7 +33,9 @@
                   <strong>{{ うち1回接種済み.toLocaleString() }}</strong>
                   <span :class="$style.unit">{{ $t('人') }}</span>
                   <div>
-                    (<strong>{{ (うち1回接種済み / (うち1回接種済み + うち2回接種済み)) * 100).toFixed(2) }}</strong>
+                    (<strong
+                      >{{ (うち1回接種済み / (うち1回接種済み + うち2回接種済み)) * 100).toFixed(2) }}</strong
+                    >
                     <span :class="$style.unit">%</span>)
                   </div>
                 </span>
@@ -47,6 +51,8 @@
               </div>
             </li>
           </ul>
+        </li>
+
         <li :class="[$style.box]">
           <div :class="$style.content">
             <span>{{ $t('未接種') }}</span>
@@ -54,7 +60,9 @@
               <strong>{{ 未接種.toLocaleString() }}</strong>
               <span :class="$style.unit">{{ $t('人') }}</span>
               <div>
-                (<strong>{{ (未接種 / (うち1回接種済み + うち2回接種済み + 未接種)) * 100).toFixed(2) }}</strong>
+                (<strong
+                  >{{ (未接種 / (うち1回接種済み + うち2回接種済み + 未接種)) * 100).toFixed(2) }}</strong
+                >
                 <span :class="$style.unit">%</span>)
               </div>
             </span>
