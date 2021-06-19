@@ -33,5 +33,5 @@ jobs:
           git checkout data
           git add .
           git commit -m "Tweet Created!"
-          git pull
+          git pull origin data
           git push origin data
