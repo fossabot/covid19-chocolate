@@ -27,6 +27,8 @@ const ConfirmedCasesByAgeCard = () =>
   import('@/components/index/CardsReference/ConfirmedCasesByAge/Card.vue')
 const TestedNumberCard = () =>
   import('@/components/index/CardsReference/TestedNumber/Card.vue')
+const VaccineInfo65Card = () =>
+  import('@/components/index/CardsReference/VaccineInfo65/Card.vue')
 /* eslint-enable simple-import-sort/imports */
 
 export default Vue.extend({
@@ -39,6 +41,7 @@ export default Vue.extend({
         [ConfirmedCasesByMunicipalitiesCard, DeathsByDeathDateCard],
         [PositiveNumberByDiagnosedDateCard, PositiveNumberByDevelopedDateCard],
         [ConfirmedCasesByAgeCard, TestedNumberCard],
+        [VaccineInfo65Card],
       ],
     }
   },
