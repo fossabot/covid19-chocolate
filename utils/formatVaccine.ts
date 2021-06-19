@@ -28,6 +28,7 @@ type DataType = {
 }
 
 type VaccineType = {
+  人口65歳以上: number
   接種済み: number
   うち1回接種済み: number
   うち2回接種済み: number
@@ -74,6 +75,7 @@ function getSelectedItem(data: DataType, key: string) {
  */
 export default (data: DataType) => {
   return {
+    人口65歳以上: getSelectedItem(data, '人口65歳以上'),
     接種済み: getSelectedItem(data, '接種済み'),
     うち1回接種済み: getSelectedItem(data, 'うち1回接種済み'),
     うち2回接種済み: getSelectedItem(data, 'うち2回接種済み'),
