@@ -4,7 +4,7 @@
       <div :class="$style.content">
         <span> {{ $t('65歳以上') }} ({{ $t('累計') }}) </span>
         <span>
-          <strong>{{ うち1回接種済み + うち2回接種済み + 未接種 }}</strong>
+          <strong>{{ (うち1回接種済み + うち2回接種済み + 未接種).toLocaleString() }}</strong>
           <span :class="$style.unit">{{ $t('人') }}</span>
         </span>
       </div>
@@ -13,7 +13,7 @@
           <div :class="$style.content">
             <span>{{ $t('接種済み') }}</span>
             <span>
-              <strong>{{ うち1回接種済み + うち2回接種済み }}</strong>
+              <strong>{{ (うち1回接種済み + うち2回接種済み).toLocaleString() }}</strong>
               <span :class="$style.unit">{{ $t('人') }}</span>
               <div>
                 (<strong
