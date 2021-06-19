@@ -1,8 +1,6 @@
 name: Auto Tweet Generate
 
 on:
-  schedule:
-    - cron: '00 0 * * *'
   push:
     branches:
       - data
@@ -33,6 +31,6 @@ jobs:
           git config user.name "Murayu0225"
           git config user.email "murayu@assistant-app.com"
           git add .
-          git commit -m "Tweet Created!"
-          git pull
+          git commit -m "Tweet Created!" || echo "No changes to commit"
+          git pull  origin data
           git push origin data
