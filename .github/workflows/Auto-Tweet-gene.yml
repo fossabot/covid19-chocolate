@@ -33,4 +33,4 @@ jobs:
           git add .
           git commit -m "Tweet Created!"
           git pull origin data
-          git push origin data
+          git push --allow-unrelated-histories origin data
