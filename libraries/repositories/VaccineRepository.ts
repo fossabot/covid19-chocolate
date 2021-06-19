@@ -2,18 +2,18 @@
 import { default as rawData } from '@/data/vaccine.json'
 import {
   Convert,
-  Data,
+  Vaccine,
 } from '@/libraries/auto_generated/data_converter/convertVaccine'
 import {
   BaseRepository,
   IBaseRepository,
 } from '@/libraries/repositories/BaseRepository'
 
-export interface IDataRepository extends IBaseRepository<Data> {}
+export interface IVaccineRepository extends IBaseRepository<Vaccine> {}
 
-export class DataRepository
+export class VaccineRepository
   extends BaseRepository<Data>
-  implements IDataRepository
+  implements IVaccineRepository
 {
   /**
    * 使用箇所
@@ -21,6 +21,6 @@ export class DataRepository
    * 65歳以上のワクチン接種状況
    */
   constructor() {
-    super(Convert.toData(JSON.stringify(rawData)))
+    super(Convert.toVaccine(JSON.stringify(rawData)))
   }
 }
