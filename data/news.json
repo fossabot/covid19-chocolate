@@ -2,6 +2,12 @@
     "newsItems": [
         {
             "date": "2021\/06\/18",
+            "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/06\/0618_02.pdf",
+            "text": "新型コロナウイルス感染症に係るまん延防止等重点措置の再々延長に対する市長コメント （PDF 270.6KB）"
+        },
+
+        {
+            "date": "2021\/06\/18",
             "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/06\/0618.pdf",
             "text": "新型コロナウイルスワクチン接種に係る基礎疾患を有する方への対応及び64歳から満12歳までの方へのクーポン券（接種券）の発送等について （PDF 116.0KB）"
         },
@@ -10,12 +16,6 @@
             "date": "2021\/06\/15",
             "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/06\/0615_02.pdf",
             "text": "新型コロナウイルスワクチン接種に係る優先集団接種会場の設置及び予約支援について （PDF 222.7KB）"
-        },
-
-        {
-            "date": "2021\/06\/11",
-            "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/shisei\/koho\/1019175.html",
-            "text": "イベント中止等のお知らせ"
         }
     ]
 }
