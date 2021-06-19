@@ -12,7 +12,7 @@ import {
 export interface IVaccineRepository extends IBaseRepository<Vaccine> {}
 
 export class VaccineRepository
-  extends BaseRepository<Data>
+  extends BaseRepository<Vaccine>
   implements IVaccineRepository
 {
   /**
