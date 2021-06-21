@@ -38,12 +38,12 @@ export default Vue.extend({
       items: [
          {
           label: this.$t('感染動向'),
-          component: CardsReferenceInfection,
+          component: CardsMonitoring,
           icon: mdiChartTimelineVariant,
         },
         {
           label: this.$t('ワクチン接種状況'),
-          component: CardsReferenceInspection,
+          component: CardsReference,
           icon: mdiNeedle,
         },
       ],
