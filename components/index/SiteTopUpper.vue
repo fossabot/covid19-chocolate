@@ -2,18 +2,14 @@
   <div class="SiteTopUpper">
     <whats-new :items="newsItems" :is-emergency="true" />
     <detail-a />
-    <lazy-static-info
-      class="mb-4"
-      :url="'https://www.city.sagamihara.kanagawa.jp/shisei/koho/1019896.html'"
-      :text="$t(' 自分や家族の症状に不安や心配があれば、\n まずは電話相談をどうぞ')"
-      :btn-text="$t('相談の手順を見る')"
-    />
+    <consultation />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 
+import Consultation from '@/components/index/SiteTopUpper/Consultation.vue'
 import DetailA from '@/components/index/SiteTopUpper/DetailA.vue'
 import WhatsNew from '@/components/index/SiteTopUpper/WhatsNew.vue'
 import {
@@ -33,6 +29,7 @@ export default Vue.extend<Data, Methods, Computed, Props>({
   components: {
     WhatsNew,
     DetailA,
+    Consultation,
   },
   computed: {
     newsItems() {
