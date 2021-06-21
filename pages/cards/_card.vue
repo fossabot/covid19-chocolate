@@ -100,7 +100,7 @@ export default class CardContainer extends Vue implements NuxtConfig {
         cardComponent = 'tested-number-card'
         break
       // 65歳以上のワクチン接種状況
-      case 'vaccine-info-65:
+      case 'vaccine-info-65':
         cardComponent = 'vaccine-info-65-card'
     }
     /* eslint-enable simple-import-sort/imports */
