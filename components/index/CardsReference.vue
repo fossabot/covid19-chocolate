@@ -73,18 +73,7 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .StaticCard {
-  margin-top: 16px;
+  margin-top: 20px;
   font-size: 1.4rem;
-}
-.DataBlock {
-  margin: 20px -8px;
-  .DataCard {
-    @include largerThan($medium) {
-      padding: 10px;
-    }
-    @include lessThan($small) {
-      padding: 4px 8px;
-    }
-  }
 }
 </style>
