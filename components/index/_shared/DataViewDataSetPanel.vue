@@ -97,7 +97,7 @@ export default Vue.extend({
       width: 100%;
       line-height: initial;
       color: $gray-3;
-      @include font-size(14);
+      @include font-size(12);
     }
   }
 }
