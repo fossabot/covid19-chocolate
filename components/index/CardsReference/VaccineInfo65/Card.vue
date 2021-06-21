@@ -1,9 +1,9 @@
 <template>
-  <v-col cols="12" md="6" class="DataCard VaccineCard">
+  <v-col cols="12" md="6" class="DataCard VaccineInfo65Card">
     <client-only>
       <data-view
         :title="$t('65歳以上のワクチン接種状況')"
-        :title-id="'vaccine'"
+        :title-id="'vaccine-info-65'"
         :date="date"
       >
         <template #additionalDescription>
@@ -16,7 +16,7 @@
         </template>
         <vaccine-table
           :aria-label="$t('65歳以上のワクチン接種状況')"
-          v-bind="vaccine"
+          v-bind="vaccine-info-65"
         />
       </data-view>
     </client-only>
