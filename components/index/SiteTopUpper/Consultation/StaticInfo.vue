@@ -37,8 +37,7 @@ export default Vue.extend({
 .StaticInfo {
   @include card-container();
 
-  justify-content: space-between;
-  align-items: center;
+  display: flex;
   flex-wrap: wrap;
 
   span {
