@@ -1,4 +1,5 @@
 <template>
+  <div>
     <div class="VaccineInfo">
       <div class="VaccineInfo-heading">
         <h3 class="VaccineInfo-title">
