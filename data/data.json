@@ -1948,34 +1948,42 @@
             {
                 "日付": "2021-06-19T08:00:00.000Z",
                 "小計": 17
+            },
+            {
+                "日付": "2021-06-20T08:00:00.000Z",
+                "小計": 8
+            },
+            {
+                "日付": "2021-06-21T08:00:00.000Z",
+                "小計": 8
             }
         ],
-        "date": "2021\/06\/19 17:00"
+        "date": "2021\/06\/21 17:00"
     },
-    "lastUpdate": "2021\/06\/19 17:00",
+    "lastUpdate": "2021\/06\/21 17:00",
     "main_summary": {
         "children": [
             {
                 "attr": "陽性患者数",
-                "date": "2021\/06\/18 09:30",
-                "value": 4356,
+                "date": "2021\/06\/21 09:30",
+                "value": 4399,
                 "children": [
                     {
                         "attr": "治療中",
-                        "value": 128,
+                        "value": 138,
                         "children": [
                           
                             {
                                 "attr": "医療機関",
-                                "value": 54
+                                "value": 58
                             },
                             {
                                 "attr": "宿泊療養",
-                                "value": 3
+                                "value": 4
                             },
                             {
                                 "attr": "自宅療養",
-                                "value": 71
+                                "value": 76
                             }
                         ]
                     },
@@ -1985,25 +1993,25 @@
                     },
                     {
                         "attr": "回復",
-                        "value": 4158
+                        "value": 4191
                     },
                     {
                         "attr": "市内在住",
-                        "value": 3900,
+                        "value": 3942,
                         "children": [
                             {
                                 "attr": "市外在住",
-                                "value": 456
+                                "value": 457
                             }
                         ]
                     },
                     {
                         "attr": "男性",
-                        "value": 2292,
+                        "value": 2312,
                         "children": [
                             {
                                 "attr": "女性",
-                                "value": 2064
+                                "value": 2087
                             }
                         ]
                     },
@@ -2019,44 +2027,44 @@
             }
         ]
     },
-    "date": "2021\/06\/14 09:30",
+    "date": "2021\/06\/21 09:30",
     "datasets": {
-        "date": "2021\/06\/14",
+        "date": "2021\/06\/21",
         "data": [
             {
                 "code": 131030,
                 "area": "相模原市",
                 "label": "緑区",
                 "ruby": "みどりく",
-                "count": 799
+                "count": 819
             },
             {
                 "code": 131031,
                 "area": "相模原市",
                 "label": "中央区",
                 "ruby": "ちゅうおうく",
-                "count": 1465
+                "count": 1501
             },
             {
                 "code": 131032,
                 "area": "相模原市",
                 "label": "南区",
                 "ruby": "みなみく",
-                "count": 1598
+                "count": 1623
             },
             {
                 "code": null,
                 "area": null,
                 "label": "市外",
                 "ruby": null,
-                "count": 448
+                "count": 456
             },
             {
                 "code": null,
                 "area": null,
                 "label": "小計",
                 "ruby": null,
-                "count": 4310
+                "count": 4399
             }
         ]
     }
