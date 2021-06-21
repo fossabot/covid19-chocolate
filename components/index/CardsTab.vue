@@ -7,7 +7,7 @@
       :href="`#tab-${i}`"
       @click="change"
     >
-      <v-icon class="TabIcon">{{ mdiChartTimelineVariant }}</v-icon>
+      <v-icon class="TabIcon">{{ item.icon }}</v-icon>
       {{ item.label }}
     </v-tab>
     <v-tabs-items v-model="tab" touchless>
@@ -19,7 +19,7 @@
 </template>
 
 <script lang="ts">
-import { mdiChartTimelineVariant } from '@mdi/js'
+import { mdiNeedle, mdiChartTimelineVariant } from '@mdi/js'
 import Vue from 'vue'
 
 import { EventBus, TOGGLE_EVENT } from '@/utils/tab-event-bus'
@@ -36,10 +36,17 @@ export default Vue.extend({
     return {
       tab: null,
       items: [
-        { label: this.$t('モニタリング項目'), component: CardsMonitoring },
-        { label: this.$t('その他 参考指標'), component: CardsReference },
+         {
+          label: this.$t('感染動向'),
+          component: CardsReferenceInfection,
+          icon: mdiChartTimelineVariant,
+        },
+        {
+          label: this.$t('ワクチン接種状況'),
+          component: CardsReferenceInspection,
+          icon: mdiNeedle,
+        },
       ],
-      mdiChartTimelineVariant,
     }
   },
   methods: {
