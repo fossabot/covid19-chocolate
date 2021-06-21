@@ -16,7 +16,7 @@
         </template>
         <vaccine-table
           :aria-label="$t('65歳以上のワクチン接種状況')"
-          v-bind="vaccine-info-65"
+          v-bind="vaccine - info - 65"
         />
       </data-view>
     </client-only>

@@ -14,7 +14,7 @@
             {{ $t('相模原市ワクチン接種web予約') }}
           </app-link>
         </li>
-       <br />
+        <br />
         <p>
           {{
             $t(
@@ -37,7 +37,7 @@
         </li>
       </ul>
     </static-card>
-  <cards-lazy-row :rows="rows" />
+    <cards-lazy-row :rows="rows" />
   </div>
 </template>
 
@@ -63,9 +63,7 @@ export default Vue.extend({
   },
   data() {
     return {
-      rows: [
-        [VaccineInfo65Card],
-      ],
+      rows: [[VaccineInfo65Card]],
     }
   },
 })

@@ -19,7 +19,7 @@
 </template>
 
 <script lang="ts">
-import { mdiNeedle, mdiChartTimelineVariant } from '@mdi/js'
+import { mdiChartTimelineVariant, mdiNeedle } from '@mdi/js'
 import Vue from 'vue'
 
 import { EventBus, TOGGLE_EVENT } from '@/utils/tab-event-bus'
@@ -36,7 +36,7 @@ export default Vue.extend({
     return {
       tab: null,
       items: [
-         {
+        {
           label: this.$t('感染動向'),
           component: CardsMonitoring,
           icon: mdiChartTimelineVariant,
