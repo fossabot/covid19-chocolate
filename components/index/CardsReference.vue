@@ -56,6 +56,7 @@ const VaccineInfo65Card = () =>
 
 export default Vue.extend({
   components: {
+    StaticCard,
     AppLink,
     CardsLazyRow,
   },
