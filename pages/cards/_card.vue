@@ -26,6 +26,8 @@ import PositiveNumberByDevelopedDateCard from '@/components/index/CardsReference
 import ConfirmedCasesByAgeCard from '@/components/index/CardsReference/ConfirmedCasesByAge/Card.vue'
 // 検査数の状況
 import TestedNumberCard from '@/components/index/CardsReference/TestedNumber/Card.vue'
+// 65歳以上のワクチン接種状況
+import VaccineInfo65Card from '@/components/index/CardsReference/VaccineInfo65/Card.vue'
 
 import { Vue, Component } from 'nuxt-property-decorator'
 import { getLinksLanguageAlternative } from '@/utils/i18nUtils'
@@ -47,6 +49,7 @@ import type { NuxtConfig } from '@nuxt/types'
     PositiveNumberByDevelopedDateCard,
     ConfirmedCasesByAgeCard,
     TestedNumberCard,
+    VaccineInfo65Card,
   },
 })
 export default class CardContainer extends Vue implements NuxtConfig {
@@ -95,6 +98,10 @@ export default class CardContainer extends Vue implements NuxtConfig {
       // 検査数の状況
       case 'tested-number':
         cardComponent = 'tested-number-card'
+        break
+      // 65歳以上のワクチン接種状況
+      case 'vaccine-info-65':
+        cardComponent = 'vaccine-info-65-card'
     }
     /* eslint-enable simple-import-sort/imports */
     return {

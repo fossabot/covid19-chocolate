@@ -174,11 +174,13 @@
 import Vue from 'vue'
 import { MetaInfo } from 'vue-meta'
 
+import AppLink from '@/components/_shared/AppLink.vue'
 import PageHeader from '@/components/_shared/PageHeader.vue'
 
 export default Vue.extend({
   components: {
     PageHeader,
+    AppLink,
   },
   data() {
     return {
