@@ -1,28 +1,14 @@
 // To parse this data:
 //
-//   import { Convert, InfectionMedicalcareprovisionStatus } from "./file";
+//   import { Convert, Vaccine } from "./file";
 //
-//   const infectionMedicalcareprovisionStatus = Convert.toInfectionMedicalcareprovisionStatus(json);
+//   const vaccine = Convert.toVaccine(json);
 //
 // These functions will throw an error if the JSON doesn't
 // match the expected interface, even if the JSON is valid.
 
-export interface InfectionMedicalcareprovisionStatus {
-    date:        string;
-    data:        { [key: string]: number };
+export interface Vaccine {
     mainSummary: MainSummary;
-    agedate:     string;
-    datasets:    Datasets;
-}
-
-export interface Datasets {
-    date: string;
-    data: Datum[];
-}
-
-export interface Datum {
-    age:   string;
-    count: number;
 }
 
 export interface MainSummary {
@@ -30,14 +16,16 @@ export interface MainSummary {
 }
 
 export interface MainSummaryChild {
+    attr:     string;
     date:     string;
+    value:    number;
     children: PurpleChild[];
 }
 
 export interface PurpleChild {
-    attr:     string;
-    value:    number;
-    children: FluffyChild[];
+    attr:      string;
+    value:     number;
+    children?: FluffyChild[];
 }
 
 export interface FluffyChild {
@@ -48,12 +36,12 @@ export interface FluffyChild {
 // Converts JSON strings to/from your types
 // and asserts the results of JSON.parse at runtime
 export class Convert {
-    public static toInfectionMedicalcareprovisionStatus(json: string): InfectionMedicalcareprovisionStatus {
-        return cast(JSON.parse(json), r("InfectionMedicalcareprovisionStatus"));
+    public static toVaccine(json: string): Vaccine {
+        return cast(JSON.parse(json), r("Vaccine"));
     }
 
-    public static infectionMedicalcareprovisionStatusToJson(value: InfectionMedicalcareprovisionStatus): string {
-        return JSON.stringify(uncast(value, r("InfectionMedicalcareprovisionStatus")), null, 2);
+    public static vaccineToJson(value: Vaccine): string {
+        return JSON.stringify(uncast(value, r("Vaccine")), null, 2);
     }
 }
 
@@ -190,32 +178,22 @@ function r(name: string) {
 }
 
 const typeMap: any = {
-    "InfectionMedicalcareprovisionStatus": o([
-        { json: "date", js: "date", typ: "" },
-        { json: "data", js: "data", typ: m(0) },
+    "Vaccine": o([
         { json: "main_summary", js: "mainSummary", typ: r("MainSummary") },
-        { json: "agedate", js: "agedate", typ: "" },
-        { json: "datasets", js: "datasets", typ: r("Datasets") },
-    ], false),
-    "Datasets": o([
-        { json: "date", js: "date", typ: "" },
-        { json: "data", js: "data", typ: a(r("Datum")) },
-    ], false),
-    "Datum": o([
-        { json: "age", js: "age", typ: "" },
-        { json: "count", js: "count", typ: 0 },
     ], false),
     "MainSummary": o([
         { json: "children", js: "children", typ: a(r("MainSummaryChild")) },
     ], false),
     "MainSummaryChild": o([
+        { json: "attr", js: "attr", typ: "" },
         { json: "date", js: "date", typ: "" },
+        { json: "value", js: "value", typ: 0 },
         { json: "children", js: "children", typ: a(r("PurpleChild")) },
     ], false),
     "PurpleChild": o([
         { json: "attr", js: "attr", typ: "" },
         { json: "value", js: "value", typ: 0 },
-        { json: "children", js: "children", typ: a(r("FluffyChild")) },
+        { json: "children", js: "children", typ: u(undefined, a(r("FluffyChild"))) },
     ], false),
     "FluffyChild": o([
         { json: "attr", js: "attr", typ: "" },
