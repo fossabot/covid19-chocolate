@@ -9,9 +9,6 @@
 
 export interface InfectionMedicalcareprovisionStatus {
     date:        string;
-    todaydate:   string;
-    検査統計日時:      Date;
-    ワクチン更新日時:    Date;
     data:        { [key: string]: number };
     mainSummary: MainSummary;
     agedate:     string;
@@ -195,9 +192,6 @@ function r(name: string) {
 const typeMap: any = {
     "InfectionMedicalcareprovisionStatus": o([
         { json: "date", js: "date", typ: "" },
-        { json: "todaydate", js: "todaydate", typ: "" },
-        { json: "検査統計日時", js: "検査統計日時", typ: Date },
-        { json: "ワクチン更新日時", js: "ワクチン更新日時", typ: Date },
         { json: "data", js: "data", typ: m(0) },
         { json: "main_summary", js: "mainSummary", typ: r("MainSummary") },
         { json: "agedate", js: "agedate", typ: "" },
