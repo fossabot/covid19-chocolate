@@ -512,5 +512,4 @@ export default Vue.extend({
     outline: 1px dotted $gray-3;
   }
 }
-
 </style>
