@@ -1947,7 +1947,7 @@
         },
         {
             "diagnosed_date": "2021-06-18",
-            "count": 7
+            "count": 6
         },
         {
             "diagnosed_date": "2021-06-19",
@@ -1959,8 +1959,12 @@
         },
         {
             "diagnosed_date": "2021-06-21",
-            "count": 5
+            "count": 9
+        },
+        {
+            "diagnosed_date": "2021-06-22",
+            "count": 2
         }
     ],
-    "date": "2021\/06\/22 18:00"
+    "date": "2021\/06\/23 18:00"
 }
