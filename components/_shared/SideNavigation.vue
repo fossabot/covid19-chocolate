@@ -258,9 +258,7 @@ export default Vue.extend({
           link: 'https://sagamiharastopcivid19.statuspage.io/',
         },
         {
-          title: this.$t(
-            '改善・アンケートフォームはこちら（外部サービスを使用しています）'
-          ),
+          title: this.$t('改善・アンケートフォームはこちら（外部サービスを使用しています）'),
           link: 'https://forms.gle/Vf9ZwjZq7aFjhzjCA',
         },
         {
