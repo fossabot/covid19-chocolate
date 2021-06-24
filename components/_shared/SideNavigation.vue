@@ -53,48 +53,66 @@
       </nav>
 
       <footer class="SideNavigation-Footer">
-        <div class="SideNavigation-Social">
-          <app-link
-            to="https://line.me/R/ti/p/%40360lkhth"
-            :show-icon="false"
-            class="SideNavigation-SocialLink"
-          >
-            <picture>
-              <source srcset="/line.webp" type="image/webp" />
-              <img src="/line.png" width="130" height="130" alt="LINE" />
-            </picture>
-          </app-link>
-          <app-link
-            to="https://twitter.com/sagami_covid19"
-            :show-icon="false"
-            class="SideNavigation-SocialLink"
-          >
-            <picture>
-              <source srcset="/twitter.webp" type="image/webp" />
-              <img src="/twitter.png" width="130" height="130" alt="Twitter" />
-            </picture>
-          </app-link>
-          <app-link
-            to="https://github.com/Murayu0225/covid19-chocolate"
-            :show-icon="false"
-            class="SideNavigation-SocialLink"
-          >
-            <picture>
-              <source srcset="/github.webp" type="image/webp" />
-              <img src="/github.png" width="130" height="130" alt="GitHub" />
-            </picture>
-          </app-link>
-          <app-link
-            to="https://www.youtube.com/user/SagamiharaCityOffice/videos"
-            :show-icon="false"
-            class="SideNavigation-SocialLink"
-          >
-            <picture>
-              <source srcset="/youtube.webp" type="image/webp" />
-              <img src="/youtube.png" width="130" height="130" alt="YouTube" />
-            </picture>
-          </app-link>
-        </div>
+        <ul class="SideNavigation-Social">
+          <li class="SideNavigation-SocialLink-ListItem">
+            <app-link
+              to="https://line.me/R/ti/p/%40360lkhth"
+              :show-icon="false"
+              class="SideNavigation-SocialLink"
+            >
+              <picture>
+                <source srcset="/line.webp" type="image/webp" />
+                <img src="/line.png" width="130" height="130" alt="LINE" />
+              </picture>
+            </app-link>
+          </li>
+          <li class="SideNavigation-SocialLink-ListItem">
+            <app-link
+              to="https://twitter.com/sagami_covid19"
+              :show-icon="false"
+              class="SideNavigation-SocialLink"
+            >
+              <picture>
+                <source srcset="/twitter.webp" type="image/webp" />
+                <img
+                  src="/twitter.png"
+                  width="130"
+                  height="130"
+                  alt="Twitter"
+                />
+              </picture>
+            </app-link>
+          </li>
+          <li class="SideNavigation-SocialLink-ListItem">
+            <app-link
+              to="https://github.com/Murayu0225/covid19-chocolate"
+              :show-icon="false"
+              class="SideNavigation-SocialLink"
+            >
+              <picture>
+                <source srcset="/github.webp" type="image/webp" />
+                <img src="/github.png" width="130" height="130" alt="GitHub" />
+              </picture>
+            </app-link>
+          </li>
+          <li class="SideNavigation-SocialLink-ListItem">
+            <app-link
+              to="https://www.youtube.com/user/SagamiharaCityOffice/videos"
+              :show-icon="false"
+              class="SideNavigation-SocialLink"
+            >
+              <picture>
+                <source srcset="/youtube.webp" type="image/webp" />
+                <img
+                  src="/youtube.png"
+                  width="130"
+                  height="130"
+                  alt="YouTube"
+                />
+              </picture>
+            </app-link>
+          </li>
+        </ul>
         <i18n
           tag="small"
           path="このサイトの内容物は{creativeCommons}の下に提供されています。（ただし商標等の他団体が権利を持つものは除く）"
@@ -110,7 +128,6 @@
             </app-link>
           </template>
         </i18n>
-        <br />
         <small class="SideNavigation-Copyright">
           &copy; 2020 Yu Muramatsu
         </small>
@@ -439,39 +456,46 @@ export default Vue.extend({
 
 .SideNavigation-Footer {
   padding-top: 20px;
-}
 
-.SideNavigation-Social {
-  display: flex;
-}
+  .SideNavigation-Social {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 15px;
 
-.SideNavigation-SocialLink {
-  border: 1px dotted transparent;
-  border-radius: 30px;
-  color: $gray-3;
-  margin-bottom: 15px;
+    .SideNavigation-SocialLink-ListItem {
+      .SideNavigation-SocialLink {
+        display: block;
+        border: 1px dotted transparent;
+        border-radius: 15px;
+        color: $gray-3;
 
-  &:link,
-  &:hover,
-  &:visited,
-  &:active {
-    color: inherit;
-    text-decoration: none;
-  }
+        &:link,
+        &:hover,
+        &:visited,
+        &:active {
+          color: inherit;
+          text-decoration: none;
+        }
 
-  &:focus {
-    color: inherit;
-    text-decoration: none;
-    border: 1px dotted $gray-3;
-    outline: none;
-  }
+        &:focus {
+          color: inherit;
+          text-decoration: none;
+          border: 1px dotted $gray-3;
+          outline: none;
+        }
 
-  & + & {
-    margin-left: 10px;
-  }
+        picture {
+          img {
+            width: 30px;
+          }
+        }
+      }
 
-  img {
-    width: 30px;
+      & + .SideNavigation-SocialLink-ListItem {
+        margin-left: 10px;
+      }
+    }
   }
 }
 
