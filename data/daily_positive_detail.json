@@ -2454,7 +2454,22 @@
             "diagnosed_date": "2021-06-25",
             "count": 19,
             "weekly_average_count": 12.7
+        },
+        {
+            "diagnosed_date": "2021-06-26",
+            "count": 14,
+            "weekly_average_count": 12.4
+        },
+        {
+            "diagnosed_date": "2021-06-27",
+            "count": 19,
+            "weekly_average_count": 14.0
+        },
+        {
+            "diagnosed_date": "2021-06-28",
+            "count": 20,
+            "weekly_average_count": 15.7
         }
     ],
-    "date": "2021\/06\/25 18:00"
+    "date": "2021\/06\/28 18:00"
 }
