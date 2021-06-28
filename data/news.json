@@ -1,27 +1,28 @@
 {
     "newsItems": [
+
+        {
+            "date": "2021\/06\/28",
+            "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/06\/0628.pdf",
+            "text": "新型コロナウイルス感染症による新たな患者の確認(4502～4511例目)及び患者の死亡について （PDF 321.8KB）"
+        },
+
+        {
+            "date": "2021\/06\/25",
+            "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/06\/0625_02.pdf",
+            "text": "新型コロナウイルスワクチン接種の予約受付等について （PDF 198.1KB）"
+        },
+
+        {
+            "date": "2021\/06\/25",
+            "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/06\/0625_03.pdf",
+            "text": "新型コロナウイルスワクチン接種予約に係る二重予約について （PDF 204.3KB）"
+        },
+
         {
             "date": "2021\/06\/24",
             "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/shisei\/koho\/1019215.html",
             "text": "市設置施設の利用情報について"
-        },
-
-        {
-            "date": "2021\/06\/23",
-            "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/06\/0623_02.pdf",
-            "text": "新型コロナウイルスワクチン集団接種会場行き無料送迎シャトルバスの運行及び市関係機関等によるワクチン接種予約代行について （PDF 284.9KB）"
-        },
-
-        {
-            "date": "2021\/06\/18",
-            "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/06\/0618_02.pdf",
-            "text": "新型コロナウイルス感染症に係るまん延防止等重点措置の再々延長に対する市長コメント （PDF 270.6KB）"
-        },
-
-        {
-            "date": "2021\/06\/18",
-            "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/06\/0618.pdf",
-            "text": "新型コロナウイルスワクチン接種に係る基礎疾患を有する方への対応及び64歳から満12歳までの方へのクーポン券（接種券）の発送等について （PDF 116.0KB）"
         }
     ]
 }
