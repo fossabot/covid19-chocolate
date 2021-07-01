@@ -1992,62 +1992,66 @@
             {
                 "日付": "2021-06-30T08:00:00.000Z",
                 "小計": 7
+            },
+            {
+                "日付": "2021-07-01T08:00:00.000Z",
+                "小計": 7
             }
         ],
-        "date": "2021\/06\/30 17:00"
+        "date": "2021\/07\/01 17:00"
     },
-    "lastUpdate": "2021\/06\/30 17:00",
+    "lastUpdate": "2021\/07\/01 17:00",
     "main_summary": {
         "children": [
             {
                 "attr": "陽性患者数",
-                "date": "2021\/06\/30 09:30",
-                "value": 4511,
+                "date": "2021\/07\/01 09:30",
+                "value": 4518,
                 "children": [
                     {
                         "attr": "治療中",
-                        "value": 117,
+                        "value": 108,
                         "children": [
                           
                             {
                                 "attr": "医療機関",
-                                "value": 45
+                                "value": 39
                             },
                             {
                                 "attr": "宿泊療養",
-                                "value": 5
+                                "value": 4
                             },
                             {
                                 "attr": "自宅療養",
-                                "value": 67
+                                "value": 65
                             }
                         ]
                     },
                     {
                         "attr": "死亡",
-                        "value": 72
+                        "value": 73
                     },
                     {
                         "attr": "回復",
-                        "value": 4322
+                        "value": 4337
                     },
                     {
                         "attr": "市内在住",
-                        "value": 4047,
+                        "value": 4053,
                         "children": [
                             {
                                 "attr": "市外在住",
-                                "value": 464
+                                "value": 465
                             }
                         ]
                     },
                     {
                         "attr": "男性",
-                        "value": 2375,
+                        "value": 2378,
                         "children": [
                             {
                                 "attr": "女性",
-                                "value": 2136
+                                "value": 2140
                             }
                         ]
                     }
