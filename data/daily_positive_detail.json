@@ -2479,7 +2479,12 @@
             "diagnosed_date": "2021-06-30",
             "count": 7,
             "weekly_average_count": 14.6
+        },
+        {
+            "diagnosed_date": "2021-07-01",
+            "count": 12,
+            "weekly_average_count": 13.7
         }
     ],
-    "date": "2021\/06\/30 18:00"
+    "date": "2021\/07\/01 18:00"
 }
