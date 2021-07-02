@@ -8,7 +8,7 @@
           <span :class="$style.unit">{{ $t('人') }}</span>
           <div>
             (<strong>{{
-              ((うち2回接種 / うち2回接種 + うち1回接種) * 100).toFixed(2)
+              ((うち2回接種 / (うち2回接種 + うち1回接種)) * 100).toFixed(2)
             }}</strong>
             <span :class="$style.unit">%</span>)
           </div>
@@ -23,7 +23,7 @@
           <span :class="$style.unit">{{ $t('人') }}</span>
           <div>
             (<strong>{{
-              ((うち2回接種 / うち1回接種 + うち2回接種) * 100).toFixed(2)
+              ((うち2回接種 / (うち1回接種 + うち2回接種)) * 100).toFixed(2)
             }}</strong>
             <span :class="$style.unit">%</span>)
           </div>
