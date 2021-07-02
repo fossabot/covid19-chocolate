@@ -4,9 +4,7 @@
       <div :class="$style.content">
         <span> {{ $t('65歳以上') }} ({{ $t('累計') }}) </span>
         <span>
-          <strong>{{
-            人口65歳以上.toLocaleString()
-          }}</strong>
+          <strong>{{ 人口65歳以上.toLocaleString() }}</strong>
           <span :class="$style.unit">{{ $t('人') }}</span>
         </span>
       </div>
@@ -22,8 +20,7 @@
               <div>
                 (<strong>{{
                   (
-                    ((うち1回接種済み + うち2回接種済み) /
-                      人口65歳以上) *
+                    ((うち1回接種済み + うち2回接種済み) / 人口65歳以上) *
                     100
                   ).toFixed(2)
                 }}</strong>
@@ -79,12 +76,19 @@
           <div :class="$style.content">
             <span>{{ $t('未接種') }}</span>
             <span>
-              <strong>{{ (人口65歳以上 - うち1回接種済み - うち2回接種済み).toLocaleString() }}</strong>
+              <strong>{{
+                (
+                  人口65歳以上 -
+                  うち1回接種済み -
+                  うち2回接種済み
+                ).toLocaleString()
+              }}</strong>
               <span :class="$style.unit">{{ $t('人') }}</span>
               <div>
                 (<strong>{{
                   (
-                    ((人口65歳以上 - うち1回接種済み - うち2回接種済み) / 人口65歳以上) *
+                    ((人口65歳以上 - うち1回接種済み - うち2回接種済み) /
+                      人口65歳以上) *
                     100
                   ).toFixed(2)
                 }}</strong>

@@ -15,7 +15,9 @@
           </app-link>
         </li>
         <li>
-          <app-link to="https://www.pref.kanagawa.jp/docs/ga4/covid19/vaccine.html">
+          <app-link
+            to="https://www.pref.kanagawa.jp/docs/ga4/covid19/vaccine.html"
+          >
             {{ $t('【神奈川県】新型コロナワクチンの接種について') }}
           </app-link>
         </li>
@@ -33,11 +35,7 @@
           <app-link
             to="https://www.city.sagamihara.kanagawa.jp/kurashi/kenko/kansenyobo/1019910/1022588/1023639.html"
           >
-            {{
-              $t(
-                '基礎疾患を有する方への対応について'
-              )
-            }}
+            {{ $t('基礎疾患を有する方への対応について') }}
           </app-link>
         </li>
       </ul>
