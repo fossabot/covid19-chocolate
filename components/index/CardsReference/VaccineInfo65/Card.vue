@@ -14,10 +14,20 @@
             </li>
           </ul>
         </template>
-        <vaccine-table
-          :aria-label="$t('65歳以上のワクチン接種状況')"
-          v-bind="vaccine"
-        />
+        <section>
+          <h4>{{ $t('接種件数') }}</h4>
+          <vaccine-status
+            :aria-label="$t('接種件数')"
+            :items="vaccine"
+          />
+        </section>
+        <section>
+          <h4>{{ $t('高齢者人口あたりの接種割合') }}</h4>
+          <vaccine-system
+            :aria-label="$t('高齢者人口あたりの接種割合')"
+            :items="vaccine"
+          />
+        </section>
       </data-view>
     </client-only>
   </v-col>
@@ -28,14 +38,16 @@ import dayjs from 'dayjs'
 
 import DataView from '@/components/index/_shared/DataView.vue'
 // table タグとの衝突を避けるため VaccineTable とする
-import VaccineTable from '@/components/index/CardsReference/VaccineInfo65/Table.vue'
+import VaccineStatus from '@/components/index/CardsReference/VaccineInfo65/Table/VaccineStatus.vue'
+import VaccineSystem from '@/components/index/CardsReference/VaccineInfo65/Table/VaccineSystem.vue'
 import Data from '@/data/vaccine.json'
 import formatVaccine from '@/utils/formatVaccine'
 
 const options = {
   components: {
     DataView,
-    VaccineTable,
+    VaccineStatus,
+    VaccineSystem,
   },
   data() {
     const mainSummary = Data.main_summary
