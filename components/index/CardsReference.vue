@@ -103,6 +103,6 @@ export default Vue.extend({
 }
 
 .red {
-  font-color: red;
+  color: red;
 }
 </style>
