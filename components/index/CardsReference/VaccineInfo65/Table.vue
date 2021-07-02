@@ -5,7 +5,7 @@
         <span> {{ $t('65歳以上') }} ({{ $t('累計') }}) </span>
         <span>
           <strong>{{
-            (うち1回接種済み + うち2回接種済み + 未接種).toLocaleString()
+            人口65歳以上.toLocaleString()
           }}</strong>
           <span :class="$style.unit">{{ $t('人') }}</span>
         </span>
@@ -23,7 +23,7 @@
                 (<strong>{{
                   (
                     ((うち1回接種済み + うち2回接種済み) /
-                      (うち1回接種済み + うち2回接種済み + 未接種)) *
+                      人口65歳以上) *
                     100
                   ).toFixed(2)
                 }}</strong>
@@ -79,12 +79,12 @@
           <div :class="$style.content">
             <span>{{ $t('未接種') }}</span>
             <span>
-              <strong>{{ 未接種.toLocaleString() }}</strong>
+              <strong>{{ (人口65歳以上 - うち1回接種済み - うち2回接種済み).toLocaleString() }}</strong>
               <span :class="$style.unit">{{ $t('人') }}</span>
               <div>
                 (<strong>{{
                   (
-                    (未接種 / (うち1回接種済み + うち2回接種済み + 未接種)) *
+                    ((人口65歳以上 - うち1回接種済み - うち2回接種済み) / 人口65歳以上) *
                     100
                   ).toFixed(2)
                 }}</strong>
@@ -104,15 +104,15 @@ import Vue from 'vue'
 /* eslint-disable vue/prop-name-casing */
 export default Vue.extend({
   props: {
+    人口65歳以上: {
+      type: Number,
+      required: true,
+    },
     うち1回接種済み: {
       type: Number,
       required: true,
     },
     うち2回接種済み: {
-      type: Number,
-      required: true,
-    },
-    未接種: {
       type: Number,
       required: true,
     },
