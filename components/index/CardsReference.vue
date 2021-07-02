@@ -23,7 +23,7 @@
         </li>
       </ul>
       <br />
-      <p class="red">
+      <p>
         {{
           $t(
             '※基礎疾患を有する方として予約するためには、事前に申し出が必要です。'
@@ -98,9 +98,5 @@ export default Vue.extend({
 .StaticCard {
   margin-top: 20px;
   font-size: 1.4rem;
-}
-
-.red {
-  color: red;
 }
 </style>
