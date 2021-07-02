@@ -14,15 +14,40 @@
             {{ $t('相模原市ワクチン接種web予約') }}
           </app-link>
         </li>
-        <br />
-        <p>
-          {{
-            $t(
-              '→ 国が設置する「大規模接種センター」で接種を希望される方は次のページをご確認ください。'
-            )
-          }}
-        </p>
+        <li>
+          <app-link to="https://www.pref.kanagawa.jp/docs/ga4/covid19/vaccine.html">
+            {{ $t('【神奈川県】新型コロナワクチンの接種について') }}
+          </app-link>
+        </li>
       </ul>
+      <br />
+      <p class="red">
+        {{
+          $t(
+            '※基礎疾患を有する方として予約するためには、事前に申し出が必要です。'
+          )
+        }}
+      </p>
+      <ul>
+        <li>
+          <app-link
+            to="https://www.city.sagamihara.kanagawa.jp/kurashi/kenko/kansenyobo/1019910/1022588/1023639.html"
+          >
+            {{
+              $t(
+                '基礎疾患を有する方への対応について'
+              )
+            }}
+          </app-link>
+        </li>
+      </ul>
+      <p>
+        {{
+          $t(
+            '→ 国が設置する「大規模接種センター」で接種を希望される方は次のページをご確認ください。'
+          )
+        }}
+      </p>
       <ul>
         <li>
           <app-link
@@ -75,5 +100,9 @@ export default Vue.extend({
 .StaticCard {
   margin-top: 20px;
   font-size: 1.4rem;
+}
+
+.red {
+  font-color: red;
 }
 </style>
