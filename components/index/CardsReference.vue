@@ -76,10 +76,10 @@ import StaticCard from '@/components/_shared/StaticCard.vue'
 import CardsLazyRow from '@/components/index/_shared/CardsLazyRow.vue'
 
 // モニタリング項目
-const VaccineInfo65Card = () =>
-  import('@/components/index/CardsReference/VaccineInfo65/Card.vue')
 const VaccineInfoCard = () =>
   import('@/components/index/CardsReference/VaccineInfo/Card.vue')
+const VaccineInfo65Card = () =>
+  import('@/components/index/CardsReference/VaccineInfo65/Card.vue')
 /* eslint-enable simple-import-sort/imports */
 
 export default Vue.extend({
@@ -90,7 +90,7 @@ export default Vue.extend({
   },
   data() {
     return {
-      rows: [[VaccineInfo65Card, VaccineInfoCard]],
+      rows: [[VaccineInfoCard, VaccineInfo65Card]],
     }
   },
 })
