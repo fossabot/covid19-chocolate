@@ -25,7 +25,7 @@ type DataType = {
         {
           attr: 'うち1回接種'
           value: number
-        }
+        },
         {
           attr: 'うち2回接種'
           value: number
