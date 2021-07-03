@@ -27,7 +27,7 @@
                 <!-- eslint-enable vue/no-v-html-->
                 <span>
                   <strong>{{ うち1回接種済み.toLocaleString() }}</strong>
-                  <span :class="$style.unit">{{ $t('件') }}</span>
+                  <span :class="$style.unit">{{ $t('件 ') }}</span>
                   <div>
                     (<strong>{{ うち1回接種割合.toLocaleString() }}</strong>
                     <span :class="$style.unit">%</span>)
@@ -40,7 +40,7 @@
                 <span>{{ $t('2回接種済み') }}</span>
                 <span>
                   <strong>{{ うち2回接種済み.toLocaleString() }}</strong>
-                  <span :class="$style.unit">{{ $t('件') }}</span>
+                  <span :class="$style.unit">{{ $t('件 ') }}</span>
                   <div>
                     (<strong>{{ うち2回接種割合.toLocaleString() }}</strong>
                     <span :class="$style.unit">%</span>)
