@@ -13,13 +13,25 @@ type DataType = {
               value: number
             },
             {
+              attr: 'うち1回接種割合'
+              value: number
+            },
+            {
               attr: 'うち2回接種済み'
+              value: number
+            },
+            {
+              attr: 'うち2回接種割合'
               value: number
             }
           ]
         },
         {
-          attr: '未接種'
+          attr: 'うち1回接種'
+          value: number
+        },
+        {
+          attr: 'うち2回接種'
           value: number
         }
       ]
@@ -31,8 +43,11 @@ type VaccineType = {
   人口65歳以上: number
   接種済み: number
   うち1回接種済み: number
+  うち1回接種割合: number
   うち2回接種済み: number
-  未接種: number
+  うち2回接種割合: number
+  うち1回接種: number
+  うち2回接種: number
 }
 
 interface ChildData {
@@ -78,7 +93,10 @@ export default (data: DataType) => {
     人口65歳以上: getSelectedItem(data, '人口65歳以上'),
     接種済み: getSelectedItem(data, '接種済み'),
     うち1回接種済み: getSelectedItem(data, 'うち1回接種済み'),
+    うち1回接種割合: getSelectedItem(data, 'うち1回接種割合'),
     うち2回接種済み: getSelectedItem(data, 'うち2回接種済み'),
-    未接種: getSelectedItem(data, '未接種'),
+    うち2回接種割合: getSelectedItem(data, 'うち2回接種割合'),
+    うち1回接種: getSelectedItem(data, 'うち1回接種'),
+    うち2回接種: getSelectedItem(data, 'うち2回接種'),
   } as VaccineType
 }
