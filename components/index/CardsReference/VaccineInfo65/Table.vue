@@ -2,7 +2,7 @@
   <ul :class="$style.container">
     <li :class="[$style.box, $style.parent]">
       <div :class="$style.content">
-        <span> {{ $t('65歳以上') }} ({{ $t('累計') }}) </span>
+        <span> {{ $t('65歳以上') }} </span>
         <span>
           <strong>{{ 人口65歳以上.toLocaleString() }}</strong>
           <span :class="$style.unit">{{ $t('人') }}</span>
