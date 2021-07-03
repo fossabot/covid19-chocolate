@@ -16,16 +16,7 @@
               <strong>{{
                 (うち1回接種済み + うち2回接種済み).toLocaleString()
               }}</strong>
-              <span :class="$style.unit">{{ $t('人') }}</span>
-              <div>
-                (<strong>{{
-                  (
-                    ((うち1回接種済み + うち2回接種済み) / 人口65歳以上) *
-                    100
-                  ).toFixed(2)
-                }}</strong>
-                <span :class="$style.unit">%</span>)
-              </div>
+              <span :class="$style.unit">{{ $t('件') }}</span>
             </span>
           </div>
           <ul :class="$style.group">
@@ -36,15 +27,9 @@
                 <!-- eslint-enable vue/no-v-html-->
                 <span>
                   <strong>{{ うち1回接種済み.toLocaleString() }}</strong>
-                  <span :class="$style.unit">{{ $t('人') }}</span>
+                  <span :class="$style.unit">{{ $t('件') }}</span>
                   <div>
-                    (<strong>{{
-                      (
-                        (うち1回接種済み /
-                          (うち1回接種済み + うち2回接種済み)) *
-                        100
-                      ).toFixed(2)
-                    }}</strong>
+                    (<strong>{{ うち1回接種割合.toLocaleString() }}</strong>
                     <span :class="$style.unit">%</span>)
                   </div>
                 </span>
@@ -55,47 +40,15 @@
                 <span>{{ $t('2回接種済み') }}</span>
                 <span>
                   <strong>{{ うち2回接種済み.toLocaleString() }}</strong>
-                  <span :class="$style.unit">{{ $t('人') }}</span>
+                  <span :class="$style.unit">{{ $t('件') }}</span>
                   <div>
-                    (<strong>{{
-                      (
-                        (うち2回接種済み /
-                          (うち1回接種済み + うち2回接種済み)) *
-                        100
-                      ).toFixed(2)
-                    }}</strong>
+                    (<strong>{{ うち2回接種割合.toLocaleString() }}</strong>
                     <span :class="$style.unit">%</span>)
                   </div>
                 </span>
               </div>
             </li>
           </ul>
-        </li>
-
-        <li :class="[$style.box]">
-          <div :class="$style.content">
-            <span>{{ $t('未接種') }}</span>
-            <span>
-              <strong>{{
-                (
-                  人口65歳以上 -
-                  うち1回接種済み -
-                  うち2回接種済み
-                ).toLocaleString()
-              }}</strong>
-              <span :class="$style.unit">{{ $t('人') }}</span>
-              <div>
-                (<strong>{{
-                  (
-                    ((人口65歳以上 - うち1回接種済み - うち2回接種済み) /
-                      人口65歳以上) *
-                    100
-                  ).toFixed(2)
-                }}</strong>
-                <span :class="$style.unit">%</span>)
-              </div>
-            </span>
-          </div>
         </li>
       </ul>
     </li>
@@ -116,7 +69,15 @@ export default Vue.extend({
       type: Number,
       required: true,
     },
+    うち1回接種割合: {
+      type: Number,
+      required: true,
+    },
     うち2回接種済み: {
+      type: Number,
+      required: true,
+    },
+    うち2回接種割合: {
       type: Number,
       required: true,
     },
