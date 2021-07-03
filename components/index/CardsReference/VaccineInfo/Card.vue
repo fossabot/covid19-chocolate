@@ -1,9 +1,9 @@
 <template>
-  <v-col cols="12" md="6" class="DataCard VaccineInfo65Card">
+  <v-col cols="12" md="6" class="DataCard VaccineInfoCard">
     <client-only>
       <data-view
-        :title="$t('65歳以上のワクチン接種件数')"
-        :title-id="'vaccine-info-65'"
+        :title="$t('新型コロナウイルスワクチン接種者数')"
+        :title-id="'vaccine-info'"
         :date="date"
       >
         <template #additionalDescription>
@@ -12,24 +12,10 @@
             <li>
               {{ $t('このデータの更新は、不定期である') }}
             </li>
-            <li>
-              {{
-                $t(
-                  'ワクチン接種記録システム（VRS）のデータを基に、接種券の発行市町村別に集計している'
-                )
-              }}
-            </li>
-            <li>
-              {{
-                $t(
-                  '総務省が公表している「住民基本台帳に基づく人口、人口動態及び世帯数」内の「【統計】令和2年住民基本台帳年齢階級別人口」を基に高齢者の全人口を分母にし、接種率を出している'
-                )
-              }}
-            </li>
           </ul>
         </template>
         <vaccine-table
-          :aria-label="$t('65歳以上のワクチン接種件数')"
+          :aria-label="$t('新型コロナウイルスワクチン接種者数')"
           v-bind="vaccine"
         />
       </data-view>
@@ -42,7 +28,7 @@ import dayjs from 'dayjs'
 
 import DataView from '@/components/index/_shared/DataView.vue'
 // table タグとの衝突を避けるため VaccineTable とする
-import VaccineTable from '@/components/index/CardsReference/VaccineInfo65/Table.vue'
+import VaccineTable from '@/components/index/CardsReference/VaccineInfo/Table.vue'
 import Data from '@/data/vaccine.json'
 import formatVaccine from '@/utils/formatVaccine'
 
@@ -53,7 +39,7 @@ const options = {
   },
   data() {
     const mainSummary = Data.main_summary
-    // 65歳以上のワクチン接種件数
+    // 新型コロナウイルスワクチン接種者数
     const vaccine = formatVaccine(mainSummary)
 
     const date = dayjs(mainSummary.children[0].date).format('YYYY/MM/DD HH:mm')
