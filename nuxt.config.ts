@@ -224,6 +224,7 @@ const config: NuxtConfig = {
         '/cards/deaths-by-death-date',
         '/cards/number-of-confirmed-cases-by-age',
         '/cards/tested-number',
+        '/cards/vaccine-info',
         '/cards/vaccine-info-65',
       ]
       const localizedPages = locales

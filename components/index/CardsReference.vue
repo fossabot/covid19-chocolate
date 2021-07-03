@@ -14,15 +14,38 @@
             {{ $t('相模原市ワクチン接種web予約') }}
           </app-link>
         </li>
-        <br />
-        <p>
-          {{
-            $t(
-              '→ 国が設置する「大規模接種センター」で接種を希望される方は次のページをご確認ください。'
-            )
-          }}
-        </p>
+        <li>
+          <app-link
+            to="https://www.pref.kanagawa.jp/docs/ga4/covid19/vaccine.html"
+          >
+            {{ $t('【神奈川県】新型コロナワクチンの接種について') }}
+          </app-link>
+        </li>
       </ul>
+      <br />
+      <p>
+        {{
+          $t(
+            '※基礎疾患を有する方として予約するためには、事前に申し出が必要です。'
+          )
+        }}
+      </p>
+      <ul>
+        <li>
+          <app-link
+            to="https://www.city.sagamihara.kanagawa.jp/kurashi/kenko/kansenyobo/1019910/1022588/1023639.html"
+          >
+            {{ $t('基礎疾患を有する方への対応について') }}
+          </app-link>
+        </li>
+      </ul>
+      <p>
+        {{
+          $t(
+            '→ 国が設置する「大規模接種センター」で接種を希望される方は次のページをご確認ください。'
+          )
+        }}
+      </p>
       <ul>
         <li>
           <app-link
@@ -51,6 +74,8 @@ import StaticCard from '@/components/_shared/StaticCard.vue'
 import CardsLazyRow from '@/components/index/_shared/CardsLazyRow.vue'
 
 // モニタリング項目
+const VaccineInfoCard = () =>
+  import('@/components/index/CardsReference/VaccineInfo/Card.vue')
 const VaccineInfo65Card = () =>
   import('@/components/index/CardsReference/VaccineInfo65/Card.vue')
 /* eslint-enable simple-import-sort/imports */
@@ -63,7 +88,7 @@ export default Vue.extend({
   },
   data() {
     return {
-      rows: [[VaccineInfo65Card]],
+      rows: [[VaccineInfoCard, VaccineInfo65Card]],
     }
   },
 })
