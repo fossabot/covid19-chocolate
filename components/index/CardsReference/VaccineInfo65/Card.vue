@@ -2,7 +2,7 @@
   <v-col cols="12" md="6" class="DataCard VaccineInfo65Card">
     <client-only>
       <data-view
-        :title="$t('65歳以上のワクチン接種状況')"
+        :title="$t('65歳以上のワクチン接種件数')"
         :title-id="'vaccine-info-65'"
         :date="date"
       >
@@ -29,7 +29,7 @@
           </ul>
         </template>
         <vaccine-table
-          :aria-label="$t('65歳以上のワクチン接種状況')"
+          :aria-label="$t('65歳以上のワクチン接種件数')"
           v-bind="vaccine"
         />
       </data-view>
@@ -53,7 +53,7 @@ const options = {
   },
   data() {
     const mainSummary = Data.main_summary
-    // 65歳以上のワクチン接種状況
+    // 65歳以上のワクチン接種件数
     const vaccine = formatVaccine(mainSummary)
 
     const date = dayjs(mainSummary.children[0].date).format('YYYY/MM/DD HH:mm')
