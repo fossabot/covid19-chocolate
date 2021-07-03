@@ -16,7 +16,7 @@
               <strong>{{
                 (うち1回接種済み + うち2回接種済み).toLocaleString()
               }}</strong>
-              <span :class="$style.unit">{{ $t('件') }}</span>
+              <span :class="$style.unit">{{ $t('件 ') }}</span>
             </span>
           </div>
           <ul :class="$style.group">
