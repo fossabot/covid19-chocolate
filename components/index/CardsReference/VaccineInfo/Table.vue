@@ -6,12 +6,6 @@
         <span>
           <strong>{{ うち2回接種.toLocaleString() }}</strong>
           <span :class="$style.unit">{{ $t('人') }}</span>
-          <div>
-            (<strong>{{
-              ((うち2回接種 / (うち2回接種 + うち1回接種)) * 100).toFixed(2)
-            }}</strong>
-            <span :class="$style.unit">%</span>)
-          </div>
         </span>
       </div>
     </li>
@@ -21,12 +15,6 @@
         <span>
           <strong>{{ うち1回接種.toLocaleString() }}</strong>
           <span :class="$style.unit">{{ $t('人') }}</span>
-          <div>
-            (<strong>{{
-              ((うち2回接種 / (うち1回接種 + うち2回接種)) * 100).toFixed(2)
-            }}</strong>
-            <span :class="$style.unit">%</span>)
-          </div>
         </span>
       </div>
     </li>
