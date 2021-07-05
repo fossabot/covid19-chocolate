@@ -1999,12 +1999,16 @@
         },
         {
             "diagnosed_date": "2021-07-01",
-            "count": 12
+            "count": 20
         },
         {
             "diagnosed_date": "2021-07-02",
-            "count": 4
+            "count": 14
+        },
+        {
+            "diagnosed_date": "2021-07-03",
+            "count": 10
         }
     ],
-    "date": "2021\/07\/03 18:00"
+    "date": "2021\/07\/05 18:00"
 }
