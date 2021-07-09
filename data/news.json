@@ -2,9 +2,15 @@
     "newsItems": [
 
         {
+            "date": "2021\/07\/09",
+            "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/07\/0709.pdf",
+            "text": "新型コロナウイルス感染症による新たな患者の確認(4681～4738例目)及び患者の死亡について （PDF 181.8KB）"
+        },
+
+        {
             "date": "2021\/07\/08",
-            "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/07\/0708.pdf",
-            "text": "新型コロナウイルス感染症による新たな患者の確認(4645～4680例目)について （PDF 334.9KB）"
+            "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/07\/0708_02.pdf",
+            "text": "新型コロナウイルス感染症に係るまん延防止等重点措置の延長に対する市長コメント （PDF 323.0KB）"
         },
 
         {
@@ -23,24 +29,6 @@
             "date": "2021\/07\/01",
             "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/shisei\/koho\/1019175.html",
             "text": "イベント中止等のお知らせ"
-        },
-
-        {
-            "date": "2021\/06\/29",
-            "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/06\/0629_02.pdf",
-            "text": "集団接種会場における冷蔵庫内の温度上昇に伴う新型コロナウイルスワクチンの廃棄について （PDF 219.8KB）"
-        },
-
-        {
-            "date": "2021\/06\/25",
-            "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/06\/0625_02.pdf",
-            "text": "新型コロナウイルスワクチン接種の予約受付等について （PDF 198.1KB）"
-        },
-
-        {
-            "date": "2021\/06\/25",
-            "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/06\/0625_03.pdf",
-            "text": "新型コロナウイルスワクチン接種予約に係る二重予約について （PDF 204.3KB）"
         }
     ]
 }
