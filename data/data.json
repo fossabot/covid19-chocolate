@@ -2050,52 +2050,52 @@
             {
                 "attr": "陽性患者数",
                 "date": "2021\/07\/12 09:30",
-                "value": 4675,
+                "value": 4807,
                 "children": [
                     {
                         "attr": "治療中",
-                        "value": 171,
+                        "value": 260,
                         "children": [
                           
                             {
                                 "attr": "医療機関",
-                                "value": 62
+                                "value": 85
                             },
                             {
                                 "attr": "宿泊療養",
-                                "value": 7
+                                "value": 23
                             },
                             {
                                 "attr": "自宅療養",
-                                "value": 102
+                                "value": 152
                             }
                         ]
                     },
                     {
                         "attr": "死亡",
-                        "value": 74
+                        "value": 76
                     },
                     {
                         "attr": "回復",
-                        "value": 4430
+                        "value": 4471
                     },
                     {
                         "attr": "市内在住",
-                        "value": 4206,
+                        "value": 4335,
                         "children": [
                             {
                                 "attr": "市外在住",
-                                "value": 469
+                                "value": 472
                             }
                         ]
                     },
                     {
                         "attr": "男性",
-                        "value": 2470,
+                        "value": 2560,
                         "children": [
                             {
                                 "attr": "女性",
-                                "value": 2205
+                                "value": 2247
                             }
                         ]
                     }
@@ -2112,28 +2112,28 @@
                 "area": "相模原市",
                 "label": "緑区",
                 "ruby": "みどりく",
-                "count": 857
+                "count": 901
             },
             {
                 "code": 131031,
                 "area": "相模原市",
                 "label": "中央区",
                 "ruby": "ちゅうおうく",
-                "count": 1571
+                "count": 1704
             },
             {
                 "code": 131032,
                 "area": "相模原市",
                 "label": "南区",
                 "ruby": "みなみく",
-                "count": 1683
+                "count": 1731
             },
             {
                 "code": null,
                 "area": null,
                 "label": "市外",
                 "ruby": null,
-                "count": 466
+                "count": 471
             },
             {
                 "code": null,
