@@ -29,7 +29,7 @@ import TestedNumberCard from '@/components/index/CardsReference/TestedNumber/Car
 // 新型コロナウイルスワクチン接種者数
 import VaccineInfoCard from '@/components/index/CardsReference/VaccineInfo/Card.vue'
 // 65歳以上のワクチン接種状況
-import VaccineInfo65Card from '@/components/index/CardsReference/VaccineInfo65/Card.vue'
+import VaccinationCard from '@/components/index/CardsReference/VaccineInfo65/Card.vue'
 
 import { Vue, Component } from 'nuxt-property-decorator'
 import { getLinksLanguageAlternative } from '@/utils/i18nUtils'
@@ -52,7 +52,7 @@ import type { NuxtConfig } from '@nuxt/types'
     ConfirmedCasesByAgeCard,
     TestedNumberCard,
     VaccineInfoCard,
-    VaccineInfo65Card,
+    VaccinationCard,
   },
 })
 export default class CardContainer extends Vue implements NuxtConfig {
@@ -107,8 +107,8 @@ export default class CardContainer extends Vue implements NuxtConfig {
         cardComponent = 'vaccine-info-card'
         break
       // 65歳以上のワクチン接種状況
-      case 'vaccine-info-65':
-        cardComponent = 'vaccine-info-65-card'
+      case 'vaccination':
+        cardComponent = 'vaccination-card'
     }
     /* eslint-enable simple-import-sort/imports */
     return {
