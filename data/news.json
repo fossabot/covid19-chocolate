@@ -2,9 +2,15 @@
     "newsItems": [
 
         {
-            "date": "2021\/07\/14",
-            "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/07\/0714.pdf",
-            "text": "新型コロナウイルス感染症による新たな患者の確認(4856～4879例目)について （PDF 332.4KB）"
+            "date": "2021\/07\/15",
+            "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/07\/0715.pdf",
+            "text": "新型コロナウイルス感染症による新たな患者の確認(4880～4910例目)について （PDF 334.0KB）"
+        },
+
+        {
+            "date": "2021\/07\/15",
+            "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/07\/0715_01.pdf",
+            "text": "新型コロナウイルスワクチンの供給量減少に伴う接種体制の見直し等について （PDF 223.0KB）"
         },
 
         {
@@ -29,12 +35,6 @@
             "date": "2021\/07\/01",
             "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/07\/0701_02.pdf",
             "text": "高齢者施設の入所者に対する新型コロナウイルスワクチンの3回目の接種について （PDF 219.6KB）"
-        },
-
-        {
-            "date": "2021\/07\/01",
-            "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/shisei\/koho\/1019175.html",
-            "text": "イベント中止等のお知らせ"
         }
     ]
 }
