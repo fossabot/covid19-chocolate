@@ -1,5 +1,5 @@
 <template>
-  <v-col cols="12" md="6" class="DataCard VaccineInfo65Card">
+  <v-col cols="12" md="6" class="DataCard VaccinationCard">
     <client-only>
       <chart
         :title="$t('ワクチン接種回数（高齢者・累計）')"
