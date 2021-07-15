@@ -1,10 +1,22 @@
 <template>
   <v-col cols="12" md="6" class="DataCard VaccineInfo65Card">
     <client-only>
-      <data-view
-        :title="$t('65歳以上のワクチン接種件数')"
-        :title-id="'vaccine-info-65'"
+      <chart
+        :title="$t('ワクチン接種回数（高齢者・累計）')"
+        title-id="vaccine-info-65"
+        :info-titles="[
+          $t('接種回数（１回目・累計）'),
+          $t('接種回数（２回目・累計）'),
+        ]"
+        chart-id="vaccination-chart"
+        :chart-data="vaccinationData.chartData"
+        :get-formatter="getFormatter"
         :date="date"
+        :labels="vaccinationData.labels"
+        :periods="vaccinationLabels"
+        :data-labels="chartLabels"
+        :last-period="vaccinationData.lastPeriod"
+        :unit="$t('人')"
       >
         <template #additionalDescription>
           <span>{{ $t('（注）') }}</span>
@@ -28,55 +40,109 @@
             </li>
           </ul>
         </template>
-        <vaccine-table
-          :aria-label="$t('65歳以上のワクチン接種件数')"
-          v-bind="vaccine"
-        />
-      </data-view>
+      </chart>
     </client-only>
   </v-col>
 </template>
 
-<script>
+<script lang="ts">
 import dayjs from 'dayjs'
+import duration from 'dayjs/plugin/duration'
+import Vue from 'vue'
 
-import DataView from '@/components/index/_shared/DataView.vue'
-// table タグとの衝突を避けるため VaccineTable とする
-import VaccineTable from '@/components/index/CardsReference/VaccineInfo65/Table.vue'
-import Data from '@/data/vaccine.json'
-import formatVaccine from '@/utils/formatVaccine'
+import Chart from '@/components/index/CardsReference/Vaccination/Chart.vue'
+import {
+  Dataset as IVaccinationDataset,
+  Period as IVaccinationPeriod,
+  Vaccination as IVaccination,
+} from '@/libraries/auto_generated/data_converter/convertVaccination'
+import { getNumberToLocaleStringFunction } from '@/utils/monitoringStatusValueFormatters'
 
-const options = {
+dayjs.extend(duration)
+
+type Data = {
+  chartLabels: string[]
+  getFormatter: () => (d: number) => string | undefined
+}
+type Methods = {
+  getWeekEndLabel: (end: Date) => string
+}
+type Computed = {
+  date: string
+  vaccinationLabels: string[]
+  vaccinationDatasets: IVaccinationDataset[]
+  vaccinationData: {
+    lastPeriod: IVaccinationPeriod
+    labels: Date[]
+    chartData: number[][]
+  }
+  vaccination: IVaccination
+}
+type Props = {}
+
+export default Vue.extend<Data, Methods, Computed, Props>({
   components: {
-    DataView,
-    VaccineTable,
+    Chart,
   },
   data() {
-    const mainSummary = Data.main_summary
-    // 65歳以上のワクチン接種件数
-    const vaccine = formatVaccine(mainSummary)
+    const chartLabels = [
+      this.$t('接種回数（１回目・累計）') as string,
+      this.$t('接種回数（２回目・累計）') as string,
+    ]
 
-    const date = dayjs(mainSummary.children[0].date).format('YYYY/MM/DD HH:mm')
+    const getFormatter = () => {
+      return getNumberToLocaleStringFunction()
+    }
 
     return {
-      vaccine,
-      date,
+      chartLabels,
+      getFormatter,
     }
   },
-}
+  computed: {
+    date() {
+      return this.vaccination.date
+    },
+    vaccinationLabels() {
+      return this.vaccinationDatasets.map((dataset) => {
+        const { period } = dataset
+        const { end } = period
+        return this.getWeekEndLabel(end)
+      })
+    },
+    vaccinationDatasets() {
+      return this.vaccination.datasets
+    },
+    vaccinationData() {
+      const datasets = this.vaccination.datasets
+      const lastPeriod = datasets.slice(-1)[0].period
+      const labels = datasets.map((d: IVaccinationDataset) => d.period.end)
+      const cumulative1StDose: number[] = datasets.map(
+        (d: IVaccinationDataset) => d.data.cumulative1StDose
+      )
+      const cumulative2NdDose: number[] = datasets.map(
+        (d: IVaccinationDataset) => d.data.cumulative2NdDose
+      )
+      const chartData: number[][] = [cumulative1StDose, cumulative2NdDose]
 
-export default options
+      return {
+        lastPeriod,
+        labels,
+        chartData,
+      }
+    },
+    vaccination() {
+      return this.$store.state.vaccination
+    },
+  },
+  methods: {
+    /**
+     * 表の横軸に表示する、「~MM/DD」形式のラベルを取得する
+     */
+    getWeekEndLabel(end: Date) {
+      const to = this.$d(dayjs(end).toDate(), 'dateWithoutYear')
+      return `${to}`
+    },
+  },
+})
 </script>
-
-<style lang="scss" module>
-.button {
-  margin: 20px 0 0;
-  color: $green-1 !important;
-  text-decoration: none;
-  &:hover {
-    color: $white !important;
-  }
-
-  @include button-text('sm');
-}
-</style>
