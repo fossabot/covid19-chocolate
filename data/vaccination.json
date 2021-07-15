@@ -930,6 +930,14 @@
                 "cumulative_1st_dose": 2409468,
                 "cumulative_2nd_dose": 1620523
             }
-        }
+        },
+        {
+             "attr": "うち1回接種",
+             "value": 186273
+        },
+        {
+             "attr": "うち2回接種",
+             "value": 82836
+         }
     ]
 }
