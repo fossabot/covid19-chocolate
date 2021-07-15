@@ -50,7 +50,7 @@ import dayjs from 'dayjs'
 import duration from 'dayjs/plugin/duration'
 import Vue from 'vue'
 
-import Chart from '@/components/index/CardsReference/Vaccination/Chart.vue'
+import Chart from '@/components/index/CardsReference/VaccineInfo65/Chart.vue'
 import {
   Dataset as IVaccinationDataset,
   Period as IVaccinationPeriod,
