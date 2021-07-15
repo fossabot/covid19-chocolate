@@ -18,23 +18,16 @@
         :last-period="vaccinationData.lastPeriod"
         :unit="$t('人')"
       >
+        <template #description>
+          <span>{{ $t('対象者 約311万人') }}</span>
+        </template>
         <template #additionalDescription>
           <span>{{ $t('（注）') }}</span>
           <ul>
             <li>
-              {{ $t('土曜日、日曜日、祝日は更新しない') }}
-            </li>
-            <li>
               {{
                 $t(
-                  'ワクチン接種記録システム（VRS）のデータを基に、接種券の発行市町村別に集計している'
-                )
-              }}
-            </li>
-            <li>
-              {{
-                $t(
-                  '総務省が公表している「住民基本台帳に基づく人口、人口動態及び世帯数」内の「【統計】令和2年住民基本台帳年齢階級別人口」を基に高齢者の全人口を分母にし、接種率を出している'
+                  'ワクチン接種記録システム（VRS）への報告を居住地の都道府県別に国が集計し、公表したものに基づき作成（本データは過日の数値が修正されることがある）'
                 )
               }}
             </li>
@@ -141,7 +134,7 @@ export default Vue.extend<Data, Methods, Computed, Props>({
      */
     getWeekEndLabel(end: Date) {
       const to = this.$d(dayjs(end).toDate(), 'dateWithoutYear')
-      return `${to}`
+      return `~${to}`
     },
   },
 })
