@@ -2,11 +2,11 @@
   <v-col cols="12" md="6" class="DataCard VaccinationCard">
     <client-only>
       <chart
-        :title="$t('ワクチン接種回数（高齢者・累計）')"
+        :title="$t('【開発中】ワクチン接種回数（高齢者・累計）')"
         title-id="vaccination"
         :info-titles="[
-          $t('接種回数（１回目・累計）'),
-          $t('接種回数（２回目・累計）'),
+          $t('接種回数（１回目)'),
+          $t('接種回数（２回目）'),
         ]"
         chart-id="vaccination-chart"
         :chart-data="vaccinationData.chartData"
@@ -19,11 +19,21 @@
         :unit="$t('人')"
       >
         <template #description>
-          <span>{{ $t('対象者 約311万人') }}</span>
+          <span>{{ $t('対象者 約○○万人') }}</span>
         </template>
         <template #additionalDescription>
           <span>{{ $t('（注）') }}</span>
           <ul>
+            <li>
+              {{ $t('このグラフは、開発中のものである') }}
+            </li>
+            <li>
+              {{
+                $t(
+                  'グラフタイトルやグラフ内の数値、注釈は、未確定のものであり、外部への混乱を防ぐためこの画面の共有の際は注意すること'
+                )
+              }}
+            </li>
             <li>
               {{
                 $t(
