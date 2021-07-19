@@ -1,6 +1,6 @@
 <template>
   <div class="About">
-    <page-header :title="$t('数値の入力ミスに関するお知らせ(2021年7月20日)')" />
+    <page-header :title="$t('【開発中】数値の入力ミスに関するお知らせ(2021年7月20日)')" />
     <static-card>
       {{
         $t(
