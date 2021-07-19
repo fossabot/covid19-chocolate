@@ -1,6 +1,6 @@
 <template>
   <div class="About">
-    <page-header :title="$t('数値の入力ミスに関するお知らせ')" />
+    <page-header :title="$t('【開発中】数値の入力ミスに関するお知らせ')" />
     <static-card>
       <app-link
         to="https://sagamihara-stopcovid19.com/data/0720"
