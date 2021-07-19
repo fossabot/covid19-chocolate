@@ -3,7 +3,7 @@
     <v-lazy>
       <static-info
         class="Data"
-        url=""
+        url="https://forms.gle/y8Luk8Lq5K9ngtC16"
         :text="
           $t('当サイトの数値に問題があれば\nご報告ください')
         "
