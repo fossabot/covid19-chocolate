@@ -9,33 +9,29 @@
       </app-link>
       <br />
       <br />
-        {{
-          $t(
-            '当サイトにて数値入力ミスを発見した場合、下記リンクよりご報告ください。'
-          )
-        }}<br />
+      {{
+        $t(
+          '当サイトにて数値入力ミスを発見した場合、下記リンクよりご報告ください。'
+        )
+      }}<br />
       <br />
-      <app-link
-        to="https://forms.gle/YoPFs1u8h9dScUjZ9"
-        :icon-size="12"
-        >{{ $t('数値入力ミスに関する報告フォーム(外部サービスを使用しています)') }}
+      <app-link to="https://forms.gle/YoPFs1u8h9dScUjZ9" :icon-size="12"
+        >{{
+          $t('数値入力ミスに関する報告フォーム(外部サービスを使用しています)')
+        }}
       </app-link>
       <br />
-      <v-divider></v-divider>
+      <v-divider />
       <br />
-        {{
-          $t(
-            'このページに関する問い合わせは、'
-          )
-        }}
+      {{ $t('このページに関する問い合わせは、') }}
       <a href="mailto:contact@sagamihara-stopcovid19.com"
         >contact@sagamihara-stopcovid19.com</a
       >
-        {{
-          $t(
-            'までお願いします。(問い合わせの際は、氏名と共にお問い合わせ内容を記入してください。)'
-          )
-        }}
+      {{
+        $t(
+          'までお願いします。(問い合わせの際は、氏名と共にお問い合わせ内容を記入してください。)'
+        )
+      }}
     </static-card>
   </div>
 </template>
