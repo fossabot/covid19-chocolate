@@ -152,13 +152,6 @@ export default Vue.extend({
   head(): MetaInfo {
     return {
       title: this.$t('数値の入力ミスに関するお知らせ (2021年7月20日発表)') as string,
-      meta: [ 
-        {      
-          hid: "robots",
-          name: "robots",
-          content: "noindex"
-        }
-      ],
     }
   },
   methods: {
