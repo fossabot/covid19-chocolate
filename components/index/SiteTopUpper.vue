@@ -4,7 +4,7 @@
     <detail-a />
     <div class="row mb-4">
       <consultation />
-      <data />
+      <fix />
     </div>
   </div>
 </template>
@@ -12,7 +12,7 @@
 <script lang="ts">
 import Vue from 'vue'
 
-import Data from '@/components/index/SiteTopUpper/Data.vue'
+import Fix from '@/components/index/SiteTopUpper/Data.vue'
 import Consultation from '@/components/index/SiteTopUpper/Consultation.vue'
 import DetailA from '@/components/index/SiteTopUpper/DetailA.vue'
 import WhatsNew from '@/components/index/SiteTopUpper/WhatsNew.vue'
@@ -34,7 +34,7 @@ export default Vue.extend<Data, Methods, Computed, Props>({
     WhatsNew,
     DetailA,
     Consultation,
-    Data,
+    Fix,
   },
   computed: {
     newsItems() {
