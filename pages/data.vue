@@ -57,13 +57,6 @@ export default Vue.extend({
   head(): MetaInfo {
     return {
       title: this.$t('数値の入力ミスに関するお知らせ') as string,
-      meta: [ 
-        {      
-          hid: "robots",
-          name: "robots",
-          content: "noindex"
-        }
-      ],
     }
   },
   methods: {
