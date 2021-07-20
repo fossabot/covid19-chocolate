@@ -17,30 +17,26 @@
       >
         <template #description>
           <span>{{ $t('対象者 184,180人') }}</span>
-            <span>
-              {{
-                $t('１回目の接種割合は、{p1}％', {
+          <span>
+            {{
+              $t('１回目の接種割合は、{p1}％', {
                 p1: p1,
-                })
-              }}
-            </span>
-            <span>
-              {{
-                $t('２回目の接種割合は、{p2}％', {
+              })
+            }}
+          </span>
+          <span>
+            {{
+              $t('２回目の接種割合は、{p2}％', {
                 p2: p2,
-                })
-              }}
-            </span>
+              })
+            }}
+          </span>
         </template>
         <template #additionalDescription>
           <span>{{ $t('（注）') }}</span>
           <ul>
             <li>
-              {{
-                $t(
-                  '土曜日、日曜日、祝日は更新しない'
-                )
-              }}
+              {{ $t('土曜日、日曜日、祝日は更新しない') }}
             </li>
             <li>
               {{
