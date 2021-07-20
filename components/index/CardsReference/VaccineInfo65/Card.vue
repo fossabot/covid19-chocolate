@@ -16,7 +16,7 @@
         :unit="$t('件')"
       >
         <template #description>
-          <span>{{ $t('対象者 184180人') }}</span>
+          <span>{{ $t('対象者 184,180人') }}</span>
         </template>
         <template #additionalDescription>
           <span>{{ $t('（注）') }}</span>
