@@ -13,7 +13,7 @@
         :periods="vaccinationLabels"
         :data-labels="chartLabels"
         :last-period="vaccinationData.lastPeriod"
-        :unit="$t('件')"
+        :unit="$t(' 件')"
       >
         <template #description>
           <span>{{ $t('対象者 184,180人') }}</span>
