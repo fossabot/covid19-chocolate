@@ -16,7 +16,7 @@
         :unit="$t('人')"
       >
         <template #description>
-          <span>{{ $t('対象者 約○○万人') }}</span>
+          <span>{{ $t('対象者 184180人') }}</span>
         </template>
         <template #additionalDescription>
           <span>{{ $t('（注）') }}</span>
@@ -86,8 +86,8 @@ export default Vue.extend<Data, Methods, Computed, Props>({
   },
   data() {
     const chartLabels = [
-      this.$t('接種回数（１回目・累計）') as string,
-      this.$t('接種回数（２回目・累計）') as string,
+      this.$t('接種回数（１回目）') as string,
+      this.$t('接種回数（２回目）') as string,
     ]
 
     const getFormatter = () => {
