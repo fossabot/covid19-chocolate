@@ -2,7 +2,10 @@
   <div class="SiteTopUpper">
     <whats-new :items="newsItems" :is-emergency="true" />
     <detail-a />
-    <consultation />
+    <div class="row mb-4">
+      <consultation />
+      <fix />
+    </div>
   </div>
 </template>
 
@@ -11,6 +14,7 @@ import Vue from 'vue'
 
 import Consultation from '@/components/index/SiteTopUpper/Consultation.vue'
 import DetailA from '@/components/index/SiteTopUpper/DetailA.vue'
+import Fix from '@/components/index/SiteTopUpper/Fix.vue'
 import WhatsNew from '@/components/index/SiteTopUpper/WhatsNew.vue'
 import {
   News as INews,
@@ -30,6 +34,7 @@ export default Vue.extend<Data, Methods, Computed, Props>({
     WhatsNew,
     DetailA,
     Consultation,
+    Fix,
   },
   computed: {
     newsItems() {
