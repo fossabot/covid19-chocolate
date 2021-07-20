@@ -2,9 +2,9 @@
   <v-col cols="12" md="6" class="DataCard VaccinationCard">
     <client-only>
       <chart
-        :title="$t('【開発中】ワクチン接種回数（高齢者・累計）')"
+        :title="$t('ワクチン接種件数（高齢者・累計）')"
         title-id="vaccination"
-        :info-titles="[$t('接種回数（１回目)'), $t('接種回数（２回目）')]"
+        :info-titles="[$t('接種件数（１回目)'), $t('接種件数（２回目）')]"
         chart-id="vaccination-chart"
         :chart-data="vaccinationData.chartData"
         :get-formatter="getFormatter"
@@ -13,7 +13,7 @@
         :periods="vaccinationLabels"
         :data-labels="chartLabels"
         :last-period="vaccinationData.lastPeriod"
-        :unit="$t('人')"
+        :unit="$t('件')"
       >
         <template #description>
           <span>{{ $t('対象者 184180人') }}</span>
@@ -86,8 +86,8 @@ export default Vue.extend<Data, Methods, Computed, Props>({
   },
   data() {
     const chartLabels = [
-      this.$t('接種回数（１回目）') as string,
-      this.$t('接種回数（２回目）') as string,
+      this.$t('接種件数（１回目）') as string,
+      this.$t('接種件数（２回目）') as string,
     ]
 
     const getFormatter = () => {
