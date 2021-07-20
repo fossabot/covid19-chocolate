@@ -1679,7 +1679,7 @@
         },
         {
             "diagnosed_date": "2021-04-12",
-            "count": 5
+            "count": 4
         },
         {
             "diagnosed_date": "2021-04-13",
@@ -1699,7 +1699,7 @@
         },
         {
             "diagnosed_date": "2021-04-17",
-            "count": 18
+            "count": 12
         },
         {
             "diagnosed_date": "2021-04-18",
@@ -2063,8 +2063,16 @@
         },
         {
             "diagnosed_date": "2021-07-17",
-            "count": 38
+            "count": 39
+        },
+        {
+            "diagnosed_date": "2021-07-18",
+            "count": 4
+        },
+        {
+            "diagnosed_date": "2021-07-19",
+            "count": 4
         }
     ],
-    "date": "2021\/07\/19 18:00"
+    "date": "2021\/07\/20 18:00"
 }
