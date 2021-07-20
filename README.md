@@ -6,6 +6,8 @@
 [![Auto Tweet Generater](https://github.com/Murayu0225/covid19-chocolate/actions/workflows/Auto-Tweet-gene.yml/badge.svg?branch=data)](https://github.com/Murayu0225/covid19-chocolate/actions/workflows/Auto-Tweet-gene.yml) <br>
 [相模原市　新型コロナウイルス対策サイト](https://sagamihara-stopcovid19.com)
 
+このサイトは、東京都のリポジトリをforkしたものです。 [Fork元](https://github.com/tokyo-metropolitan-gov/covid19)
+
 ## 貢献の仕方
 Issues にあるいろいろな修正にご協力いただけると嬉しいです。
 

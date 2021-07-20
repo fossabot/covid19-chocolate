@@ -2,12 +2,10 @@
   <v-col cols="12" md="6">
     <v-lazy>
       <static-info
-        class="Consultation"
-        url="https://www.city.sagamihara.kanagawa.jp/shisei/koho/1019896.html"
-        :text="
-          $t('自分や家族の症状に不安や心配があれば\nまずは電話相談をどうぞ')
-        "
-        :btn-text="$t('相談の手順を見る')"
+        class="Data"
+        url="https://forms.gle/y8Luk8Lq5K9ngtC16"
+        :text="$t('当サイトの数値に問題があれば\nご報告ください')"
+        :btn-text="$t('数値ミスを報告する')"
       />
     </v-lazy>
   </v-col>
@@ -31,7 +29,7 @@ export default Vue.extend<Data, Methods, Computed, Props>({
 </script>
 
 <style lang="scss" scoped>
-.Consultation {
+.Data {
   padding: 3px 18px;
   min-height: 5.5em;
 }
