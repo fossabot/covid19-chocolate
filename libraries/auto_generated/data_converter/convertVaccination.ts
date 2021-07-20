@@ -11,7 +11,7 @@
 export interface Vaccination {
     date:     string;
     p1:       number;
-    p2:       number
+    p2:       number;
     datasets: Dataset[];
 }
 
