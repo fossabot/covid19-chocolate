@@ -10,6 +10,8 @@
 // test comment: Vaccination
 export interface Vaccination {
     date:     string;
+    p1:       number;
+    p2:       number
     datasets: Dataset[];
 }
 
@@ -19,9 +21,9 @@ export interface Dataset {
 }
 
 /*
- * cumulative1StDose: 接種回数（1回目・累計）
+ * cumulative1StDose: 接種件数（1回目）
  *
- * cumulative2NdDose: 接種回数（2回目・累計）
+ * cumulative2NdDose: 接種件数（2回目）
 */
 export interface Data {
     cumulative1StDose: number; // 接種回数（1回目・累計）
@@ -180,6 +182,8 @@ function r(name: string) {
 const typeMap: any = {
     "Vaccination": o([
         { json: "date", js: "date", typ: "" },
+        { json: "p1", js: "p1", typ: 0 },
+        { json: "p2", js: "p2", typ: 0 },
         { json: "datasets", js: "datasets", typ: a(r("Dataset")) },
     ], false),
     "Dataset": o([
