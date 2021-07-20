@@ -22,7 +22,11 @@
           <span>{{ $t('（注）') }}</span>
           <ul>
             <li>
-              {{ $t('このグラフは、開発中のものである') }}
+              {{
+                $t('一回目の接種割合は、{p1}%', {
+                p1: p1,
+                })
+              }}
             </li>
             <li>
               {{
@@ -69,6 +73,8 @@ type Methods = {
 }
 type Computed = {
   date: string
+  p1: number
+  p2: number
   vaccinationLabels: string[]
   vaccinationDatasets: IVaccinationDataset[]
   vaccinationData: {
@@ -112,6 +118,12 @@ export default Vue.extend<Data, Methods, Computed, Props>({
     },
     vaccinationDatasets() {
       return this.vaccination.datasets
+    },
+    p1() {
+      return this.vaccination.p1
+    },
+    p2() {
+      return this.vaccination.p2
     },
     vaccinationData() {
       const datasets = this.vaccination.datasets
