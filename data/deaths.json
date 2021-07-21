@@ -1863,7 +1863,123 @@
         {
             "death_date": "2021-06-17",
             "count": 1
+        },
+        {
+            "death_date": "2021-06-18",
+            "count": 0
+        },
+        {
+            "death_date": "2021-06-19",
+            "count": 0
+        },
+        {
+            "death_date": "2021-06-20",
+            "count": 0
+        },
+        {
+            "death_date": "2021-06-21",
+            "count": 0
+        },
+        {
+            "death_date": "2021-06-22",
+            "count": 0
+        },
+        {
+            "death_date": "2021-06-23",
+            "count": 0
+        },
+        {
+            "death_date": "2021-06-24",
+            "count": 1
+        },
+        {
+            "death_date": "2021-06-25",
+            "count": 0
+        },
+        {
+            "death_date": "2021-06-26",
+            "count": 1
+        },
+        {
+            "death_date": "2021-06-27",
+            "count": 0
+        },
+        {
+            "death_date": "2021-06-28",
+            "count": 0
+        },
+        {
+            "death_date": "2021-06-29",
+            "count": 0
+        },
+        {
+            "death_date": "2021-06-30",
+            "count": 0
+        },
+        {
+            "death_date": "2021-07-01",
+            "count": 0
+        },
+        {
+            "death_date": "2021-07-02",
+            "count": 0
+        },
+        {
+            "death_date": "2021-07-03",
+            "count": 1
+        },
+        {
+            "death_date": "2021-07-04",
+            "count": 2
+        },
+        {
+            "death_date": "2021-07-05",
+            "count": 0
+        },
+        {
+            "death_date": "2021-07-06",
+            "count": 0
+        },
+        {
+            "death_date": "2021-07-07",
+            "count": 0
+        },
+        {
+            "death_date": "2021-07-08",
+            "count": 0
+        },
+        {
+            "death_date": "2021-07-09",
+            "count": 0
+        },
+        {
+            "death_date": "2021-07-10",
+            "count": 0
+        },
+        {
+            "death_date": "2021-07-11",
+            "count": 1
+        },
+        {
+            "death_date": "2021-07-12",
+            "count": 1
+        },
+        {
+            "death_date": "2021-07-13",
+            "count": 0
+        },
+        {
+            "death_date": "2021-07-14",
+            "count": 0
+        },
+        {
+            "death_date": "2021-07-15",
+            "count": 0
+        },
+        {
+            "death_date": "2021-07-16",
+            "count": 1
         }
     ],
-    "date": "2021\/06\/21 18:30"
+    "date": "2021\/07\/18 18:30"
 }
