@@ -19,7 +19,7 @@ PATHS = {
     "/cards/number-of-confirmed-cases-by-age": (959, 570),
     "/cards/tested-number": (959, 570),
     "/cards/vaccine-info": (959, 570),
-    "/cards/vaccine-info-65": (959, 570),
+    "/cards/vaccination": (959, 570),
 }
 
 options = webdriver.ChromeOptions()
