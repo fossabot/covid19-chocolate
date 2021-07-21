@@ -265,7 +265,7 @@ export default Vue.extend({
         },
         {
           title: this.$t('当サイトの稼働状況'),
-          link: 'https://sagamiharastopcivid19.statuspage.io/',
+          link: 'https://sagamihara-stopcovid19.statuspage.io/',
         },
         {
           title: this.$t(

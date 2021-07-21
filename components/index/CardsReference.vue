@@ -76,7 +76,7 @@ import CardsLazyRow from '@/components/index/_shared/CardsLazyRow.vue'
 // モニタリング項目
 const VaccineInfoCard = () =>
   import('@/components/index/CardsReference/VaccineInfo/Card.vue')
-const VaccineInfo65Card = () =>
+const VaccinationCard = () =>
   import('@/components/index/CardsReference/VaccineInfo65/Card.vue')
 /* eslint-enable simple-import-sort/imports */
 
@@ -88,7 +88,7 @@ export default Vue.extend({
   },
   data() {
     return {
-      rows: [[VaccineInfoCard, VaccineInfo65Card]],
+      rows: [[VaccineInfoCard, VaccinationCard]],
     }
   },
 })
