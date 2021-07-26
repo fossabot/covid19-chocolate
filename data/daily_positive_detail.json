@@ -2584,7 +2584,32 @@
             "diagnosed_date": "2021-07-21",
             "count": 44,
             "weekly_average_count": 29.4
+        },
+        {
+            "diagnosed_date": "2021-07-22",
+            "count": 37,
+            "weekly_average_count": 30.3
+        },
+        {
+            "diagnosed_date": "2021-07-23",
+            "count": 60,
+            "weekly_average_count": 36.7
+        },
+        {
+            "diagnosed_date": "2021-07-24",
+            "count": 58,
+            "weekly_average_count": 38.1
+        },
+        {
+            "diagnosed_date": "2021-07-25",
+            "count": 33,
+            "weekly_average_count": 38.7
+        },
+        {
+            "diagnosed_date": "2021-07-26",
+            "count": 50,
+            "weekly_average_count": 41.6
         }
     ],
-    "date": "2021\/07\/21 18:00"
+    "date": "2021\/07\/26 18:00"
 }
