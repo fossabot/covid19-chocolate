@@ -2,9 +2,15 @@
     "newsItems": [
 
         {
+            "date": "2021\/07\/26",
+            "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/07\/0726.pdf",
+            "text": "新型コロナウイルス感染症による新たな患者の確認(5274～5323例目)及び本市教職員の感染確認について （PDF 351.3KB）"
+        },
+
+        {
             "date": "2021\/07\/21",
-            "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/07\/0721.pdf",
-            "text": "新型コロナウイルス感染症による新たな患者の確認(5042～5085例目)について （PDF 337.0KB）"
+            "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/07\/0721_03.pdf",
+            "text": "新型コロナウイルスワクチン予防接種証明書(ワクチンパスポート)の発行について （PDF 200.7KB）"
         },
 
         {
@@ -29,12 +35,6 @@
             "date": "2021\/07\/05",
             "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/07\/0705_02.pdf",
             "text": "新型コロナウイルスワクチン接種を希望される75歳以上の方への対応及び臨時集団接種会場の増設等について （PDF 216.9KB）"
-        },
-
-        {
-            "date": "2021\/07\/01",
-            "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/07\/0701_02.pdf",
-            "text": "高齢者施設の入所者に対する新型コロナウイルスワクチンの3回目の接種について （PDF 219.6KB）"
         }
     ]
 }
