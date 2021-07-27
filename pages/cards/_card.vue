@@ -220,6 +220,7 @@ export default class CardContainer extends Vue implements NuxtConfig {
 <style lang="scss">
 .card-title {
   @include font-size(24);
+
   color: $gray-2;
   font-weight: normal;
   padding: 8px 12px;
