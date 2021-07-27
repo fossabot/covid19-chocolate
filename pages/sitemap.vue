@@ -107,7 +107,6 @@ import cardData from '@/assets/json/cardRoutesSettings.json'
 import AppLink from '@/components/_shared/AppLink.vue'
 import PageHeader from '@/components/_shared/PageHeader.vue'
 import StaticCard from '@/components/_shared/StaticCard.vue'
-import ParentIcon from '@/static/parent.svg'
 import { Settings } from '@/types/cardRoutesSettings'
 
 type Data = {
@@ -126,7 +125,6 @@ export default Vue.extend<Data, Methods, Computed, Props>({
     PageHeader,
     StaticCard,
     AppLink,
-    ParentIcon,
   },
   data() {
     return {
