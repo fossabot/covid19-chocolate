@@ -81,19 +81,15 @@
         </app-link>
       </h3>
       <p>
-        {{
-          $t('当サイト内における数値の入力ミスについて')
-        }}
+        {{ $t('当サイト内における数値の入力ミスについて') }}
       </p>
       <br />
       <p>
-        {{
-          $t('過去の報告')
-        }}
+        {{ $t('過去の報告') }}
       </p>
-        <app-link :to="localePath('/info/0721')" class="Sitemap-titleLink">
-          {{ $t('2021年7月21日発表分') }}
-        </app-link>
+      <app-link :to="localePath('/info/0721')" class="Sitemap-titleLink">
+        {{ $t('2021年7月21日発表分') }}
+      </app-link>
     </static-card>
   </div>
 </template>
