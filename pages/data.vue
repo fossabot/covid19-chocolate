@@ -2,11 +2,9 @@
   <div class="About">
     <page-header :title="$t('数値の入力ミスに関するお知らせ')" />
     <static-card>
-      <app-link
-        to="https://sagamihara-stopcovid19.com/info/0720"
-        :icon-size="12"
-        >{{ $t('2021年7月21日発表分 (別タブで開きます)') }}
-      </app-link>
+        <app-link :to="localePath('/info/0721')" :icon-size="12">
+          {{ $t('2021年7月21日発表分') }}
+        </app-link>
       <br />
       <br />
       {{
