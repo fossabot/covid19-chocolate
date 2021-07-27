@@ -170,7 +170,6 @@ import {
   mdiClose,
   mdiDomain,
   mdiMenu,
-  mdiNeedle,
 } from '@mdi/js'
 import Vue from 'vue'
 import { TranslateResult } from 'vue-i18n'
@@ -258,7 +257,6 @@ export default Vue.extend({
           slug: 'support-info',
         },
         {
-          iconPath: mdiNeedle,
           title: this.$t('ワクチンについて'),
           link: 'https://www.city.sagamihara.kanagawa.jp/kurashi/kenko/kansenyobo/1019910/1022588/index.html',
           slug: 'related-sites',
