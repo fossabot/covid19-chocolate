@@ -281,6 +281,10 @@ export default Vue.extend({
           title: this.$t('相模原市公式ホームページ'),
           link: 'https://www.city.sagamihara.kanagawa.jp/index.html',
         },
+        {
+          title: this.$t('サイトマップ'),
+          link: this.localePath('/sitemap'),
+        },
       ]
     },
     logoSrc(): string {
