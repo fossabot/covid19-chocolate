@@ -55,7 +55,11 @@
             <language-selector />
           </div>
         </div>
-        <menu-list :items="items" @click="$emit('close-navigation', $event)" />
+        <menu-list
+          :items="items"
+          :item-titles="itemTitles"
+          @click="$emit('close-navigation', $event)"
+        />
       </nav>
 
       <footer class="SideNavigation-Footer">
@@ -175,12 +179,17 @@ import AppLink from '@/components/_shared/AppLink.vue'
 import LanguageSelector from '@/components/_shared/SideNavigation/LanguageSelector.vue'
 import MenuList from '@/components/_shared/SideNavigation/MenuList.vue'
 
+type ItemTitle = {
+  slug: string
+  text: TranslateResult
+}
+
 type Item = {
   iconPath?: string
   svg?: string
   title: TranslateResult
   link: string
-  divider?: boolean
+  slug: string
 }
 
 export default Vue.extend({
@@ -202,88 +211,124 @@ export default Vue.extend({
     }
   },
   computed: {
+    itemTitles(): ItemTitle[] {
+      return [
+        {
+          slug: 'covid19-info',
+          text: this.$t('新型コロナウイルス感染症情報'),
+        },
+        {
+          slug: 'support-info',
+          text: this.$t('支援情報'),
+        },
+        {
+          slug: 'related-sites',
+          text: this.$t('関連サイト'),
+        },
+        {
+          slug: 'site-info',
+          text: this.$t('サイト情報'),
+        },
+      ]
+    },
     items(): Item[] {
       return [
         {
           iconPath: mdiChartTimelineVariant,
           title: this.$t('市内の最新感染動向'),
           link: this.localePath('/'),
+          slug: 'covid19-info',
         },
         {
           svg: 'CovidIcon',
           title: this.$t('新型コロナウイルス感染症が心配なときに.nav'),
           link: 'https://www.city.sagamihara.kanagawa.jp/shisei/koho/1019896.html',
+          slug: 'covid19-info',
         },
         {
           iconPath: mdiAccountMultiple,
           title: this.$t('市民の皆様へ'),
           link: 'https://www.city.sagamihara.kanagawa.jp/kurashi/kenko/kansenyobo/1019910/1020293.html',
+          slug: 'support-info',
         },
         {
           iconPath: mdiDomain,
           title: this.$t('企業の皆様・はたらく皆様へ'),
           link: this.localePath('/worker'),
+          slug: 'support-info',
         },
         {
           iconPath: mdiNeedle,
           title: this.$t('ワクチンについて'),
           link: 'https://www.city.sagamihara.kanagawa.jp/kurashi/kenko/kansenyobo/1019910/1022588/index.html',
-          divider: true,
+          slug: 'related-sites',
         },
         {
           title: this.$t('市民利用施設に関する情報'),
           link: 'https://www.city.sagamihara.kanagawa.jp/shisei/koho/1019215.html',
+          slug: 'related-sites',
         },
         {
           title: this.$t('イベントに関する情報'),
           link: 'https://www.city.sagamihara.kanagawa.jp/shisei/koho/1019175.html',
+          slug: 'related-sites',
         },
         {
           title: this.$t('相模原市医師会 新型コロナウイルス特設サイト'),
           link: 'https://www.sagamihara.kanagawa.med.or.jp/covid19',
+          slug: 'related-sites',
         },
         {
           title: this.$t('市長からのメッセージ'),
           link: 'https://www.city.sagamihara.kanagawa.jp/channel/1012225/1019894/index.html',
+          slug: 'related-sites',
         },
         {
           title: this.$t('神奈川県内の最新感染動向'),
           link: 'https://www.pref.kanagawa.jp/osirase/1369/',
-          divider: true,
+          slug: 'related-sites',
+        },
+        {
+          title: this.$t('相模原市公式ホームページ'),
+          link: 'https://www.city.sagamihara.kanagawa.jp/index.html',
+          slug: 'related-sites',
         },
         {
           title: this.$t('お問い合わせ先一覧'),
           link: this.localePath('/contacts'),
+          slug: 'site-info',
         },
         {
           title: this.$t('当サイトの開発情報'),
           link: 'https://note.com/murayu0225/m/m6c7a40a8fcf9',
+          slug: 'site-info',
         },
         {
           title: this.$t('当サイトにおける数値入力ミスについて'),
           link: this.localePath('/data'),
+          slug: 'site-info',
         },
         {
           title: this.$t('当サイトの稼働状況'),
           link: 'https://sagamihara-stopcovid19.statuspage.io/',
+          slug: 'site-info',
         },
         {
           title: this.$t(
             '改善・アンケートフォームはこちら（外部サービスを使用しています）'
           ),
           link: 'https://forms.gle/Vf9ZwjZq7aFjhzjCA',
+          slug: 'site-info',
         },
         {
           title: this.$t('当サイトについて'),
           link: this.localePath('/about'),
-        },
-        {
-          title: this.$t('相模原市公式ホームページ'),
-          link: 'https://www.city.sagamihara.kanagawa.jp/index.html',
+          slug: 'site-info',
         },
         {
           title: this.$t('サイトマップ'),
           link: this.localePath('/sitemap'),
+          slug: 'site-info',
         },
       ]
     },
@@ -402,7 +447,7 @@ export default Vue.extend({
 
 .SideNavigation-HeaderTitle {
   width: 100%;
-  color: #707070;
+  color: $gray-3;
   font-weight: 600;
   @include font-size(13);
   @include largerThan($small) {
