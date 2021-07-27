@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/zh-tw/cards/vaccine-info", {data:[{}],fetch:{},mutations:[]});
