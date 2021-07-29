@@ -1795,7 +1795,7 @@
         },
         {
             "diagnosed_date": "2021-05-11",
-            "count": 34
+            "count": 35
         },
         {
             "diagnosed_date": "2021-05-12",
@@ -2047,7 +2047,7 @@
         },
         {
             "diagnosed_date": "2021-07-13",
-            "count": 44
+            "count": 42
         },
         {
             "diagnosed_date": "2021-07-14",
@@ -2063,16 +2063,44 @@
         },
         {
             "diagnosed_date": "2021-07-17",
-            "count": 39
+            "count": 40
         },
         {
             "diagnosed_date": "2021-07-18",
-            "count": 4
+            "count": 19
         },
         {
             "diagnosed_date": "2021-07-19",
-            "count": 4
+            "count": 34
+        },
+        {
+            "diagnosed_date": "2021-07-20",
+            "count": 55
+        },
+        {
+            "diagnosed_date": "2021-07-21",
+            "count": 43
+        },
+        {
+            "diagnosed_date": "2021-07-22",
+            "count": 37
+        },
+        {
+            "diagnosed_date": "2021-07-23",
+            "count": 33
+        },
+        {
+            "diagnosed_date": "2021-07-24",
+            "count": 46
+        },
+        {
+            "diagnosed_date": "2021-07-25",
+            "count": 40
+        },
+        {
+            "diagnosed_date": "2021-07-26",
+            "count": 2
         }
     ],
-    "date": "2021\/07\/20 18:00"
+    "date": "2021\/07\/27 18:00"
 }
