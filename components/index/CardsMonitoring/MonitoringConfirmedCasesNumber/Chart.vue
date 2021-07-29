@@ -101,7 +101,7 @@ import { getNumberToLocaleStringFunction } from '@/utils/monitoringStatusValueFo
 
 type PatientsCount = number
 type WeeklyAverageCount = number | null
-type ChartData = [PatientsCount[], WeeklyAverageCount[]]
+type ChartData = (number | null)[][]
 
 interface DisplayInfo {
   lText: string
@@ -175,7 +175,7 @@ export default Vue.extend<Data, Methods, Computed, Props>({
       default: 'monitoring-confirmed-cases-number-chart',
     },
     chartData: {
-      type: Object as PropType<ChartData>,
+      type: Array as PropType<ChartData>,
       required: false,
       default: () => [[], []] as ChartData,
     },
