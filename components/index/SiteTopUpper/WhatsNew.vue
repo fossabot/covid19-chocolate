@@ -17,7 +17,7 @@
               <v-icon size="1em" class="WhatsNew-linkButton-v-icon">
                 {{ mdiBullhorn }}
               </v-icon>
-              {{ $t('まん延防止等重点措置 発令中') }}
+              {{ $t('緊急事態宣言 発令中') }}
             </span>
           </app-link>
         </li>
