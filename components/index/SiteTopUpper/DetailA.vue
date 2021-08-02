@@ -189,6 +189,9 @@ export default Vue.extend<Data, Methods, Computed, Props>({
 
         text-decoration: none;
       }
+      > p {
+        @include text-link(14);
+      }
     }
   }
 }
