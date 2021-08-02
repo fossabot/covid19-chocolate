@@ -2633,13 +2633,18 @@
         {
             "diagnosed_date": "2021-07-31",
             "count": 89,
-            "weekly_average_count":60.4
+            "weekly_average_count": 60.4
         },
         {
             "diagnosed_date": "2021-08-01",
             "count": 113,
-            "weekly_average_count":71.9
+            "weekly_average_count": 71.9
+        },
+        {
+            "diagnosed_date": "2021-08-02",
+            "count": 91,
+            "weekly_average_count": 77.7
         }
     ],
-    "date": "2021\/08\/01 18:00"
+    "date": "2021\/08\/02 18:00"
 }
