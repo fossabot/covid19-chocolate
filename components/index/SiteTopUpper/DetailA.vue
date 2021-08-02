@@ -155,7 +155,7 @@ export default Vue.extend<Data, Methods, Computed, Props>({
       color: $gray-2;
 
       @include card-h2();
-      @include font-size(14);
+      @include font-size(16);
     }
   }
 
@@ -171,11 +171,11 @@ export default Vue.extend<Data, Methods, Computed, Props>({
       margin: 0 4px 1px 0;
       color: $gray-3;
 
-      @include font-size(12);
+      @include font-size(14);
     }
 
     .InfectionMedicalCareProvisionStatus-description {
-      @include font-size(12);
+      @include font-size(14);
 
       padding: 3px 0 0 0;
       margin: 0;
