@@ -245,6 +245,12 @@ export default Vue.extend({
           slug: 'covid19-info',
         },
         {
+          svg: 'CovidIcon',
+          title: this.$t('新型コロナウイルス感染症の患者の方へ'),
+          link: 'https://www.city.sagamihara.kanagawa.jp/kurashi/kenko/kansenyobo/1019910/1023841.html',
+          slug: 'covid19-info',
+        },
+        {
           iconPath: mdiAccountMultiple,
           title: this.$t('市民の皆様へ'),
           link: 'https://www.city.sagamihara.kanagawa.jp/kurashi/kenko/kansenyobo/1019910/1020293.html',
