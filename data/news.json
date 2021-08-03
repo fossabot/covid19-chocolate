@@ -2,9 +2,15 @@
     "newsItems": [
 
         {
-            "date": "2021\/08\/02",
-            "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/07\/0802.pdf",
-            "text": "新型コロナウイルス感染症による新たな患者の確認(5777～5867例目）について （PDF 334.2KB）"
+            "date": "2021\/08\/03",
+            "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/08\/0803_00.pdf",
+            "text": "新型コロナウイルス感染症による新たな患者の確認(5868～5957例目）について （PDF 331.9KB）"
+        },
+
+        {
+            "date": "2021\/08\/03",
+            "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/08\/0803_01.pdf",
+            "text": "新型コロナウイルスワクチン接種の予約受付及び優先接種対象の追加について （PDF 114.6KB）"
         },
 
         {
@@ -29,12 +35,6 @@
             "date": "2021\/07\/21",
             "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/07\/0721_03.pdf",
             "text": "新型コロナウイルスワクチン予防接種証明書(ワクチンパスポート)の発行について （PDF 200.7KB）"
-        },
-
-        {
-            "date": "2021\/07\/15",
-            "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/07\/0715_01.pdf",
-            "text": "新型コロナウイルスワクチンの供給量減少に伴う接種体制の見直し等について （PDF 223.0KB）"
         }
     ]
 }
