@@ -2115,20 +2115,24 @@
         },
         {
             "diagnosed_date": "2021-07-30",
-            "count": 116
+            "count": 117
         },
         {
             "diagnosed_date": "2021-07-31",
-            "count": 102
+            "count": 108
         },
         {
             "diagnosed_date": "2021-08-01",
-            "count": 36
+            "count": 57
         },
         {
             "diagnosed_date": "2021-08-02",
-            "count": 5
+            "count": 53
+        },
+        {
+            "diagnosed_date": "2021-08-03",
+            "count": 4
         }
     ],
-    "date": "2021\/08\/03 18:00"
+    "date": "2021\/08\/04 18:00"
 }
