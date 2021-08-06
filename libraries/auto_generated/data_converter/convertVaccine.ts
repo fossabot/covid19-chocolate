@@ -1,47 +1,49 @@
 // To parse this data:
 //
-//   import { Convert, Vaccine } from "./file";
+//   import { Convert, Vaccination } from "./file";
 //
-//   const vaccine = Convert.toVaccine(json);
+//   const vaccination = Convert.toVaccination(json);
 //
 // These functions will throw an error if the JSON doesn't
 // match the expected interface, even if the JSON is valid.
 
-export interface Vaccine {
-    mainSummary: MainSummary;
-}
-
-export interface MainSummary {
-    children: MainSummaryChild[];
-}
-
-export interface MainSummaryChild {
-    attr:     string;
+// test comment: Vaccination
+export interface Vaccination {
     date:     string;
-    value:    number;
-    children: PurpleChild[];
+    p1:       number;
+    p2:       number;
+    datasets: Dataset[];
 }
 
-export interface PurpleChild {
-    attr:      string;
-    value:     number;
-    children?: FluffyChild[];
+export interface Dataset {
+    period: Period;
+    data:   Data;
 }
 
-export interface FluffyChild {
-    attr:  string;
-    value: number;
+/*
+ * cumulative1StDose: 接種件数（1回目）
+ *
+ * cumulative2NdDose: 接種件数（2回目）
+*/
+export interface Data {
+    cumulative1StDose: number; // 接種回数（1回目・累計）
+    cumulative2NdDose: number; // 接種回数（2回目・累計）
+}
+
+export interface Period {
+    begin: Date;
+    end:   Date;
 }
 
 // Converts JSON strings to/from your types
 // and asserts the results of JSON.parse at runtime
 export class Convert {
-    public static toVaccine(json: string): Vaccine {
-        return cast(JSON.parse(json), r("Vaccine"));
+    public static toVaccination(json: string): Vaccination {
+        return cast(JSON.parse(json), r("Vaccination"));
     }
 
-    public static vaccineToJson(value: Vaccine): string {
-        return JSON.stringify(uncast(value, r("Vaccine")), null, 2);
+    public static vaccinationToJson(value: Vaccination): string {
+        return JSON.stringify(uncast(value, r("Vaccination")), null, 2);
     }
 }
 
@@ -178,25 +180,22 @@ function r(name: string) {
 }
 
 const typeMap: any = {
-    "Vaccine": o([
-        { json: "main_summary", js: "mainSummary", typ: r("MainSummary") },
-    ], false),
-    "MainSummary": o([
-        { json: "children", js: "children", typ: a(r("MainSummaryChild")) },
-    ], false),
-    "MainSummaryChild": o([
-        { json: "attr", js: "attr", typ: "" },
+    "Vaccination": o([
         { json: "date", js: "date", typ: "" },
-        { json: "value", js: "value", typ: 0 },
-        { json: "children", js: "children", typ: a(r("PurpleChild")) },
+        { json: "p1", js: "p1", typ: 0 },
+        { json: "p2", js: "p2", typ: 0 },
+        { json: "datasets", js: "datasets", typ: a(r("Dataset")) },
     ], false),
-    "PurpleChild": o([
-        { json: "attr", js: "attr", typ: "" },
-        { json: "value", js: "value", typ: 0 },
-        { json: "children", js: "children", typ: u(undefined, a(r("FluffyChild"))) },
+    "Dataset": o([
+        { json: "period", js: "period", typ: r("Period") },
+        { json: "data", js: "data", typ: r("Data") },
     ], false),
-    "FluffyChild": o([
-        { json: "attr", js: "attr", typ: "" },
-        { json: "value", js: "value", typ: 0 },
+    "Data": o([
+        { json: "cumulative_1st_dose", js: "cumulative1StDose", typ: 0 },
+        { json: "cumulative_2nd_dose", js: "cumulative2NdDose", typ: 0 },
+    ], false),
+    "Period": o([
+        { json: "begin", js: "begin", typ: Date },
+        { json: "end", js: "end", typ: Date },
     ], false),
 };
