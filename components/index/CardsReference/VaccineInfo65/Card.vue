@@ -190,12 +190,12 @@ export default Vue.extend<Data, Methods, Computed, Props>({
 })
 </script>
 
-<style lang="scss" module>
-margin {
+<style module lang="scss">
+.margin {
   margin-bottom: 3px;
 }
 
-bold {
+.bold {
   font-weight: bold;
 }
 </style>
