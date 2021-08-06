@@ -90,7 +90,10 @@ export default Vue.extend({
   },
   data() {
     return {
-      rows: [[Vaccine7Card, VaccinationCard]],
+      rows: [
+        [VaccineInfoCard, Vaccine7Card],
+        [VaccinationCard]
+      ],
     }
   },
 })
