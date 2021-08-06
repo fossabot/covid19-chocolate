@@ -15,18 +15,33 @@
         :last-period="vaccinationData.lastPeriod"
         :unit="$t(' 件')"
       >
-        <template #description>
-          <span>{{ $t('対象者 184,180人') }}</span>
-          <span>
+        <template #attentionNote>
+          <p>
             {{
-              $t('１回目の接種割合は、{p1}％', {
+              $t(
+                '7月末までに接種を希望される高齢者への接種を完了又は概ね完了したため、神奈川県からのこのグラフに関するデータの公表は終了しました。それにともない、2021年8月5日分の更新を持ってこのグラフの運用は終了しました。'
+              )
+            }}
+          </p>
+        </template>
+        <template #description>
+          <span>
+            {{ $t('対象者 184,180人') }}
+          </span>
+          <br />
+          <span>
+            {{ $t('１回目の接種割合は、') }}
+            {{
+              $t('{p1}％', {
                 p1: p1,
               })
             }}
           </span>
+          <br />
           <span>
+            {{ $t('２回目の接種割合は、') }}
             {{
-              $t('２回目の接種割合は、{p2}％', {
+              $t('{p2}％', {
                 p2: p2,
               })
             }}
