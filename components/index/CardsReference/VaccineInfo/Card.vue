@@ -3,7 +3,7 @@
     <client-only>
       <chart
         :title="$t('ワクチン接種者数')"
-        title-id="vaccine"
+        title-id="vaccine-info"
         :info-titles="[$t('接種者数（１回目・週報)'), $t('接種者数（２回目・週報）')]"
         chart-id="vaccination-chart"
         :chart-data="vaccinationData.chartData"
