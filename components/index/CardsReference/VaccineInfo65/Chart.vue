@@ -33,6 +33,9 @@
     <h4 :id="`${titleId}-graph`" class="visually-hidden">
       {{ $t(`{title}のグラフ`, { title }) }}
     </h4>
+    <template #attentionNote>
+      <slot name="attentionNote" />
+    </template>
     <scrollable-chart
       v-show="canvas"
       :display-data="displayData"
@@ -61,9 +64,6 @@
         />
       </template>
     </scrollable-chart>
-    <template #attentionNote>
-      <slot name="attentionNote" />
-    </template>
     <template #description>
       <slot name="description" />
     </template>
