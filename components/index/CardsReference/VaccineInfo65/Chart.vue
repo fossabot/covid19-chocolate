@@ -61,6 +61,9 @@
         />
       </template>
     </scrollable-chart>
+    <template #attentionNote>
+      <slot name="attentionNote" />
+    </template>
     <template #description>
       <slot name="description" />
     </template>
