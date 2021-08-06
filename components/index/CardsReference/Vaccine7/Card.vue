@@ -1,5 +1,5 @@
 <template>
-  <v-col cols="12" md="6" class="DataCard AgencyCard">
+  <v-col cols="12" md="6" class="DataCard Vaccine7Card">
     <client-only>
       <chart
         :title="$t('ワクチン接種者数の推移（累計）')"
@@ -13,7 +13,7 @@
         :unit="$t('人')"
       >
         <template #additionalDescription>
-          {{ $t('') }}
+          {{ $t('開発中') }}
         </template>
       </chart>
     </client-only>
