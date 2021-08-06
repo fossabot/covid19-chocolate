@@ -25,32 +25,30 @@
           </p>
         </template>
         <template #description>
-          <span class="margin">
+          <span>
             {{ $t('対象者 184,180人') }}
           </span>
-          <span class="margin">
+          <br />
+          <span>
             {{
               $t('１回目の接種割合は、')
             }}
-            <p class="bold">
               {{
                 $t('{p1}％', {
                   p1: p1,
                 })
               }}
-            </p>
           </span>
-          <span class="margin">
+          <br />
+          <span>
             {{
               $t('２回目の接種割合は、')
             }}
-            <p class="bold">
               {{
                 $t('{p2}％', {
                   p2: p2,
                 })
               }}
-            </p>
          </span>
         </template>
         <template #additionalDescription>
@@ -189,13 +187,3 @@ export default Vue.extend<Data, Methods, Computed, Props>({
   },
 })
 </script>
-
-<style module lang="scss">
-.margin {
-  margin-bottom: 3px;
-}
-
-.bold {
-  font-weight: bold;
-}
-</style>
