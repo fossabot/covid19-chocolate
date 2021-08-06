@@ -3,7 +3,7 @@
     <client-only>
       <chart
         :title="$t('ワクチン接種者数の推移（累計）')"
-        :title-id="'vaccine-7"
+        :title-id="'vaccine-7'"
         :chart-id="'agency'"
         :chart-data="agency"
         :date="date"
