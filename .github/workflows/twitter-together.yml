@@ -1,7 +1,4 @@
-on:
-  pull_request:
-    branches:
-      - main
+on: [push, pull_request]
 name: Auto Tweet System
 jobs:
   preview:

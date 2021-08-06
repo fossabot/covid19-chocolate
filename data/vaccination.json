@@ -219,9 +219,79 @@
                 "cumulative_1st_dose": 158460,
                 "cumulative_2nd_dose": 131305
             }
+        },
+        {
+            "period": {
+                "begin": "2021-07-26",
+                "end": "2021-07-26"
+            },
+            "data": {
+                "cumulative_1st_dose": 158789,
+                "cumulative_2nd_dose": 135465
+            }
+        },
+        {
+            "period": {
+                "begin": "2021-07-27",
+                "end": "2021-07-27"
+            },
+            "data": {
+                "cumulative_1st_dose": 159079,
+                "cumulative_2nd_dose": 139157
+            }
+        },
+        {
+            "period": {
+                "begin": "2021-07-28",
+                "end": "2021-07-28"
+            },
+            "data": {
+                "cumulative_1st_dose": 159266,
+                "cumulative_2nd_dose": 142065
+            }
+        },
+        {
+            "period": {
+                "begin": "2021-07-29",
+                "end": "2021-07-29"
+            },
+            "data": {
+                "cumulative_1st_dose": 159504,
+                "cumulative_2nd_dose": 144637
+            }
+        },
+        {
+            "period": {
+                "begin": "2021-07-30",
+                "end": "2021-08-01"
+            },
+            "data": {
+                "cumulative_1st_dose": 160159,
+                "cumulative_2nd_dose": 152052
+            }
+        },
+        {
+            "period": {
+                "begin": "2021-08-02",
+                "end": "2021-08-02"
+            },
+            "data": {
+                "cumulative_1st_dose": 160420,
+                "cumulative_2nd_dose": 152637
+            }
+        },
+        {
+            "period": {
+                "begin": "2021-08-03",
+                "end": "2021-08-03"
+            },
+            "data": {
+                "cumulative_1st_dose": 160797,
+                "cumulative_2nd_dose": 153469
+            }
         }
     ],
-    "date": "2021\/7\/27 17:00",
-    "p1": 86.04,
-    "p2": 71.29
+    "date": "2021\/8\/05 17:00",
+    "p1": 87.30,
+    "p2": 83.33
 }
