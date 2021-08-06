@@ -15,22 +15,43 @@
         :last-period="vaccinationData.lastPeriod"
         :unit="$t(' 件')"
       >
+        <template #attentionNote>
+          <p>
+            {{
+              $t(
+                '7月末までに接種を希望される高齢者への接種を完了又は概ね完了したため、神奈川県からのこのグラフに関するデータの公表は終了しました。それにともない、2021年8月5日分の更新を持ってこのグラフの運用は終了しました。'
+              )
+            }}
+          </p>
+        </template>
         <template #description>
-          <span>{{ $t('対象者 184,180人') }}</span>
-          <span>
-            {{
-              $t('１回目の接種割合は、{p1}％', {
-                p1: p1,
-              })
-            }}
+          <span class="margin">
+            {{ $t('対象者 184,180人') }}
           </span>
-          <span>
+          <span class="margin">
             {{
-              $t('２回目の接種割合は、{p2}％', {
-                p2: p2,
-              })
+              $t('１回目の接種割合は、')
             }}
+            <p class="bold">
+              {{
+                $t('{p1}％', {
+                  p1: p1,
+                })
+              }}
+            </p>
           </span>
+          <span class="margin">
+            {{
+              $t('２回目の接種割合は、')
+            }}
+            <p class="bold">
+              {{
+                $t('{p2}％', {
+                  p2: p2,
+                })
+              }}
+            </p>
+         </span>
         </template>
         <template #additionalDescription>
           <span>{{ $t('（注）') }}</span>
@@ -168,3 +189,13 @@ export default Vue.extend<Data, Methods, Computed, Props>({
   },
 })
 </script>
+
+<style lang="scss" module>
+margin {
+  margin-bottom: 3px;
+}
+
+bold {
+  font-weight: bold;
+}
+</style>
