@@ -1,9 +1,9 @@
 <template>
-  <v-col cols="12" md="6" class="DataCard Vaccine7Card">
+  <v-col cols="12" md="6" class="DataCard AgencyCard">
     <client-only>
       <chart
-        :title="$t('ワクチン接種者数の推移（累計）')"
-        :title-id="'vaccine-7'"
+        :title="$t('都庁来庁者数の推移')"
+        :title-id="'agency'"
         :chart-id="'agency'"
         :chart-data="agency"
         :date="date"
@@ -13,7 +13,7 @@
         :unit="$t('人')"
       >
         <template #additionalDescription>
-          {{ $t('開発中') }}
+          {{ $t('※土・日・祝日を除く庁舎開庁日の1週間累計数') }}
         </template>
       </chart>
     </client-only>
@@ -24,7 +24,7 @@
 import Vue from 'vue'
 
 import Chart from '@/components/index/CardsReference/Vaccine7/Chart.vue'
-import { Agency as IAgency } from '@/libraries/auto_generated/data_converter/vaccine7'
+import { Agency as IAgency } from '@/libraries/auto_generated/data_converter/convertAgency'
 import { convertDateToISO8601Format } from '@/utils/formatDate'
 
 type Data = {
@@ -45,8 +45,9 @@ export default Vue.extend<Data, Methods, Computed, Props>({
   },
   data() {
     const agencyItems = [
-      this.$t('うち、２回目接種済み') as string,
-      this.$t('総接種者数') as string,
+      this.$t('第一庁舎計') as string,
+      this.$t('第二庁舎計') as string,
+      this.$t('議事堂計') as string,
     ]
     return {
       agencyItems,
