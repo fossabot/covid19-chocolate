@@ -18,10 +18,10 @@
           </span>
           <br />
           <span>
-            {{ $t('現在の総接種者数は、') }}
+            {{ $t('現在の総接種者数 ') }}
             {{
               $t('{all}人', {
-                all: all,
+                all: all.toLocaleString(),
               })
             }}
           </span>
