@@ -2,28 +2,24 @@
 import { default as rawData } from '@/data/vaccine_all.json'
 import {
   Convert,
-  VaccineAll,
-} from '@/libraries/auto_generated/data_converter/convertVaccineAll'
+  Vaccination,
+} from '@/libraries/auto_generated/data_converter/convertVaccineAll
 import {
   BaseRepository,
   IBaseRepository,
 } from '@/libraries/repositories/BaseRepository'
 
-export interface IVaccineAllRepository
-  extends IBaseRepository<DailyPositiveDetail> {}
-
+export interface IVaccinationRepository extends IBaseRepository<Vaccination> {}
 export class VaccinationRepository
-  extends BaseRepository<DailyPositiveDetail>
-  implements IVaccineAllRepository
+  extends BaseRepository<Vaccination>
+  implements IVaccinationRepository
 {
   /**
    * 使用箇所
    *
-   * モニタリング項目(1) 新規陽性者数 (components/cards/MonitoringConfirmedCasesNumberCard.vue)
-   *
-   * モニタリング項目(3) 新規陽性者における接触歴等不明者数／増加比 (components/cards/UntrackedRateCard.vue)
+   * ワクチン接種回数（高齢者・累計） (components/index/CardsReference/Vaccination/Card.vue)
    */
   constructor() {
-    super(Convert.toVaccineAll(JSON.stringify(rawData)))
+    super(Convert.toVaccination(JSON.stringify(rawData)))
   }
 }
