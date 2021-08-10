@@ -7,7 +7,7 @@ from selenium import webdriver
 if not os.path.exists("ogp"):
     os.mkdir("ogp")
 
-f = open('/Users/runner/work/covid19-chocolate/covid19-chocolate/./assets/json/cardRoutesSettings.json', 'r')
+f = open('../../assets/json/cardRoutesSettings.json', 'r')
 card_data = json.load(f)
 
 options = webdriver.ChromeOptions()
