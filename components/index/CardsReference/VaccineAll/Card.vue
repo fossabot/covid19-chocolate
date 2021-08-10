@@ -55,9 +55,9 @@ import Vue from 'vue'
 
 import Chart from '@/components/index/CardsReference/VaccineAll/Chart.vue'
 import {
-  DailyPositiveDetail as IDailyPositiveDetail,
-  Datum as IDailyPositiveDetailDatum,
-} from '@/libraries/auto_generated/data_converter/convertDailyPositiveDetail'
+  VaccineAll as IVaccineAll,
+  Datum as IVaccineAllDatum,
+} from '@/libraries/auto_generated/data_converter/convertVaccineAll'
 import {
   getNumberToFixedFunction,
   getNumberToLocaleStringFunction,
@@ -74,12 +74,12 @@ type Computed = {
   chartData: (number | null)[][]
   date: string
   labels: string[]
-  filteredDailyPositiveDetailData: IDailyPositiveDetailDatum[]
-  dailyPositiveDetail: IDailyPositiveDetail
+  filteredVaccineAllData: IVaccineAllDatum[]
+  VaccineAll: IVaccineAll
 }
 type Props = {}
 
-const firstDiagnosedDate = new Date('2020-03-27')
+const firstDiagnosedDate = new Date('2021-08-04')
 
 export default Vue.extend<Data, Methods, Computed, Props>({
   components: {
@@ -120,38 +120,38 @@ export default Vue.extend<Data, Methods, Computed, Props>({
   computed: {
     chartData() {
       const reportedCount: (number | null)[] =
-        this.filteredDailyPositiveDetailData.map((d) => d.reportedCount)
+        this.filteredVaccineAllData.map((d) => d.reportedCount)
 
       const missingCount: (number | null)[] =
-        this.filteredDailyPositiveDetailData.map((d) => d.missingCount)
+        this.filteredVaccineAllData.map((d) => d.missingCount)
 
       const untrackedRate: (number | null)[] =
-        this.filteredDailyPositiveDetailData.map(
+        this.filteredVaccineAllData.map(
           (d) => d.weeklyAverageUntrackedCount
         )
 
       const untrackedIncreseRate: (number | null)[] =
-        this.filteredDailyPositiveDetailData.map(
+        this.filteredVaccineAllData.map(
           (d) => d.weeklyAverageUntrackedIncresePercent
         )
 
       return [reportedCount, missingCount, untrackedRate, untrackedIncreseRate]
     },
     date() {
-      return this.dailyPositiveDetail.date
+      return this.VaccineAll.date
     },
     labels() {
-      return this.filteredDailyPositiveDetailData.map(
+      return this.filteredVaccineAllData.map(
         (d) => `${d.diagnosedDate}`
       )
     },
-    filteredDailyPositiveDetailData() {
-      return this.dailyPositiveDetail.data.filter(
+    filteredVaccineAllData() {
+      return this.VaccineAll.data.filter(
         (d) => new Date(d.diagnosedDate) >= firstDiagnosedDate
       )
     },
-    dailyPositiveDetail() {
-      return this.$store.state.dailyPositiveDetail
+    VaccineAll() {
+      return this.$store.state.VaccineAll
     },
   },
 })
