@@ -83,6 +83,13 @@
     "ogpHeight": 570
   },
   {
+    "path": "/cards/vaccine-all",
+    "title": "ワクチン接種件数（全世代・累計）",
+    "category": "ワクチン接種状況",
+    "ogpWidth": 959,
+    "ogpHeight": 570
+  }
+  {
     "path": "/cards/vaccination",
     "title": "ワクチン接種件数（高齢者・累計）",
     "category": "ワクチン接種状況",
