@@ -92,7 +92,7 @@ type Computed = {
     labels: Date[]
     chartData: number[][]
   }
-  vaccination: IVaccination
+  vaccineAll: IVaccination
 }
 type Props = {}
 
@@ -153,7 +153,7 @@ export default Vue.extend<Data, Methods, Computed, Props>({
         chartData,
       }
     },
-    vaccination() {
+    vaccineAll() {
       return this.$store.state.vaccineAll
     },
   },
