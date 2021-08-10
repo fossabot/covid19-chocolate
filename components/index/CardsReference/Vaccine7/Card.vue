@@ -16,6 +16,15 @@
           <span>
             {{ $t('接種対象者数 661,738人') }}
           </span>
+          <br />
+          <span>
+            {{ $t('現在の総接種者数は、') }}
+            {{
+              $t('{all}人', {
+                all: all,
+              })
+            }}
+          </span>
         </template>
         <template #additionalDescription>
           <span>{{ $t('（注）') }}</span>
@@ -53,6 +62,7 @@ type Methods = {}
 type Computed = {
   agency: IAgency
   date: string
+  all: number
   labels: string[]
   periods: string[]
 }
@@ -77,6 +87,9 @@ export default Vue.extend<Data, Methods, Computed, Props>({
     },
     date() {
       return this.agency.date
+    },
+    all() {
+      return this.agency.all
     },
     labels() {
       return this.agency.periods.map((p) => {
