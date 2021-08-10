@@ -1,46 +1,55 @@
 <template>
-  <v-col cols="12" md="6" class="DataCard UntrackedRateCard">
+  <v-col cols="12" md="6" class="DataCard VaccineAllCard">
     <client-only>
       <chart
-        :title="$t('モニタリング項目(3)')"
-        :title-id="'untracked-rate'"
-        :info-titles="[$t('新規陽性者における接触歴等不明者数'), $t('増加比')]"
-        :chart-id="'untracked-rate-chart'"
-        :chart-data="chartData"
-        :date="date"
-        :labels="labels"
-        :units="units"
-        :data-labels="dataLabels"
-        :table-labels="tableLabels"
+        :title="$t('ワクチン接種件数（全世代・累計）')"
+        title-id="vaccine-all"
+        :info-titles="[$t('接種件数（１回目)'), $t('接種件数（２回目）')]"
+        chart-id="vaccination-chart"
+        :chart-data="vaccinationData.chartData"
         :get-formatter="getFormatter"
+        :date="date"
+        :labels="vaccinationData.labels"
+        :periods="vaccinationLabels"
+        :data-labels="chartLabels"
+        :last-period="vaccinationData.lastPeriod"
+        :unit="$t(' 件')"
       >
+        <template #description>
+          <span>{{ $t('対象者 650,971人') }}</span>
+          <span>
+            {{
+              $t('１回目の接種割合は、{p1}％', {
+                p1: p1,
+              })
+            }}
+          </span>
+          <span>
+            {{
+              $t('２回目の接種割合は、{p2}％', {
+                p2: p2,
+              })
+            }}
+          </span>
+        </template>
         <template #additionalDescription>
           <span>{{ $t('（注）') }}</span>
           <ul>
             <li>
+              {{ $t('土曜日、日曜日、祝日は更新しない') }}
+            </li>
+            <li>
               {{
                 $t(
-                  '保健所から発生届が提出された日別（報告日別）の新規陽性者について、接触歴等の不明者、判明者に区分したものである'
+                  '総務省が公表している「住民基本台帳に基づく人口、人口動態及び世帯数」内の「【統計】令和2年住民基本台帳年齢階級別人口」を基に高齢者の全人口を分母にし、接種率を出している'
                 )
               }}
             </li>
             <li>
               {{
                 $t(
-                  '集団感染発生や曜日による数値のばらつきにより、日々の結果が変動するため、こうしたばらつきを平準化し全体の傾向を見る趣旨から、過去7日間の移動平均値を不明者数として算出（例えば、2020年5月7日の移動平均値は、2020年5月1日から5月7日までの実績値を平均したもの）'
+                  'ワクチン接種記録システム（VRS）のデータを基に、接種券の発行市町村別に集計している（本データは過日の数値が修正されることがある）'
                 )
-              }}
-            </li>
-            <li>
-              {{
-                $t(
-                  '濃厚接触者など、患者の発生状況の内訳の公表を開始した2020年3月27日から作成'
-                )
-              }}
-            </li>
-            <li>
-              {{
-                $t('増加比は、１週間前の接触歴等不明者数（移動平均値）との比較')
               }}
             </li>
           </ul>
@@ -51,107 +60,110 @@
 </template>
 
 <script lang="ts">
+import dayjs from 'dayjs'
+import duration from 'dayjs/plugin/duration'
 import Vue from 'vue'
 
-import Chart from '@/components/index/CardsReference/VaccineAll/Chart.vue'
+import Chart from '@/components/index/CardsReference/VaccineInfo65/Chart.vue'
 import {
-  VaccineAll as IVaccineAll,
-  Datum as IVaccineAllDatum,
+  Dataset as IVaccinationDataset,
+  Period as IVaccinationPeriod,
+  Vaccination as IVaccination,
 } from '@/libraries/auto_generated/data_converter/convertVaccineAll'
-import {
-  getNumberToFixedFunction,
-  getNumberToLocaleStringFunction,
-} from '@/utils/monitoringStatusValueFormatters'
+import { getNumberToLocaleStringFunction } from '@/utils/monitoringStatusValueFormatters'
+
+dayjs.extend(duration)
 
 type Data = {
-  dataLabels: string[]
-  tableLabels: string[]
-  getFormatter: (columnIndex: number) => (d: number) => string | undefined
-  units: string[]
+  chartLabels: string[]
+  getFormatter: () => (d: number) => string | undefined
 }
-type Methods = {}
+type Methods = {
+  getWeekEndLabel: (end: Date) => string
+}
 type Computed = {
-  chartData: (number | null)[][]
   date: string
-  labels: string[]
-  filteredVaccineAllData: IVaccineAllDatum[]
-  VaccineAll: IVaccineAll
+  p1: number
+  p2: number
+  vaccinationLabels: string[]
+  vaccinationDatasets: IVaccinationDataset[]
+  vaccinationData: {
+    lastPeriod: IVaccinationPeriod
+    labels: Date[]
+    chartData: number[][]
+  }
+  vaccination: IVaccination
 }
 type Props = {}
-
-const firstDiagnosedDate = new Date('2021-08-04')
 
 export default Vue.extend<Data, Methods, Computed, Props>({
   components: {
     Chart,
   },
   data() {
-    const dataLabels = [
-      this.$t('接触歴等判明者数') as string,
-      this.$t('接触歴等不明者数') as string,
-      this.$t('接触歴等不明者数（７日間移動平均）') as string,
-      this.$t('増加比') as string,
+    const chartLabels = [
+      this.$t('接種件数（１回目）') as string,
+      this.$t('接種件数（２回目）') as string,
     ]
 
-    const tableLabels = [
-      this.$t('接触歴等判明者数') as string,
-      this.$t('接触歴等不明者数') as string,
-      this.$t('接触歴等不明者数（７日間移動平均）') as string,
-      this.$t('増加比') as string,
-    ]
-
-    const getFormatter = (columnIndex: number) => {
-      // 7日間移動平均と増加比は小数点第1位まで表示する。
-      if (columnIndex >= 2) {
-        return getNumberToFixedFunction(1)
-      }
+    const getFormatter = () => {
       return getNumberToLocaleStringFunction()
     }
 
-    const units = [this.$t('人') as string, '%']
-
     return {
-      dataLabels,
-      tableLabels,
+      chartLabels,
       getFormatter,
-      units,
     }
   },
   computed: {
-    chartData() {
-      const reportedCount: (number | null)[] =
-        this.filteredVaccineAllData.map((d) => d.reportedCount)
-
-      const missingCount: (number | null)[] =
-        this.filteredVaccineAllData.map((d) => d.missingCount)
-
-      const untrackedRate: (number | null)[] =
-        this.filteredVaccineAllData.map(
-          (d) => d.weeklyAverageUntrackedCount
-        )
-
-      const untrackedIncreseRate: (number | null)[] =
-        this.filteredVaccineAllData.map(
-          (d) => d.weeklyAverageUntrackedIncresePercent
-        )
-
-      return [reportedCount, missingCount, untrackedRate, untrackedIncreseRate]
-    },
     date() {
-      return this.VaccineAll.date
+      return this.vaccination.date
     },
-    labels() {
-      return this.filteredVaccineAllData.map(
-        (d) => `${d.diagnosedDate}`
+    vaccinationLabels() {
+      return this.vaccinationDatasets.map((dataset) => {
+        const { period } = dataset
+        const { end } = period
+        return this.getWeekEndLabel(end)
+      })
+    },
+    vaccinationDatasets() {
+      return this.vaccination.datasets
+    },
+    p1() {
+      return this.vaccination.p1
+    },
+    p2() {
+      return this.vaccination.p2
+    },
+    vaccinationData() {
+      const datasets = this.vaccination.datasets
+      const lastPeriod = datasets.slice(-1)[0].period
+      const labels = datasets.map((d: IVaccinationDataset) => d.period.end)
+      const cumulative1StDose: number[] = datasets.map(
+        (d: IVaccinationDataset) => d.data.cumulative1StDose
       )
-    },
-    filteredVaccineAllData() {
-      return this.VaccineAll.data.filter(
-        (d) => new Date(d.diagnosedDate) >= firstDiagnosedDate
+      const cumulative2NdDose: number[] = datasets.map(
+        (d: IVaccinationDataset) => d.data.cumulative2NdDose
       )
+      const chartData: number[][] = [cumulative1StDose, cumulative2NdDose]
+
+      return {
+        lastPeriod,
+        labels,
+        chartData,
+      }
     },
-    VaccineAll() {
-      return this.$store.state.VaccineAll
+    vaccination() {
+      return this.$store.state.vaccination
+    },
+  },
+  methods: {
+    /**
+     * 表の横軸に表示する、「~MM/DD」形式のラベルを取得する
+     */
+    getWeekEndLabel(end: Date) {
+      const to = this.$d(dayjs(end).toDate(), 'dateWithoutYear')
+      return `~${to}`
     },
   },
 })
