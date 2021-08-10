@@ -117,7 +117,7 @@ export default Vue.extend<Data, Methods, Computed, Props>({
   },
   computed: {
     date() {
-      return this.vaccination.date
+      return this.vaccineAll.date
     },
     vaccinationLabels() {
       return this.vaccinationDatasets.map((dataset) => {
@@ -127,16 +127,16 @@ export default Vue.extend<Data, Methods, Computed, Props>({
       })
     },
     vaccinationDatasets() {
-      return this.vaccination.datasets
+      return this.vaccineAll.datasets
     },
     p1() {
-      return this.vaccination.p1
+      return this.vaccineAll.p1
     },
     p2() {
-      return this.vaccination.p2
+      return this.vaccineAll.p2
     },
     vaccinationData() {
-      const datasets = this.vaccination.datasets
+      const datasets = this.vaccineAll.datasets
       const lastPeriod = datasets.slice(-1)[0].period
       const labels = datasets.map((d: IVaccinationDataset) => d.period.end)
       const cumulative1StDose: number[] = datasets.map(
@@ -154,7 +154,7 @@ export default Vue.extend<Data, Methods, Computed, Props>({
       }
     },
     vaccination() {
-      return this.$store.state.vaccination
+      return this.$store.state.vaccineAll
     },
   },
   methods: {
