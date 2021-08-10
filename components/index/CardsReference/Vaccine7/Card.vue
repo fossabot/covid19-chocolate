@@ -2,7 +2,7 @@
   <v-col cols="12" md="6" class="DataCard Vaccine7Card">
     <client-only>
       <chart
-        :title="$t('ワクチン接種者数の推移（累計）')"
+        :title="$t('ワクチン接種者数の推移（累計・週報）')"
         :title-id="'vaccine-7'"
         :chart-id="'vaccine-7'"
         :chart-data="agency"
@@ -14,11 +14,23 @@
       >
         <template #description>
           <span>
-            {{ $t('対象者 661,738人') }}
+            {{ $t('接種対象者数 661,738人') }}
           </span>
         </template>
         <template #additionalDescription>
-          {{ $t('※土・日・祝日を除く庁舎開庁日の1週間累計数') }}
+          <span>{{ $t('（注）') }}</span>
+          <ul>
+            <li>
+              {{ $t('接種対象者数は、満12歳以上の者である（2021年6月30日時点）') }}
+            </li>
+            <li>
+              {{
+                $t(
+                  'グラフ上にて確認しにくい数値は、下記の「テーブルを表示」より確認可能である'
+                )
+              }}
+            </li>
+          </ul>
         </template>
       </chart>
     </client-only>
