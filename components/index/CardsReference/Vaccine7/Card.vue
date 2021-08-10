@@ -1,10 +1,10 @@
 <template>
-  <v-col cols="12" md="6" class="DataCard AgencyCard">
+  <v-col cols="12" md="6" class="DataCard Vaccine7Card">
     <client-only>
       <chart
-        :title="$t('都庁来庁者数の推移')"
-        :title-id="'agency'"
-        :chart-id="'agency'"
+        :title="$t('ワクチン接種者数の推移（累計）')"
+        :title-id="'vaccine-7'"
+        :chart-id="'vaccine-7'"
         :chart-data="agency"
         :date="date"
         :labels="labels"
@@ -12,6 +12,11 @@
         :items="agencyItems"
         :unit="$t('人')"
       >
+        <template #description>
+          <span>
+            {{ $t('対象者 661,738人') }}
+          </span>
+        </template>
         <template #additionalDescription>
           {{ $t('※土・日・祝日を除く庁舎開庁日の1週間累計数') }}
         </template>
@@ -45,9 +50,8 @@ export default Vue.extend<Data, Methods, Computed, Props>({
   },
   data() {
     const agencyItems = [
-      this.$t('第一庁舎計') as string,
-      this.$t('第二庁舎計') as string,
-      this.$t('議事堂計') as string,
+      this.$t('うち、２回目接種済み') as string,
+      this.$t('総接種者数') as string,
     ]
     return {
       agencyItems,

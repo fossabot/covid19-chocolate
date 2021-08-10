@@ -35,7 +35,7 @@ import TestedNumberCard from '@/components/index/CardsReference/TestedNumber/Car
 // 新型コロナウイルスワクチン接種者数
 import VaccineInfoCard from '@/components/index/CardsReference/VaccineInfo/Card.vue'
 // 未定
-import AgencyCard from '@/components/index/CardsReference/Vaccine7/Card.vue'
+import Vaccine7Card from '@/components/index/CardsReference/Vaccine7/Card.vue'
 // 65歳以上のワクチン接種状況
 import VaccinationCard from '@/components/index/CardsReference/VaccineInfo65/Card.vue'
 
@@ -61,7 +61,7 @@ import type { NuxtConfig } from '@nuxt/types'
     ConfirmedCasesByAgeCard,
     TestedNumberCard,
     VaccineInfoCard,
-    AgencyCard,
+    Vaccine7Card,
     VaccinationCard,
   },
 })
@@ -128,8 +128,8 @@ export default class CardContainer extends Vue implements NuxtConfig {
         cardCategory = 'reference'
         break
       // 未定
-      case 'agency':
-        cardComponent = 'agency-card'
+      case 'vaccine-7':
+        cardComponent = 'vaccine-7-card'
         cardCategory = 'reference'
         break
       // 65歳以上のワクチン接種状況
