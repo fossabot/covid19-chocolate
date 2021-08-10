@@ -1,12 +1,17 @@
 {
-    "date": "2021\/8\/10 19:15",
-    "data": [
+    "datasets": [
         {
-            "diagnosed_date": "2021-08-04",
-            "missing_count": 5,
-            "reported_count": 3,
-            "weekly_average_untracked_count": 27.10,
-            "weekly_average_untracked_increse_percent": 38.07
+            "period": {
+                "begin": "2021-08-04",
+                "end": "2021-08-04"
+            },
+            "data": {
+                "cumulative_1st_dose": 244697,
+                "cumulative_2nd_dose": 186634
+            }
         }
-    ]
+    ],
+    "date": "2021\/8\/10 17:00",
+    "p1": 37.59,
+    "p2": 28.67
 }
