@@ -2679,7 +2679,12 @@
             "diagnosed_date": "2021-08-09",
             "count": 171,
             "weekly_average_count": 131.6
+        },
+        {
+            "diagnosed_date": "2021-08-10",
+            "count": 111,
+            "weekly_average_count": 134.6
         }
     ],
-    "date": "2021\/08\/09 18:00"
+    "date": "2021\/08\/10 18:00"
 }

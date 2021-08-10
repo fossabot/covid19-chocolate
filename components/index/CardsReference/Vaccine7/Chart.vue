@@ -1,41 +1,31 @@
 <template>
-  <data-view
-    :title="title"
-    :title-id="titleId"
-    :date="date"
-    :head-title="headTitle"
-  >
+  <data-view :title="title" :title-id="titleId" :date="date">
     <ul
       :class="$style.GraphLegend"
       :style="{ display: canvas ? 'block' : 'none' }"
     >
-      <li
-        v-for="(dataLabel, i) in dataLabels"
-        :key="i"
-        @click="onClickLegend(i)"
-      >
+      <li v-for="(item, i) in items" :key="i" @click="onClickLegend(i)">
         <button>
           <div
             :style="{
               backgroundColor: colors[i].fillColor,
               borderColor: colors[i].strokeColor,
+              width: '20px',
             }"
           />
           <span
             :style="{
               textDecoration: displayLegends[i] ? 'none' : 'line-through',
             }"
-            >{{ dataLabel }}</span
           >
+            {{ item }}
+          </span>
         </button>
       </li>
     </ul>
     <h4 :id="`${titleId}-graph`" class="visually-hidden">
       {{ $t(`{title}のグラフ`, { title }) }}
     </h4>
-    <template #attentionNote>
-      <slot name="attentionNote" />
-    </template>
     <scrollable-chart
       v-show="canvas"
       :display-data="displayData"
@@ -48,7 +38,7 @@
           :chart-data="displayData"
           :options="displayOption"
           :display-legends="displayLegends"
-          :height="240"
+          :height="280"
           :width="chartWidth"
         />
       </template>
@@ -58,124 +48,82 @@
           :chart-id="`${chartId}-header-right`"
           :chart-data="displayDataHeader"
           :options="displayOptionHeader"
-          :plugins="yAxesBgPlugin"
           :display-legends="displayLegends"
-          :height="240"
+          :plugins="yAxesBgPlugin"
+          :height="280"
         />
       </template>
     </scrollable-chart>
+    <template #dataTable>
+      <client-only>
+        <data-view-table :headers="tableHeaders" :items="tableData" />
+      </client-only>
+    </template>
     <template #description>
       <slot name="description" />
     </template>
     <template #additionalDescription>
       <slot name="additionalDescription" />
     </template>
-    <template #dataTable>
-      <client-only>
-        <data-view-table :headers="tableHeaders" :items="tableDataItems" />
-      </client-only>
-    </template>
-    <template #dataSetPanel>
-      <data-view-data-set-panel
-        v-for="(di, i) in displayInfo"
-        :key="i"
-        :title="infoTitles[i]"
-        :l-text="di.lText"
-        :s-text="di.sText"
-        :unit="di.unit"
-      />
-    </template>
   </data-view>
 </template>
 
 <script lang="ts">
-import { ChartOptions, PluginServiceRegistrationOptions } from 'chart.js'
+import { ChartData, ChartOptions, ChartTooltipItem } from 'chart.js'
 import Vue, { PropType } from 'vue'
-import { ThisTypedComponentOptionsWithRecordProps } from 'vue/types/options'
-import { TranslateResult } from 'vue-i18n'
 
 import DataView from '@/components/index/_shared/DataView.vue'
-import DataViewDataSetPanel from '@/components/index/_shared/DataViewDataSetPanel.vue'
 import DataViewTable, {
   TableHeader,
   TableItem,
 } from '@/components/index/_shared/DataViewTable.vue'
-import OpenDataLink from '@/components/index/_shared/OpenDataLink.vue'
 import ScrollableChart from '@/components/index/_shared/ScrollableChart.vue'
-import {
-  DisplayData,
-  yAxesBgPlugin,
-  yAxesBgRightPlugin,
-} from '@/plugins/vue-chart'
-import { getGraphSeriesColor, SurfaceStyle } from '@/utils/colors'
-import { getNumberToFixedFunction } from '@/utils/monitoringStatusValueFormatters'
+import { Agency as IAgency } from '@/libraries/auto_generated/data_converter/convertAgency'
+import { DataSets, DisplayData, yAxesBgPlugin } from '@/plugins/vue-chart'
+import { getGraphSeriesStyle, SurfaceStyle } from '@/utils/colors'
+
+interface AgencyDataSets extends DataSets {
+  label: string
+}
+interface AgencyDisplayData extends DisplayData {
+  labels: string[]
+  datasets: AgencyDataSets[]
+}
 
 type Data = {
+  colors: SurfaceStyle[]
   canvas: boolean
   displayLegends: boolean[]
-  colors: SurfaceStyle[]
 }
 type Methods = {
   onClickLegend: (i: number) => void
 }
-type DisplayInfo = {
-  lText: string
-  sText: string
-  unit: string
-}
 type Computed = {
-  displayInfo: DisplayInfo[]
-  displayData: DisplayData
+  displayData: AgencyDisplayData
   displayOption: ChartOptions
-  displayDataHeader: DisplayData
+  displayDataHeader: AgencyDisplayData
   displayOptionHeader: ChartOptions
-  headTitle: string
   tableHeaders: TableHeader[]
-  tableDataItems: TableItem[]
-}
-type Period = {
-  begin: Date
-  end: Date
+  tableData: TableItem[]
 }
 type Props = {
   title: string
   titleId: string
-  infoTitles: string[]
   chartId: string
-  chartData: number[][]
-  getFormatter: Function
+  chartData: IAgency
   date: string
   labels: string[]
-  dataLabels: string[] | TranslateResult[]
   periods: string[]
-  lastPeriod: Period
+  items: string[]
   unit: string
-  url: string
-  optionUnit: string
-  yAxesBgPlugin: PluginServiceRegistrationOptions[]
-  yAxesBgRightPlugin: PluginServiceRegistrationOptions[]
 }
 
-const options: ThisTypedComponentOptionsWithRecordProps<
-  Vue,
-  Data,
-  Methods,
-  Computed,
-  Props
-> = {
-  created() {
-    this.canvas = process.browser
-  },
-  components: {
-    DataView,
-    DataViewTable,
-    DataViewDataSetPanel,
-    ScrollableChart,
-    OpenDataLink,
-  },
+export default Vue.extend<Data, Methods, Computed, Props>({
+  components: { DataView, DataViewTable, ScrollableChart },
   props: {
     title: {
       type: String,
+      required: false,
       default: '',
     },
     titleId: {
@@ -183,154 +131,87 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       required: false,
       default: '',
     },
-    infoTitles: {
-      type: Array,
-      required: false,
-      default: () => [],
-    },
     chartId: {
       type: String,
-      default: 'VariantChart',
+      required: false,
+      default: 'agency-bar-chart',
     },
     chartData: {
-      type: Array,
-      required: false,
-      default: () => [],
-    },
-    getFormatter: {
-      type: Function,
-      required: false,
-      default: (_: number) => getNumberToFixedFunction(),
+      type: Object as PropType<IAgency>,
+      default: () => ({
+        date: '',
+        periods: [],
+        datasets: [],
+      }),
     },
     date: {
       type: String,
-      required: true,
       default: '',
     },
     labels: {
-      type: Array,
-      default: () => [],
-    },
-    dataLabels: {
-      type: Array,
+      type: Array as PropType<string[]>,
       default: () => [],
     },
     periods: {
-      type: Array,
+      type: Array as PropType<string[]>,
       default: () => [],
     },
-    lastPeriod: {
-      type: Object as PropType<Period>,
-      default: () => ({ begin: new Date(), end: new Date() }),
+    items: {
+      type: Array as PropType<string[]>,
+      default: () => [],
     },
     unit: {
-      type: String,
-      default: '',
-    },
-    url: {
-      type: String,
-      default: '',
-    },
-    optionUnit: {
       type: String,
       required: false,
       default: '',
     },
-    yAxesBgPlugin: {
-      type: Array,
-      default: () => yAxesBgPlugin,
-    },
-    yAxesBgRightPlugin: {
-      type: Array,
-      default: () => yAxesBgRightPlugin,
-    },
   },
   data: () => ({
-    displayLegends: [true, true],
-    colors: [getGraphSeriesColor('C'), getGraphSeriesColor('A')],
+    colors: getGraphSeriesStyle(3),
     canvas: true,
+    yAxesBgPlugin,
+    displayLegends: [true, true, true],
   }),
   computed: {
-    displayInfo() {
-      const lastData = (dataset: number[]) => {
-        return dataset.slice(-1)[0]
-      }
-      const periodText = `${this.$t('{dateEnd}累計値', {
-        dateEnd: this.$d(this.lastPeriod.end, 'date'),
-      })}`
-      return [
-        {
-          lText: this.getFormatter(0)(lastData(this.chartData[0])),
-          sText: periodText,
-          unit: this.unit,
-        },
-        {
-          lText: this.getFormatter(1)(lastData(this.chartData[1])),
-          sText: periodText,
-          unit: this.unit,
-        },
-      ]
-    },
-    displayData() {
-      const datasets = this.dataLabels.map((_, i) => {
-        return {
-          label: this.dataLabels[i],
-          data: this.chartData[i],
-          backgroundColor: this.colors[i].fillColor,
-          borderColor: this.colors[i].strokeColor,
-          borderWidth: 1,
-        }
-      })
+    displayData(): AgencyDisplayData {
       return {
         labels: this.labels,
-        datasets,
+        datasets: this.chartData.datasets.map((dataset, index) => {
+          const label = this.items[index]
+          const { data } = dataset
+          const color = this.colors[index]
+
+          return {
+            label,
+            data,
+            backgroundColor: color.fillColor,
+            borderColor: color.strokeColor,
+            borderWidth: 1,
+          }
+        }),
       }
     },
-    headTitle() {
-      return this.title + this.infoTitles.join(',')
-    },
-    tableHeaders() {
-      return [
-        { text: this.$t('日付'), value: 'text' },
-        ...(this.dataLabels as string[]).map((text, i) => {
-          return { text, value: String(i) }
-        }),
-      ]
-    },
-    tableDataItems() {
-      return this.displayData.datasets[0].data
-        .map((_, i) => {
-          return Object.assign(
-            { text: this.periods[i] },
-            ...this.chartData.map((_, j) => {
-              return {
-                [j]: this.getFormatter(j)(this.chartData[j][i]),
-              }
-            })
-          )
-        })
-        .reverse()
-    },
-    displayOption() {
+    displayOption(): ChartOptions {
       const options: ChartOptions = {
+        maintainAspectRatio: false,
         tooltips: {
           displayColors: false,
           callbacks: {
-            title: (tooltipItem) => {
-              return this.periods[tooltipItem[0].index!]
+            title: (tooltipItems: ChartTooltipItem[]) => {
+              const dateString = this.periods[tooltipItems[0].index!]
+              return this.$t('期間: {duration}', {
+                duration: dateString!,
+              }) as string
             },
-            label: (tooltipItem, data) => {
+            label: (tooltipItem: ChartTooltipItem, data: ChartData) => {
               const index = tooltipItem.datasetIndex!
               const title = this.$t(data.datasets![index].label!)
-              const num = this.getFormatter(tooltipItem.datasetIndex!)(
-                parseFloat(tooltipItem.value!)
-              )
+              const num = parseInt(tooltipItem.value!).toLocaleString()
               const unit = this.$t(this.unit)
               return `${title}: ${num} ${unit}`
             },
           },
         },
-        maintainAspectRatio: false,
         legend: {
           display: false,
         },
@@ -338,7 +219,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
           xAxes: [
             {
               id: 'period',
-              stacked: false,
+              stacked: true,
               gridLines: {
                 display: false,
               },
@@ -376,18 +257,16 @@ const options: ThisTypedComponentOptionsWithRecordProps<
           ],
           yAxes: [
             {
-              stacked: false,
+              stacked: true,
               gridLines: {
                 display: true,
-                drawOnChartArea: true,
               },
               ticks: {
-                fontSize: 12,
-                maxTicksLimit: 10,
-                suggestedMin: 0,
+                fontSize: 9,
                 fontColor: '#808080',
-                callback: (value) => {
-                  return `${value}${this.unit}`
+                maxTicksLimit: 10,
+                callback: (label) => {
+                  return `${label}${this.unit}`
                 },
               },
             },
@@ -401,38 +280,37 @@ const options: ThisTypedComponentOptionsWithRecordProps<
 
       return options
     },
-    displayDataHeader() {
-      const datasets = this.dataLabels.map((_, i) => {
-        return {
-          label: this.dataLabels[i],
-          data: this.chartData[i],
-          backgroundColor: 'transparent',
-          borderWidth: 0,
-        }
-      })
+    displayDataHeader(): AgencyDisplayData {
       return {
         labels: this.labels,
-        datasets,
+        datasets: this.chartData.datasets.map((item, index) => {
+          return {
+            label: this.items[index] as string,
+            data: item.data,
+            backgroundColor: 'transparent',
+            borderWidth: 0,
+          }
+        }),
       }
     },
-    displayOptionHeader() {
-      const options: ChartOptions = {
-        tooltips: { enabled: false },
+    displayOptionHeader(): ChartOptions {
+      return {
         maintainAspectRatio: false,
         legend: {
           display: false,
         },
+        tooltips: { enabled: false },
         scales: {
           xAxes: [
             {
               id: 'period',
-              stacked: false,
+              stacked: true,
               gridLines: {
                 display: false,
               },
               ticks: {
                 fontSize: 9,
-                fontColor: 'transparent',
+                fontColor: 'transparent', // displayOption では '#808080'
                 callback: (_, i) => {
                   return this.periods[i]
                 },
@@ -449,7 +327,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
               },
               ticks: {
                 fontSize: 11,
-                fontColor: 'transparent', // displayOption では #808080
+                fontColor: 'transparent', // displayOption では '#808080'
                 padding: 13, // 3 + 10(tickMarkLength)，displayOption では 3
                 fontStyle: 'bold',
               },
@@ -461,19 +339,18 @@ const options: ThisTypedComponentOptionsWithRecordProps<
           ],
           yAxes: [
             {
-              stacked: false,
+              stacked: true,
               gridLines: {
                 display: true,
-                drawOnChartArea: false, // displayOption では true
-                color: '#E5E5E5',
+                drawOnChartArea: false, // displayOption では定義なし
+                color: '#E5E5E5', // displayOption では定義なし
               },
               ticks: {
-                fontSize: 12,
-                maxTicksLimit: 10,
-                suggestedMin: 0,
+                suggestedMin: 0, // displayOption では定義なし
                 fontColor: '#808080',
-                callback: (value) => {
-                  return `${value}${this.unit}`
+                maxTicksLimit: 10,
+                callback: (label) => {
+                  return `${label}${this.unit}`
                 },
               },
             },
@@ -481,15 +358,32 @@ const options: ThisTypedComponentOptionsWithRecordProps<
         },
         animation: { duration: 0 },
       }
-
-      return options
+    },
+    tableHeaders(): TableHeader[] {
+      return [
+        { text: this.$t('日付'), value: 'text' },
+        ...this.displayData.datasets.map((text, value) => {
+          return { text: text.label, value: String(value), align: 'end' }
+        }),
+      ]
+    },
+    tableData(): TableItem[] {
+      return this.displayData.datasets[0].data
+        .map((_, i) => {
+          return Object.assign(
+            { text: this.periods[i] },
+            ...this.displayData.datasets!.map((_, j) => {
+              return {
+                [j]: this.displayData.datasets[j].data[i].toLocaleString(),
+              }
+            })
+          )
+        })
+        .reverse()
     },
   },
-  methods: {
-    onClickLegend(i) {
-      this.displayLegends[i] = !this.displayLegends[i]
-      this.displayLegends = this.displayLegends.slice()
-    },
+  created() {
+    this.canvas = process.browser
   },
   mounted() {
     const barChart = this.$refs.barChart as Vue
@@ -502,9 +396,13 @@ const options: ThisTypedComponentOptionsWithRecordProps<
       canvas.setAttribute('aria-labelledby', labelledbyId)
     }
   },
-}
-
-export default Vue.extend(options)
+  methods: {
+    onClickLegend(i) {
+      this.displayLegends[i] = !this.displayLegends[i]
+      this.displayLegends = this.displayLegends.slice()
+    },
+  },
+})
 </script>
 
 <style module lang="scss">

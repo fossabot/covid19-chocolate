@@ -1,9 +1,9 @@
 name: Auto Tweet Generate
 
 on:
-  push:
+  pull_request:
     branches:
-      - data
+      - main
 
 jobs:
   build:

@@ -75,6 +75,12 @@
     "category": "ワクチン接種状況",
     "ogpWidth": 959,
     "ogpHeight": 570
+  },  {
+    "path": "/cards/vaccine-7",
+    "title": "ワクチン接種者数の推移（累計）",
+    "category": "ワクチン接種状況",
+    "ogpWidth": 959,
+    "ogpHeight": 570
   },
   {
     "path": "/cards/vaccination",
