@@ -3,7 +3,7 @@ import { default as rawData } from '@/data/vaccine_all.json'
 import {
   Convert,
   Vaccination,
-} from '@/libraries/auto_generated/data_converter/convertVaccineAll
+} from '@/libraries/auto_generated/data_converter/convertVaccineAll'
 import {
   BaseRepository,
   IBaseRepository,
