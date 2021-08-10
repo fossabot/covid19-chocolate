@@ -9,6 +9,7 @@
 
 export interface Agency {
     date:     string;
+    all:      number;
     periods:  Period[];
     datasets: Dataset[];
 }
@@ -170,6 +171,7 @@ function r(name: string) {
 const typeMap: any = {
     "Agency": o([
         { json: "date", js: "date", typ: "" },
+        { json: "all", js: "all", typ: 0 },
         { json: "periods", js: "periods", typ: a(r("Period")) },
         { json: "datasets", js: "datasets", typ: a(r("Dataset")) },
     ], false),
