@@ -1,0 +1,37 @@
+{
+    "datasets": [
+        {
+            "period": {
+                "begin": "2021-08-04",
+                "end": "2021-08-04"
+            },
+            "data": {
+                "cumulative_1st_dose": 83787,
+                "cumulative_2nd_dose": 32942
+            }
+        },
+        {
+            "period": {
+                "begin": "2021-08-05",
+                "end": "2021-08-09"
+            },
+            "data": {
+                "cumulative_1st_dose": 93880,
+                "cumulative_2nd_dose": 43122
+            }
+        },
+        {
+            "period": {
+                "begin": "2021-08-10",
+                "end": "2021-08-10"
+            },
+            "data": {
+                "cumulative_1st_dose": 96395,
+                "cumulative_2nd_dose": 44978
+            }
+        }
+    ],
+    "date": "2021\/8\/11 17:00",
+    "p1": 20.65,
+    "p2": 9.64
+}
