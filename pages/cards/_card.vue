@@ -39,7 +39,7 @@ import Vaccine7Card from '@/components/index/CardsReference/Vaccine7/Card.vue'
 // 全世代のワクチン接種状況
 import VaccineAllCard from '@/components/index/CardsReference/VaccineAll/Card.vue'
 // 12～64歳のワクチン接種状況
-import Vaccine12Card from '@/components/index/CardsReference/Vaccine12/Card.vue'
+import Vaccine1264Card from '@/components/index/CardsReference/Vaccine1264/Card.vue'
 // 65歳以上のワクチン接種状況
 import VaccinationCard from '@/components/index/CardsReference/VaccineInfo65/Card.vue'
 
@@ -67,7 +67,7 @@ import type { NuxtConfig } from '@nuxt/types'
     VaccineInfoCard,
     Vaccine7Card,
     VaccineAllCard,
-    Vaccine12Card,
+    Vaccine1264Card,
     VaccinationCard,
   },
 })
