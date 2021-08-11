@@ -3,16 +3,16 @@ import { default as rawData } from '@/data/vaccine_12_64.json'
 import {
   Convert,
   Vaccination,
-} from '@/libraries/auto_generated/data_converter/convertVaccine12'
+} from '@/libraries/auto_generated/data_converter/convertVaccine1264'
 import {
   BaseRepository,
   IBaseRepository,
 } from '@/libraries/repositories/BaseRepository'
 
-export interface IVaccine12Repository extends IBaseRepository<Vaccination> {}
-export class Vaccine12Repository
+export interface IVaccine1264Repository extends IBaseRepository<Vaccination> {}
+export class Vaccine1264Repository
   extends BaseRepository<Vaccination>
-  implements IVaccine12Repository
+  implements IVaccine1264Repository
 {
   /**
    * 使用箇所
