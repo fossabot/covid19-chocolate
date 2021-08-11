@@ -5,8 +5,8 @@ import { DataRepository } from '@/libraries/repositories/DataRepository'
 import { InfectionMedicalcareprovisionStatusRepository as InfectionMedicalCareProvisionStatusRepository } from '@/libraries/repositories/InfectionMedicalCareProvisionStatusRepository'
 import { NewsRepository } from '@/libraries/repositories/NewsRepository'
 import { VaccinationRepository } from '@/libraries/repositories/VaccinationRepository'
-import { VaccineAllRepository } from '@/libraries/repositories/VaccineAllRepository'
 import { Vaccine12Repository } from '@/libraries/repositories/Vaccine12Repository'
+import { VaccineAllRepository } from '@/libraries/repositories/VaccineAllRepository'
 
 export const state = () => ({
   agency: new AgencyRepository().data,
