@@ -90,6 +90,13 @@
     "ogpHeight": 570
   },
   {
+    "path": "/cards/vaccine-12-64",
+    "title": "ワクチン接種件数（12～64歳・累計）",
+    "category": "ワクチン接種状況",
+    "ogpWidth": 959,
+    "ogpHeight": 570
+  },
+  {
     "path": "/cards/vaccination",
     "title": "ワクチン接種件数（高齢者・累計）",
     "category": "ワクチン接種状況",

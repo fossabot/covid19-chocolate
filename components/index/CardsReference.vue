@@ -80,6 +80,8 @@ const Vaccine7Card = () =>
   import('@/components/index/CardsReference/Vaccine7/Card.vue')
 const VaccineAllCard = () =>
   import('@/components/index/CardsReference/VaccineAll/Card.vue')
+const Vaccine1264Card = () =>
+  import('@/components/index/CardsReference/Vaccine1264/Card.vue')
 const VaccinationCard = () =>
   import('@/components/index/CardsReference/VaccineInfo65/Card.vue')
 /* eslint-enable simple-import-sort/imports */
@@ -92,7 +94,11 @@ export default Vue.extend({
   },
   data() {
     return {
-      rows: [[VaccineInfoCard, Vaccine7Card], [VaccineAllCard, VaccinationCard]],
+      rows: [
+        [VaccineInfoCard, Vaccine7Card],
+        [VaccineAllCard, Vaccine1264Card],
+        [VaccinationCard],
+      ],
     }
   },
 })
