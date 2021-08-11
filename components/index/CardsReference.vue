@@ -96,8 +96,8 @@ export default Vue.extend({
     return {
       rows: [
         [VaccineInfoCard, Vaccine7Card],
-        [VaccineAllCard, VaccinationCard],
-        [Vaccine12Card],
+        [VaccineAllCard, Vaccine12Card],
+        [VaccinationCard],
       ],
     }
   },
