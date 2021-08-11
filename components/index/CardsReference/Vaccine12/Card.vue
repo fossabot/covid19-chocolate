@@ -1,5 +1,5 @@
 <template>
-  <v-col cols="12" md="6" class="DataCard Vaccine12Card">
+  <v-col cols="12" md="6" class="DataCard Vaccine1264Card">
     <client-only>
       <chart
         :title="$t('ワクチン接種件数（12～64歳・累計）')"
@@ -97,7 +97,7 @@ type Computed = {
     labels: Date[]
     chartData: number[][]
   }
-  vaccine12: IVaccination
+  vaccine1264: IVaccination
 }
 type Props = {}
 
@@ -122,7 +122,7 @@ export default Vue.extend<Data, Methods, Computed, Props>({
   },
   computed: {
     date() {
-      return this.vaccine12.date
+      return this.vaccine1264.date
     },
     vaccinationLabels() {
       return this.vaccinationDatasets.map((dataset) => {
@@ -132,16 +132,16 @@ export default Vue.extend<Data, Methods, Computed, Props>({
       })
     },
     vaccinationDatasets() {
-      return this.vaccine12.datasets
+      return this.vaccine1264.datasets
     },
     p1() {
-      return this.vaccine12.p1
+      return this.vaccine1264.p1
     },
     p2() {
-      return this.vaccine12.p2
+      return this.vaccine1264.p2
     },
     vaccinationData() {
-      const datasets = this.vaccine12.datasets
+      const datasets = this.vaccine1264.datasets
       const lastPeriod = datasets.slice(-1)[0].period
       const labels = datasets.map((d: IVaccinationDataset) => d.period.end)
       const cumulative1StDose: number[] = datasets.map(
@@ -158,8 +158,8 @@ export default Vue.extend<Data, Methods, Computed, Props>({
         chartData,
       }
     },
-    vaccine12() {
-      return this.$store.state.vaccine12
+    vaccine1264() {
+      return this.$store.state.vaccine1264
     },
   },
   methods: {
