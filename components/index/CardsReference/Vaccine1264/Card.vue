@@ -74,7 +74,7 @@ import {
   Dataset as IVaccinationDataset,
   Period as IVaccinationPeriod,
   Vaccination as IVaccination,
-} from '@/libraries/auto_generated/data_converter/convertVaccine12'
+} from '@/libraries/auto_generated/data_converter/convertVaccine1264'
 import { getNumberToLocaleStringFunction } from '@/utils/monitoringStatusValueFormatters'
 
 dayjs.extend(duration)
