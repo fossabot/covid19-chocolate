@@ -16,6 +16,6 @@ export const state = () => ({
     new InfectionMedicalCareProvisionStatusRepository().data,
   news: new NewsRepository().data,
   vaccination: new VaccinationRepository().data,
-  vaccineAll: new VaccineAllRepository().data,
   vaccine12: new Vaccine12Repository().data,
+  vaccineAll: new VaccineAllRepository().data,
 })
