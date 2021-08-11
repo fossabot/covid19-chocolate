@@ -30,6 +30,7 @@ jobs:
         run: |
           git config user.name "Murayu0225"
           git config user.email "murayu@assistant-app.com"
+          git config pull.rebase false
           git add .
           git commit -m "Tweet Created!" || echo "No changes to commit"
           git pull  origin data
