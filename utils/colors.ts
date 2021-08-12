@@ -7,7 +7,7 @@ type Series = 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G'
 
 const surfaceStyleA: SurfaceStyle = {
   strokeColor: '#16A308',
-  fillColor: '#16A308',
+  fillColor: '#D9EADC',
 }
 
 const surfaceStyleB: SurfaceStyle = {
