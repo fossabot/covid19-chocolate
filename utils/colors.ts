@@ -45,7 +45,7 @@ export function getGraphSeriesStyle(seriesLength: number) {
     case 1:
       return [surfaceStyleB]
     case 2:
-      return [surfaceStyleA, surfaceStyleC]
+      return [surfaceStyleC, surfaceStyleA]
     case 4:
       return [surfaceStyleA, surfaceStyleB, surfaceStyleC, surfaceStyleG]
     default:
