@@ -214,7 +214,7 @@ export default Vue.extend<Data, Methods, Computed, Props>({
   },
   data() {
     const colors: SurfaceStyle[] = [
-      getGraphSeriesColor('C'),
+      getGraphSeriesColor('A'),
       getGraphSeriesColor('E'),
     ]
 
