@@ -30,8 +30,6 @@ jobs:
         run: |
           git config user.name "Murayu0225"
           git config user.email "murayu@assistant-app.com"
-          git config pull.rebase false
-          git merge --allow-unrelated-histories origin/main
           git add .
           git commit -m "Tweet Created!" || echo "No changes to commit"
           git pull  origin data
