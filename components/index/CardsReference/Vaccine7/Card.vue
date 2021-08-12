@@ -88,8 +88,8 @@ export default Vue.extend<Data, Methods, Computed, Props>({
   },
   data() {
     const agencyItems = [
-      this.$t('２回目接種済み') as string,
       this.$t('１回目接種済み') as string,
+      this.$t('２回目接種済み') as string,
     ]
     return {
       agencyItems,
