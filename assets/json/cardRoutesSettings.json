@@ -28,6 +28,13 @@
     "ogpHeight": 500
   },
   {
+    "path": "/cards/untracked-rate",
+    "title": "新規陽性者における接触歴等不明者数",
+    "category": "感染動向",
+    "ogpWidth": 959,
+    "ogpHeight": 500
+  },
+  {
     "path": "/cards/number-of-confirmed-cases-by-municipalities",
     "title": "陽性者数（区別・週報）",
     "category": "感染動向",
