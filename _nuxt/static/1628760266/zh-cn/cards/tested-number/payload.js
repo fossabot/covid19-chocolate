@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/zh-cn/cards/tested-number", {data:[{}],fetch:{},mutations:[]});
