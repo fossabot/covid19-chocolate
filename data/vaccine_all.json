@@ -39,9 +39,19 @@
                 "cumulative_1st_dose": 260150,
                 "cumulative_2nd_dose": 203042
             }
+        },
+        {
+            "period": {
+                "begin": "2021-08-12",
+                "end": "2021-08-12"
+            },
+            "data": {
+                "cumulative_1st_dose": 262397,
+                "cumulative_2nd_dose": 205152
+            }
         }
     ],
-    "date": "2021\/8\/12 17:00",
-    "p1": 39.96,
-    "p2": 31.19
+    "date": "2021\/8\/13 17:00",
+    "p1": 40.31,
+    "p2": 31.51
 }
