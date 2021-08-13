@@ -11,11 +11,18 @@ export interface InfectionMedicalcareprovisionStatus {
     date:        string;
     data:        { [key: string]: number };
     mainSummary: MainSummary;
+    agedate:     string;
     datasets:    Datasets;
 }
 
 export interface Datasets {
     date: string;
+    data: Datum[];
+}
+
+export interface Datum {
+    age:   string;
+    count: number;
 }
 
 export interface MainSummary {
@@ -187,10 +194,16 @@ const typeMap: any = {
         { json: "date", js: "date", typ: "" },
         { json: "data", js: "data", typ: m(0) },
         { json: "main_summary", js: "mainSummary", typ: r("MainSummary") },
+        { json: "agedate", js: "agedate", typ: "" },
         { json: "datasets", js: "datasets", typ: r("Datasets") },
     ], false),
     "Datasets": o([
         { json: "date", js: "date", typ: "" },
+        { json: "data", js: "data", typ: a(r("Datum")) },
+    ], false),
+    "Datum": o([
+        { json: "age", js: "age", typ: "" },
+        { json: "count", js: "count", typ: 0 },
     ], false),
     "MainSummary": o([
         { json: "children", js: "children", typ: a(r("MainSummaryChild")) },
