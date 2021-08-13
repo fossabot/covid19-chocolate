@@ -75,7 +75,7 @@ type Computed = {
   date: string
   labels: string[]
   filteredDailyPositiveDetailData: IDailyPositiveDetailDatum[]
-  dailyPositiveDetail: IDailyPositiveDetail
+  untracked: IDailyPositiveDetail
 }
 type Props = {}
 
@@ -138,7 +138,7 @@ export default Vue.extend<Data, Methods, Computed, Props>({
       return [reportedCount, missingCount, untrackedRate, untrackedIncreseRate]
     },
     date() {
-      return this.dailyPositiveDetail.date
+      return this.untracked.date
     },
     labels() {
       return this.filteredDailyPositiveDetailData.map(
@@ -146,12 +146,12 @@ export default Vue.extend<Data, Methods, Computed, Props>({
       )
     },
     filteredDailyPositiveDetailData() {
-      return this.dailyPositiveDetail.data.filter(
+      return this.untracked.data.filter(
         (d) => new Date(d.diagnosedDate) >= firstDiagnosedDate
       )
     },
-    dailyPositiveDetail() {
-      return this.$store.state.dailyPositiveDetail
+    untracked() {
+      return this.$store.state.untracked
     },
   },
 })
