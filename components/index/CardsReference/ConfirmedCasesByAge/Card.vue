@@ -37,8 +37,8 @@ export default {
     Chart,
   },
   data() {
-    // patients_ageは、削除しようか考え中
-    const { data, date } = Data.patients_age
+    // patients_ageは、削除しようか考え中(消した)
+    const { data, date } = Data
 
     const formattedDate = dayjs(date).format('YYYY/MM/DD HH:mm')
 
