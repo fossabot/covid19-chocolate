@@ -22,6 +22,8 @@ const MonitoringConfirmedCasesNumberCard = () =>
   import(
     '@/components/index/CardsMonitoring/MonitoringConfirmedCasesNumber/Card.vue'
   )
+const UntrackedRateCard = () =>
+  import('@/components/index/CardsMonitoring/UntrackedRate/Card.vue')
 const ConfirmedCasesByMunicipalitiesCard = () =>
   import(
     '@/components/index/CardsReference/ConfirmedCasesByMunicipalities/Card.vue'
@@ -51,9 +53,10 @@ export default Vue.extend({
       rows: [
         [ConfirmedCasesDetailsCard, MonitoringItemsOverviewCard],
         [ConfirmedCasesNumberCard, MonitoringConfirmedCasesNumberCard],
-        [ConfirmedCasesByMunicipalitiesCard, DeathsByDeathDateCard],
-        [PositiveNumberByDiagnosedDateCard, PositiveNumberByDevelopedDateCard],
-        [ConfirmedCasesByAgeCard, TestedNumberCard],
+        [UntrackedRateCard, ConfirmedCasesByMunicipalitiesCard],
+        [DeathsByDeathDateCard, PositiveNumberByDiagnosedDateCard],
+        [PositiveNumberByDevelopedDateCard, ConfirmedCasesByAgeCard],
+        [TestedNumberCard]
       ],
     }
   },
