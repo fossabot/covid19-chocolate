@@ -20,7 +20,7 @@ import ConfirmedCasesNumberCard from '@/components/index/CardsMonitoring/Confirm
 // 新規陽性者数
 import MonitoringConfirmedCasesNumberCard from '@/components/index/CardsMonitoring/MonitoringConfirmedCasesNumber/Card.vue'
 // 感染経路不明者数
-import UntrackedRateCard from '@/components/index/CardsMonitoring/UntrackedRateCard/Card.vue'
+import UntrackedRateCard from '@/components/index/CardsMonitoring/UntrackedRate/Card.vue'
 // ---- その他 参考指標
 // 陽性者数（区別・週報）
 import ConfirmedCasesByMunicipalitiesCard from '@/components/index/CardsReference/ConfirmedCasesByMunicipalities/Card.vue'
