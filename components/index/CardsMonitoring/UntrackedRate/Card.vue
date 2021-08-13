@@ -34,7 +34,7 @@
             <li>
               {{
                 $t(
-                  '濃厚接触者など、患者の発生状況の内訳の公表を開始した2020年3月27日から作成'
+                  '濃厚接触者など、患者の発生状況の内訳の公表を開始した2021年1月8日から作成'
                 )
               }}
             </li>
@@ -57,7 +57,7 @@ import Chart from '@/components/index/CardsMonitoring/UntrackedRate/Chart.vue'
 import {
   DailyPositiveDetail as IDailyPositiveDetail,
   Datum as IDailyPositiveDetailDatum,
-} from '@/libraries/auto_generated/data_converter/convertDailyPositiveDetail'
+} from '@/libraries/auto_generated/data_converter/convertUntracked
 import {
   getNumberToFixedFunction,
   getNumberToLocaleStringFunction,
