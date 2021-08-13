@@ -79,7 +79,7 @@ type Computed = {
 }
 type Props = {}
 
-const firstDiagnosedDate = new Date('2020-03-27')
+const firstDiagnosedDate = new Date('2021-01-08')
 
 export default Vue.extend<Data, Methods, Computed, Props>({
   components: {
