@@ -14,7 +14,7 @@ export interface IUntrackedRepository
 
 export class UntrackedRepository
   extends BaseRepository<DailyPositiveDetail>
-  implements IUntrackedepository
+  implements IUntrackedRepository
 {
   /**
    * 使用箇所
