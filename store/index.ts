@@ -7,6 +7,7 @@ import { NewsRepository } from '@/libraries/repositories/NewsRepository'
 import { VaccinationRepository } from '@/libraries/repositories/VaccinationRepository'
 import { Vaccine1264Repository } from '@/libraries/repositories/Vaccine1264Repository'
 import { VaccineAllRepository } from '@/libraries/repositories/VaccineAllRepository'
+import { UntrackedRepository } from '@/libraries/repositories/UntrackedRepository'
 
 export const state = () => ({
   agency: new AgencyRepository().data,
@@ -18,4 +19,5 @@ export const state = () => ({
   vaccination: new VaccinationRepository().data,
   vaccine1264: new Vaccine1264Repository().data,
   vaccineAll: new VaccineAllRepository().data,
+  untracked: new UntrackedRepository().data,
 })
