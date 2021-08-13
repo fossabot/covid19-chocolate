@@ -57,7 +57,7 @@ import Chart from '@/components/index/CardsMonitoring/UntrackedRate/Chart.vue'
 import {
   DailyPositiveDetail as IDailyPositiveDetail,
   Datum as IDailyPositiveDetailDatum,
-} from '@/libraries/auto_generated/data_converter/convertUntracked
+} from '@/libraries/auto_generated/data_converter/convertUntracked'
 import {
   getNumberToFixedFunction,
   getNumberToLocaleStringFunction,
