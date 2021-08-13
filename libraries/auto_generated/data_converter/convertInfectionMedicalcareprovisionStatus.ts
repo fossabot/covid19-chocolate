@@ -16,7 +16,6 @@ export interface InfectionMedicalcareprovisionStatus {
 
 export interface Datasets {
     date: string;
-    data: Datum[];
 }
 
 export interface MainSummary {
@@ -192,7 +191,6 @@ const typeMap: any = {
     ], false),
     "Datasets": o([
         { json: "date", js: "date", typ: "" },
-        { json: "data", js: "data", typ: a(r("Datum")) },
     ], false),
     "MainSummary": o([
         { json: "children", js: "children", typ: a(r("MainSummaryChild")) },
