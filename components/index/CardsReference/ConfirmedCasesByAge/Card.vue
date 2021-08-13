@@ -27,7 +27,7 @@
 import dayjs from 'dayjs'
 
 import Chart from '@/components/index/CardsReference/ConfirmedCasesByAge/Chart.vue'
-import Data from '@/data/infection_medicalcareprovision_status.json'
+import Data from '@/data/age.json'
 import { getCommaSeparatedNumberToFixedFunction } from '@/utils/monitoringStatusValueFormatters'
 
 const countFormatter = getCommaSeparatedNumberToFixedFunction()
