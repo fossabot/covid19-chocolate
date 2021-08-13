@@ -1,0 +1,12 @@
+{
+    "data": [
+        {
+            "diagnosed_date": "2021-01-08",
+            "missing_count": 31,
+            "reported_count": 11,
+            "weekly_average_untracked_count": null,
+            "weekly_average_untracked_increse_percent": null
+        },
+    ],
+    "date": "2021\/08\/13 18:00"
+}
