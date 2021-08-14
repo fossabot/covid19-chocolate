@@ -8,7 +8,7 @@
         :date="date"
         :info="info"
       >
-        <template #description>
+        <template #additionalDescription>
           <span>{{ $t('（注）') }}</span>
           <ul>
             <li>
