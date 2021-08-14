@@ -19,8 +19,8 @@
         :unit="info.unit"
       />
     </template>
-    <template #description>
-      <slot name="description" />
+    <template #additionalDescription>
+      <slot name="additionalDescription" />
     </template>
   </data-view>
 </template>
