@@ -1,8 +1,5 @@
 <template>
   <data-view :title="title" :title-id="titleId" :date="date">
-    <template #description>
-      <slot name="description" />
-    </template>
     <v-data-table
       :ref="'displayedTable'"
       :headers="chartData.headers"
@@ -21,6 +18,9 @@
         :s-text="info.sText"
         :unit="info.unit"
       />
+    </template>
+    <template #description>
+      <slot name="description" />
     </template>
   </data-view>
 </template>
