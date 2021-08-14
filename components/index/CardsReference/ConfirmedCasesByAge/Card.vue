@@ -2,7 +2,7 @@
   <v-col cols="12" md="6" class="DataCard ConfirmedCasesByAgeCard">
     <client-only>
       <chart
-        :title="$t('年代別の感染状況（直近1週間）')"
+        :title="$t('年代別の陽性者数')"
         :title-id="'number-of-confirmed-cases-by-age'"
         :chart-data="ageTable"
         :date="date"
