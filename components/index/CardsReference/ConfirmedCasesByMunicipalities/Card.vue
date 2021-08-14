@@ -53,21 +53,19 @@ export default {
     // ヘッダーを設定
     if (this.$i18n.locale === 'ja') {
       municipalitiesTable.headers = [
-        { text: this.$t('地域'), value: 'area' },
         { text: this.$t('ふりがな'), value: 'ruby' },
         { text: this.$t('区'), value: 'label' },
         { text: this.$t('陽性者数'), value: 'count', align: 'end' },
       ]
     } else {
       municipalitiesTable.headers = [
-        { text: this.$t('地域'), value: 'area' },
         { text: this.$t('区'), value: 'label' },
         { text: this.$t('陽性者数'), value: 'count', align: 'end' },
       ]
     }
 
     // データをソート
-    const areaOrder = ['相模原市', null]
+    const labelOrder = ['緑区', '中央区', '南区', null]
     datasets.data
       .sort((a, b) => {
         // 全体をふりがなでソート
@@ -81,22 +79,21 @@ export default {
       })
       .sort((a, b) => {
         // '特別区' -> '多摩地域' -> '島しょ地域' -> その他 の順にソート
-        return areaOrder.indexOf(a.area) - areaOrder.indexOf(b.area)
+        return labelOrder.indexOf(a.label) - labelOrder.indexOf(b.label)
       })
 
     // データを追加
     municipalitiesTable.datasets = datasets.data
       .filter((d) => d.label !== '小計')
       .map((d) => {
-        const area = this.$t(d.area)
         const label = this.$t(d.label)
         const count = countFormatter(d.count)
 
         if (this.$i18n.locale === 'ja') {
           const ruby = this.$t(d.ruby)
-          return { area, ruby, label, count }
+          return { ruby, label, count }
         } else {
-          return { area, label, count }
+          return { label, count }
         }
       })
 
