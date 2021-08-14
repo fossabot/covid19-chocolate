@@ -53,7 +53,6 @@ export default {
     // ヘッダーを設定
     if (this.$i18n.locale === 'ja') {
       municipalitiesTable.headers = [
-        { text: this.$t('ふりがな'), value: 'ruby' },
         { text: this.$t('区'), value: 'label' },
         { text: this.$t('陽性者数'), value: 'count', align: 'end' },
       ]
@@ -68,16 +67,6 @@ export default {
     const labelOrder = ['緑区', '中央区', '南区', '市外', '小計']
     datasets.data
       .sort((a, b) => {
-        // 全体をふりがなでソート
-        if (a.ruby === b.ruby) {
-          return 0
-        } else if (a.ruby > b.ruby) {
-          return 1
-        } else {
-          return -1
-        }
-      })
-      .sort((a, b) => {
         // '特別区' -> '多摩地域' -> '島しょ地域' -> その他 の順にソート
         return labelOrder.indexOf(a.label) - labelOrder.indexOf(b.label)
       })
@@ -89,8 +78,7 @@ export default {
         const count = countFormatter(d.count)
 
         if (this.$i18n.locale === 'ja') {
-          const ruby = this.$t(d.ruby)
-          return { ruby, label, count }
+          return { label, count }
         } else {
           return { label, count }
         }
