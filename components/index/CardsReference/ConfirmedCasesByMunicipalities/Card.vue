@@ -65,7 +65,7 @@ export default {
     }
 
     // データをソート
-    const labelOrder = ['緑区', '中央区', '南区', null]
+    const labelOrder = ['緑区', '中央区', '南区', '市外', '小計']
     datasets.data
       .sort((a, b) => {
         // 全体をふりがなでソート
@@ -84,7 +84,6 @@ export default {
 
     // データを追加
     municipalitiesTable.datasets = datasets.data
-      .filter((d) => d.label !== '小計')
       .map((d) => {
         const label = this.$t(d.label)
         const count = countFormatter(d.count)
