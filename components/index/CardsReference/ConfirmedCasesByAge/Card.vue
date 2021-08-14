@@ -7,7 +7,6 @@
         :chart-data="ageTable"
         :date="date"
         :info="info"
-        :url="'https://sagamihara-stopcovid19.com'"
       >
         <template #description>
           <span>{{ $t('（注）') }}</span>
@@ -51,8 +50,8 @@ export default {
     // ヘッダーを設定
     ageTable.headers = [
       { text: this.$t('年代'), value: 'age', align: 'center' },
-      { text: this.$t('新規'), value: '_new', align: 'center' },
-      { text: this.$t('濃厚接触者'), value: 'close', align: 'center' },
+      { text: this.$t('本日発表分'), value: '_new', align: 'center' },
+      { text: this.$t('昨日までの累計'), value: 'close', align: 'center' },
       { text: this.$t('合計'), value: 'total', align: 'center' },
     ]
 
