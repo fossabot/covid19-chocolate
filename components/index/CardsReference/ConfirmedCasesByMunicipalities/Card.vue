@@ -65,24 +65,22 @@ export default {
 
     // データをソート
     const labelOrder = ['緑区', '中央区', '南区', '市外', '小計']
-    datasets.data
-      .sort((a, b) => {
-        // '特別区' -> '多摩地域' -> '島しょ地域' -> その他 の順にソート
-        return labelOrder.indexOf(a.label) - labelOrder.indexOf(b.label)
-      })
+    datasets.data.sort((a, b) => {
+      // '特別区' -> '多摩地域' -> '島しょ地域' -> その他 の順にソート
+      return labelOrder.indexOf(a.label) - labelOrder.indexOf(b.label)
+    })
 
     // データを追加
-    municipalitiesTable.datasets = datasets.data
-      .map((d) => {
-        const label = this.$t(d.label)
-        const count = countFormatter(d.count)
+    municipalitiesTable.datasets = datasets.data.map((d) => {
+      const label = this.$t(d.label)
+      const count = countFormatter(d.count)
 
-        if (this.$i18n.locale === 'ja') {
-          return { label, count }
-        } else {
-          return { label, count }
-        }
-      })
+      if (this.$i18n.locale === 'ja') {
+        return { label, count }
+      } else {
+        return { label, count }
+      }
+    })
 
     const info = {
       sText: this.$t('{date}の累計', {
