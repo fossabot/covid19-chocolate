@@ -1,18 +1,17 @@
 <template>
   <div class="DataView-DataSet">
-    <span v-if="title" class="DataView-DataSet-title">{{ title }}</span>
+    <h4 v-if="title" class="DataView-DataSet-title">{{ title }}</h4>
     <div class="DataView-DataSet-info">
       <template v-if="lText">
-        <span class="DataView-DataSet-summary">
+        <p class="DataView-DataSet-summary">
           {{ lText }}
-          <small class="DataView-DataSet-summary-unit">{{ unit }}</small>
-        </span>
-        <br />
+          <span class="DataView-DataSet-summary-unit">{{ unit }}</span>
+        </p>
       </template>
-      <small class="DataView-DataSet-date">{{ sText }}</small>
+      <span class="DataView-DataSet-date">{{ sText }}</span>
       <template v-if="sTextUnder">
         <br />
-        <small class="DataView-DataSet-date">{{ sTextUnder }}</small>
+        <span class="DataView-DataSet-date">{{ sTextUnder }}</span>
       </template>
     </div>
   </div>
@@ -56,18 +55,18 @@ export default Vue.extend({
   &-DataSet {
     display: flex;
     flex-flow: column;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     color: $gray-2;
 
     @include largerThan($large) {
-      flex-flow: row;
       justify-content: space-between;
+      flex-flow: row;
     }
 
     &-title {
+      font-weight: normal;
       flex: 1 1 50%;
-      margin-bottom: 10px;
-      font-size: 2rem;
+      @include font-size(18);
     }
 
     &-info {
@@ -80,10 +79,11 @@ export default Vue.extend({
 
     &-summary {
       display: inline-block;
-      font-style: normal;
-      line-height: 30px;
       color: $gray-2;
       white-space: nowrap;
+      font-style: normal;
+      line-height: 30px;
+      margin-bottom: 0 !important;
       @include font-size(30);
 
       &-unit {
@@ -95,8 +95,8 @@ export default Vue.extend({
     &-date {
       display: inline-block;
       width: 100%;
-      line-height: initial;
       color: $gray-3;
+      line-height: initial;
       @include font-size(12);
     }
   }
