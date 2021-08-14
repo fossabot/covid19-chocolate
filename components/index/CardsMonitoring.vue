@@ -8,12 +8,6 @@ import Vue from 'vue'
 
 import CardsLazyRow from '@/components/index/_shared/CardsLazyRow.vue'
 
-// 検査陽性者の状況
-const ConfirmedCasesDetailsCard = () =>
-  import('@/components/index/CardsMonitoring/ConfirmedCasesDetails/Card.vue')
-// モニタリング項目
-const MonitoringItemsOverviewCard = () =>
-  import('@/components/index/CardsMonitoring/MonitoringItemsOverview/Card.vue')
 // 報告日別陽性者数
 const ConfirmedCasesNumberCard = () =>
   import('@/components/index/CardsMonitoring/ConfirmedCasesNumber/Card.vue')
@@ -22,10 +16,14 @@ const MonitoringConfirmedCasesNumberCard = () =>
   import(
     '@/components/index/CardsMonitoring/MonitoringConfirmedCasesNumber/Card.vue'
   )
-const ConfirmedCasesByMunicipalitiesCard = () =>
-  import(
-    '@/components/index/CardsReference/ConfirmedCasesByMunicipalities/Card.vue'
-  )
+// 検査陽性者の状況
+const ConfirmedCasesDetailsCard = () =>
+  import('@/components/index/CardsMonitoring/ConfirmedCasesDetails/Card.vue')
+// モニタリング項目
+const MonitoringItemsOverviewCard = () =>
+  import('@/components/index/CardsMonitoring/MonitoringItemsOverview/Card.vue')
+const ConfirmedCasesByAgeCard = () =>
+  import('@/components/index/CardsReference/ConfirmedCasesByAge/Card.vue')
 const DeathsByDeathDateCard = () =>
   import('@/components/index/CardsReference/DeathsByDeathDate/Card.vue')
 const PositiveNumberByDiagnosedDateCard = () =>
@@ -36,8 +34,10 @@ const PositiveNumberByDevelopedDateCard = () =>
   import(
     '@/components/index/CardsReference/PositiveNumberByDevelopedDate/Card.vue'
   )
-const ConfirmedCasesByAgeCard = () =>
-  import('@/components/index/CardsReference/ConfirmedCasesByAge/Card.vue')
+const ConfirmedCasesByMunicipalitiesCard = () =>
+  import(
+    '@/components/index/CardsReference/ConfirmedCasesByMunicipalities/Card.vue'
+  )
 const TestedNumberCard = () =>
   import('@/components/index/CardsReference/TestedNumber/Card.vue')
 /* eslint-enable simple-import-sort/imports */
@@ -49,11 +49,11 @@ export default Vue.extend({
   data() {
     return {
       rows: [
-        [ConfirmedCasesDetailsCard, MonitoringItemsOverviewCard],
         [ConfirmedCasesNumberCard, MonitoringConfirmedCasesNumberCard],
-        [ConfirmedCasesByMunicipalitiesCard, DeathsByDeathDateCard],
+        [ConfirmedCasesDetailsCard, MonitoringItemsOverviewCard],
+        [ConfirmedCasesByAgeCard, DeathsByDeathDateCard],
         [PositiveNumberByDiagnosedDateCard, PositiveNumberByDevelopedDateCard],
-        [ConfirmedCasesByAgeCard, TestedNumberCard],
+        [ConfirmedCasesByMunicipalitiesCard, TestedNumberCard],
       ],
     }
   },
