@@ -189,6 +189,7 @@ import PageHeader from '@/components/_shared/PageHeader.vue'
 import StaticCard from '@/components/_shared/StaticCard.vue'
 
 export default Vue.extend({
+  middleware: 'redirect',
   components: {
     PageHeader,
     StaticCard,

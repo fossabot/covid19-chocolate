@@ -11,25 +11,25 @@
 <script lang="ts">
 /* eslint-disable simple-import-sort/imports -- ブラウザでの表示順に合わせて各 card の component を import する */
 // ---- モニタリング項目
-// 検査陽性者の状況
-import ConfirmedCasesDetailsCard from '@/components/index/CardsMonitoring/ConfirmedCasesDetails/Card.vue'
-// モニタリング状況
-import MonitoringItemsOverviewCard from '@/components/index/CardsMonitoring/MonitoringItemsOverview/Card.vue'
 // 報告日別による陽性者数の推移
 import ConfirmedCasesNumberCard from '@/components/index/CardsMonitoring/ConfirmedCasesNumber/Card.vue'
 // 新規陽性者数
 import MonitoringConfirmedCasesNumberCard from '@/components/index/CardsMonitoring/MonitoringConfirmedCasesNumber/Card.vue'
+// 検査陽性者の状況
+import ConfirmedCasesDetailsCard from '@/components/index/CardsMonitoring/ConfirmedCasesDetails/Card.vue'
+// モニタリング状況
+import MonitoringItemsOverviewCard from '@/components/index/CardsMonitoring/MonitoringItemsOverview/Card.vue'
 // ---- その他 参考指標
-// 陽性者数（区別・週報）
-import ConfirmedCasesByMunicipalitiesCard from '@/components/index/CardsReference/ConfirmedCasesByMunicipalities/Card.vue'
+// 年代別の陽性者数
+import ConfirmedCasesByAgeCard from '@/components/index/CardsReference/ConfirmedCasesByAge/Card.vue'
 // 死亡日別による死亡者数の推移
 import DeathsByDeathDateCard from '@/components/index/CardsReference/DeathsByDeathDate/Card.vue'
 // 確定日別による陽性者数の推移
 import PositiveNumberByDiagnosedDateCard from '@/components/index/CardsReference/PositiveNumberByDiagnosedDate/Card.vue'
 // 発症日別による陽性者数の推移
 import PositiveNumberByDevelopedDateCard from '@/components/index/CardsReference/PositiveNumberByDevelopedDate/Card.vue'
-// 年代別の陽性者数
-import ConfirmedCasesByAgeCard from '@/components/index/CardsReference/ConfirmedCasesByAge/Card.vue'
+// 陽性者数（区別・週報）
+import ConfirmedCasesByMunicipalitiesCard from '@/components/index/CardsReference/ConfirmedCasesByMunicipalities/Card.vue'
 // 検査数の状況
 import TestedNumberCard from '@/components/index/CardsReference/TestedNumber/Card.vue'
 // 新型コロナウイルスワクチン接種者数
@@ -53,16 +53,16 @@ import type { NuxtConfig } from '@nuxt/types'
 @Component({
   components: {
     // ---- モニタリング項目
-    ConfirmedCasesDetailsCard,
-    MonitoringItemsOverviewCard,
     ConfirmedCasesNumberCard,
     MonitoringConfirmedCasesNumberCard,
+    ConfirmedCasesDetailsCard,
+    MonitoringItemsOverviewCard,
     // ---- その他 参考指標
-    ConfirmedCasesByMunicipalitiesCard,
+    ConfirmedCasesByAgeCard,
     DeathsByDeathDateCard,
     PositiveNumberByDiagnosedDateCard,
     PositiveNumberByDevelopedDateCard,
-    ConfirmedCasesByAgeCard,
+    ConfirmedCasesByMunicipalitiesCard,
     TestedNumberCard,
     VaccineInfoCard,
     Vaccine7Card,
@@ -77,16 +77,6 @@ export default class CardContainer extends Vue implements NuxtConfig {
     switch (this.$route.params.card) {
       // NOTE: 以下，ブラウザでの表示順に合わせて条件分岐を行う
       // ---- モニタリング項目
-      // 検査陽性者の状況
-      case 'details-of-confirmed-cases':
-        cardComponent = 'confirmed-cases-details-card'
-        cardCategory = 'monitoring'
-        break
-      // モニタリング状況
-      case 'monitoring-items-overview':
-        cardComponent = 'monitoring-items-overview-card'
-        cardCategory = 'monitoring'
-        break
       // 報告日別による陽性者数の推移
       case 'number-of-confirmed-cases':
         cardComponent = 'confirmed-cases-number-card'
@@ -97,10 +87,20 @@ export default class CardContainer extends Vue implements NuxtConfig {
         cardComponent = 'monitoring-confirmed-cases-number-card'
         cardCategory = 'monitoring'
         break
+      // 検査陽性者の状況
+      case 'details-of-confirmed-cases':
+        cardComponent = 'confirmed-cases-details-card'
+        cardCategory = 'monitoring'
+        break
+      // モニタリング状況
+      case 'monitoring-items-overview':
+        cardComponent = 'monitoring-items-overview-card'
+        cardCategory = 'monitoring'
+        break
       // ---- その他 参考指標
-      // 陽性者数（区別・週報）
-      case 'number-of-confirmed-cases-by-municipalities':
-        cardComponent = 'confirmed-cases-by-municipalities-card'
+      // 年代別の陽性者数
+      case 'number-of-confirmed-cases-by-age':
+        cardComponent = 'confirmed-cases-by-age-card'
         cardCategory = 'monitoring'
         break
       // 死亡日別による死亡者数の推移
@@ -118,9 +118,9 @@ export default class CardContainer extends Vue implements NuxtConfig {
         cardComponent = 'positive-number-by-developed-date-card'
         cardCategory = 'monitoring'
         break
-      // 年代別の陽性者数
-      case 'number-of-confirmed-cases-by-age':
-        cardComponent = 'confirmed-cases-by-age-card'
+      // 陽性者数（区別・週報）
+      case 'number-of-confirmed-cases-by-municipalities':
+        cardComponent = 'confirmed-cases-by-municipalities-card'
         cardCategory = 'monitoring'
         break
       // 検査数の状況
