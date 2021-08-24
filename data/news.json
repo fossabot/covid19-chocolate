@@ -2,9 +2,21 @@
     "newsItems": [
 
         {
-            "date": "2021\/08\/22",
-            "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/08\/0822.pdf",
-            "text": "新型コロナウイルス感染症による新たな患者の確認(8498～8734例目）について （PDF 193.3KB）"
+            "date": "2021\/08\/24",
+            "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/08\/0824.pdf",
+            "text": "新型コロナウイルス感染症による新たな患者の確認(8982～9078例目）、患者の死亡及び本市職員の感染確認について （PDF 186.1KB）"
+        },
+
+        {
+            "date": "2021\/08\/24",
+            "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/08\/0824_02.pdf",
+            "text": "新型コロナウイルス感染症対策に係る人事異動について （PDF 147.0KB）"
+        },
+
+        {
+            "date": "2021\/08\/23",
+            "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/08\/0823_02.pdf",
+            "text": "新型コロナウイルスワクチンの集団接種会場におけるワクチンの調製誤りに伴う廃棄について （PDF 219.0KB）"
         },
 
         {
@@ -23,18 +35,6 @@
             "date": "2021\/08\/06",
             "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/08\/0806_01.pdf",
             "text": "新型コロナウイルスワクチン集団接種会場の臨時予約の受付について （PDF 185.8KB）"
-        },
-
-        {
-            "date": "2021\/08\/03",
-            "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/08\/0803_01.pdf",
-            "text": "新型コロナウイルスワクチン接種の予約受付及び優先接種対象の追加について （PDF 114.6KB）"
-        },
-
-        {
-            "date": "2021\/07\/31",
-            "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/023\/854\/07\/0731_00.pdf",
-            "text": "緊急事態宣言に伴う本市の対応について （PDF 389.0KB）"
         }
     ]
 }
