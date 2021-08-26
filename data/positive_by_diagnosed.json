@@ -2187,36 +2187,40 @@
         },
         {
             "diagnosed_date": "2021-08-17",
-            "count": 256
+            "count": 257
         },
         {
             "diagnosed_date": "2021-08-18",
-            "count": 224
+            "count": 226
         },
         {
             "diagnosed_date": "2021-08-19",
-            "count": 183
+            "count": 184
         },
         {
             "diagnosed_date": "2021-08-20",
-            "count": 196
+            "count": 199
         },
         {
             "diagnosed_date": "2021-08-21",
-            "count": 144
+            "count": 149
         },
         {
             "diagnosed_date": "2021-08-22",
-            "count": 85
+            "count": 88
         },
         {
             "diagnosed_date": "2021-08-23",
-            "count": 69
+            "count": 129
         },
         {
             "diagnosed_date": "2021-08-24",
-            "count": 8
+            "count": 33
+        },
+        {
+            "diagnosed_date": "2021-08-25",
+            "count": 6
         }
     ],
-    "date": "2021\/08\/25 18:00"
+    "date": "2021\/08\/26 18:00"
 }
