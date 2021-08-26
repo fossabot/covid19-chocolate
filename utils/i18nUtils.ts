@@ -29,7 +29,7 @@ export const getLinksLanguageAlternative = (
         rel: 'alternate',
         href: getFullPathWihLocale(locale.code),
         hreflang: locale.iso,
-      }} as MetaInfo)
+      } as MetaInfo)
     }
   }
   if (defaultLocale) {
@@ -38,7 +38,7 @@ export const getLinksLanguageAlternative = (
       rel: 'alternate',
       href: getFullPathWihLocale(defaultLocale),
       hreflang: 'x-default',
-    }} as MetaInfo)
+    } as MetaInfo)
   }
 
   return links
