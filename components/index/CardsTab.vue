@@ -14,7 +14,6 @@
       {{ item.label }}
     </v-tab>
     <v-tabs-items v-model="tab" touchless>
-      <v-tab-item v-for="(item, i) in items" :key="i" :value="`tab-${i}`">
       <v-tab-item
         v-for="(item, i) in items"
         :key="i"
