@@ -172,7 +172,7 @@ import {
   mdiMenu,
 } from '@mdi/js'
 import Vue from 'vue'
-import { TranslateResult } from 'vue-i18n'
+import { TranslateResult } from 'vue-i18n' // eslint-disable-line import/named
 
 import AppLink from '@/components/_shared/AppLink.vue'
 import LanguageSelector from '@/components/_shared/SideNavigation/LanguageSelector.vue'
@@ -181,6 +181,7 @@ import MenuList from '@/components/_shared/SideNavigation/MenuList.vue'
 type ItemTitle = {
   slug: string
   text: TranslateResult
+  isExpand?: boolean
 }
 
 type Item = {
@@ -215,18 +216,22 @@ export default Vue.extend({
         {
           slug: 'covid19-info',
           text: this.$t('新型コロナウイルス感染症情報'),
+          isExpand: false,
         },
         {
           slug: 'support-info',
           text: this.$t('支援情報'),
+          isExpand: false,
         },
         {
           slug: 'related-sites',
           text: this.$t('関連サイト'),
+          isExpand: true,
         },
         {
           slug: 'site-info',
           text: this.$t('サイト情報'),
+          isExpand: false,
         },
       ]
     },
