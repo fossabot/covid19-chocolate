@@ -5,7 +5,6 @@
       :id="`cardTab-${i}`"
       :key="i"
       v-ripple="false"
-      :href="`#tab-${i}`"
       :to="{ path: localePath(item.path) }"
       nuxt
       exact
