@@ -43,14 +43,16 @@ export default Vue.extend({
     return {
       tab: null,
       items: [
-        {
+         {
           label: this.$t('感染動向'),
           component: CardsMonitoring,
+          icon: mdiChartTimelineVariant,
           path: '/',
         },
         {
           label: this.$t('ワクチン接種状況'),
           component: CardsReference,
+          icon: mdiNeedle,
           path: '/reference',
         },
       ],
