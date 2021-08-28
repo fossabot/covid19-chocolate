@@ -43,7 +43,7 @@ export default Vue.extend({
     return {
       tab: null,
       items: [
-         {
+        {
           label: this.$t('感染動向'),
           component: CardsMonitoring,
           icon: mdiChartTimelineVariant,
