@@ -9,6 +9,15 @@
         :date="date"
         :unit="$t('人')"
       >
+        <template #attentionNote>
+          <p>
+            {{
+              $t(
+                'このグラフに関する相模原市の情報公開終了に伴い、2021年8月27日分の更新を持って運用を終了しました。'
+              )
+            }}
+          </p>
+        </template>
         <template #additionalDescription>
           <span>{{ $t('（注）') }}</span>
           <ul>
