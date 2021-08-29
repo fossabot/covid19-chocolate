@@ -57,7 +57,9 @@ export default Vue.extend({
         [ConfirmedCasesByAgeCard, DeathsByDeathDateCard],
         [ConfirmedCasesByMunicipalitiesCard, TestedNumberCard],
       ],
-      hideRows: [[PositiveNumberByDiagnosedDateCard, PositiveNumberByDevelopedDateCard]],
+      hideRows: [
+        [PositiveNumberByDiagnosedDateCard, PositiveNumberByDevelopedDateCard],
+      ],
     }
   },
 })
