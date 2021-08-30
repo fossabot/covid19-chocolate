@@ -9,7 +9,7 @@
         :date="positiveByDeveloped.date"
         :unit="$t('人')"
       >
-        <template #attentionNote>
+        <template #description>
           <p>
             {{
               $t(
