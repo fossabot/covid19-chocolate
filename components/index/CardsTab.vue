@@ -2,16 +2,23 @@
   <v-tabs v-model="tab" hide-slider>
     <v-tab
       v-for="(item, i) in items"
+      :id="`cardTab-${i}`"
       :key="i"
       v-ripple="false"
-      :href="`#tab-${i}`"
+      :to="{ path: localePath(item.path) }"
+      nuxt
+      exact
       @click="change"
     >
       <v-icon class="TabIcon">{{ item.icon }}</v-icon>
       {{ item.label }}
     </v-tab>
     <v-tabs-items v-model="tab" touchless>
-      <v-tab-item v-for="(item, i) in items" :key="i" :value="`tab-${i}`">
+      <v-tab-item
+        v-for="(item, i) in items"
+        :key="i"
+        :value="localePath(item.path)"
+      >
         <lazy-component :is="item.component" />
       </v-tab-item>
     </v-tabs-items>
@@ -40,11 +47,13 @@ export default Vue.extend({
           label: this.$t('感染動向'),
           component: CardsMonitoring,
           icon: mdiChartTimelineVariant,
+          path: '/',
         },
         {
           label: this.$t('ワクチン接種状況'),
           component: CardsReference,
           icon: mdiNeedle,
+          path: '/reference',
         },
       ],
     }
