@@ -66,7 +66,7 @@
         <ul class="SideNavigation-Social">
           <li class="SideNavigation-SocialLink-ListItem">
             <app-link
-              to="https://line.me/R/ti/p/%40360lkhth"
+              to="https://lin.ee/BMlBaDg"
               :show-icon="false"
               class="SideNavigation-SocialLink"
             >
