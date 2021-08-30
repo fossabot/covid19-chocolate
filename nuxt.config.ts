@@ -126,7 +126,7 @@ const config: NuxtConfig = {
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
     ['@nuxtjs/dotenv', { filename: `.env.${environment}` }],
-    ['nuxt-i18n', i18n],
+    ['@nuxtjs/i18n', i18n],
     'nuxt-svg-loader',
     ['vue-scrollto/nuxt', { duration: 1000, offset: -72 }],
     'nuxt-webfontloader',
@@ -248,6 +248,15 @@ const config: NuxtConfig = {
   watchers: {
     webpack: {
       poll: true,
+    },
+  },
+  router: {
+    extendRoutes(routes) {
+      routes.forEach((route) => {
+        if (route.name === 'index' || route.name === 'reference') {
+          route.meta = { tabs: true }
+        }
+      })
     },
   },
 }

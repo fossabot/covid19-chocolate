@@ -1,5 +1,8 @@
 <template>
-  <cards-lazy-row :rows="rows" />
+  <div>
+    <cards-lazy-row :rows="rows" />
+    <cards-lazy-row :rows="hideRows" hide-cards />
+  </div>
 </template>
 
 <script lang="ts">
@@ -26,6 +29,12 @@ const ConfirmedCasesByAgeCard = () =>
   import('@/components/index/CardsReference/ConfirmedCasesByAge/Card.vue')
 const DeathsByDeathDateCard = () =>
   import('@/components/index/CardsReference/DeathsByDeathDate/Card.vue')
+const ConfirmedCasesByMunicipalitiesCard = () =>
+  import(
+    '@/components/index/CardsReference/ConfirmedCasesByMunicipalities/Card.vue'
+  )
+const TestedNumberCard = () =>
+  import('@/components/index/CardsReference/TestedNumber/Card.vue')
 const PositiveNumberByDiagnosedDateCard = () =>
   import(
     '@/components/index/CardsReference/PositiveNumberByDiagnosedDate/Card.vue'
@@ -34,12 +43,6 @@ const PositiveNumberByDevelopedDateCard = () =>
   import(
     '@/components/index/CardsReference/PositiveNumberByDevelopedDate/Card.vue'
   )
-const ConfirmedCasesByMunicipalitiesCard = () =>
-  import(
-    '@/components/index/CardsReference/ConfirmedCasesByMunicipalities/Card.vue'
-  )
-const TestedNumberCard = () =>
-  import('@/components/index/CardsReference/TestedNumber/Card.vue')
 /* eslint-enable simple-import-sort/imports */
 
 export default Vue.extend({
@@ -52,8 +55,10 @@ export default Vue.extend({
         [ConfirmedCasesNumberCard, MonitoringConfirmedCasesNumberCard],
         [ConfirmedCasesDetailsCard, MonitoringItemsOverviewCard],
         [ConfirmedCasesByAgeCard, DeathsByDeathDateCard],
-        [PositiveNumberByDiagnosedDateCard, PositiveNumberByDevelopedDateCard],
         [ConfirmedCasesByMunicipalitiesCard, TestedNumberCard],
+      ],
+      hideRows: [
+        [PositiveNumberByDiagnosedDateCard, PositiveNumberByDevelopedDateCard],
       ],
     }
   },
