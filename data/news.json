@@ -2,10 +2,17 @@
     "newsItems": [
 
         {
-            "date": "2021\/08\/29",
-            "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/08\/0829.pdf",
-            "text": "新型コロナウイルス感染症による新たな患者の確認(9669～9884例目)について （PDF 193.2KB）"
+            "date": "2021\/08\/31",
+            "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/08\/0831_00.pdf",
+            "text": "新型コロナウイルス感染症による新たな患者の確認(10051～10167例目)及び本市職員の感染確認について （PDF 367.7KB）"
         },
+
+        {
+            "date": "2021\/08\/31",
+            "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/08\/0831.pdf",
+            "text": "新型コロナウイルス感染症による自宅療養者の支援体制の強化 （PDF 279.6KB）"
+        },
+
         {
 
             "date": "2021\/08\/25",
@@ -29,12 +36,6 @@
             "date": "2021\/08\/19",
             "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/08\/0819_02.pdf",
             "text": "相模原市立小学校及び中学校等の臨時休業について （PDF 190.8KB）"
-        },
-
-        {
-            "date": "2021\/08\/16",
-            "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/08\/0816.pdf",
-            "text": "新型コロナウイルスワクチン接種体制の強化等について （PDF 359.3KB）"
         }
     ]
 }
