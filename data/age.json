@@ -3,64 +3,64 @@
       [
         {
           "age":"合計",
-          "close":9318,
-          "new": 152
+          "close":10044,
+          "new": 117
         },
         {
           "age":"10歳未満",
-          "close":378,
-          "new": 16
+          "close":425,
+          "new": 6
         },
         {
           "age":"10代",
-          "close":929,
+          "close":1010,
           "new":18
         },
         {
           "age":"20代",
-          "close":2379,
-          "new":41
+          "close":2569,
+          "new":26
         },
         {
           "age":"30代",
-          "close":1375,
-          "new":22
+          "close":1493,
+          "new":16
         },
         {
           "age":"40代",
-          "close":1495,
-          "new":27
+          "close":1642,
+          "new":24
         },
         {
           "age":"50代",
-          "close":1303,
-          "new":15
+          "close":1413,
+          "new":18
         },
         {
           "age":"60代",
-          "close":567,
-          "new":5
+          "close":579,
+          "new":4
         },
         {
           "age":"70代",
-          "close":465,
-          "new":2
+          "close":477,
+          "new":1
         },
         {
           "age":"80代",
-          "close":307,
-          "new":6
+          "close":315,
+          "new":3
         },
         {
           "age":"90代",
           "close":113,
-          "new":0
+          "new":1
         },
         {
           "age":"100歳以上",
-          "close":7,
+          "close":8,
           "new":0
         }
     ],
-  "date":"2021/08/27 17:00"
+  "date":"2021/08/31 17:00"
 }
