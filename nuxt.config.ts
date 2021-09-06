@@ -2,8 +2,8 @@
 import fs from 'fs'
 import path from 'path'
 import { NuxtConfig } from '@nuxt/types'
-/* eslint-enable simple-import-sort/imports */
 import { Settings } from '@/types/cardRoutesSettings'
+/* eslint-enable simple-import-sort/imports */
 
 // eslint-disable-next-line no-restricted-imports
 import i18n from './nuxt-i18n.config'
