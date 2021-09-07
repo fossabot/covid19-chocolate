@@ -102,7 +102,7 @@
 <script lang="ts">
 import { mdiChartTimelineVariant, mdiDomain } from '@mdi/js'
 import Vue from 'vue'
-import { MetaInfo } from 'vue-meta'
+import { MetaInfo } from 'vue-meta' // eslint-disable-line import/named
 
 import cardData from '@/assets/json/cardRoutesSettings.json'
 import AppLink from '@/components/_shared/AppLink.vue'

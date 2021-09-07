@@ -38,7 +38,7 @@
     "@nuxt/types": "2.15.8",
     "@nuxtjs/dotenv": "1.4.1",
     "@nuxtjs/gtm": "2.4.0",
-    "@nuxtjs/i18n": "7.0.2",
+    "@nuxtjs/i18n": "7.0.3",
     "@nuxtjs/pwa": "3.3.5",
     "axe-core": "4.3.3",
     "chart.js": "2.9.4",
@@ -53,8 +53,8 @@
     "vue-spinner": "1.0.4"
   },
   "devDependencies": {
-    "@babel/core": "7.15.0",
-    "@babel/runtime-corejs3": "7.15.3",
+    "@babel/core": "7.15.5",
+    "@babel/runtime-corejs3": "7.15.4",
     "@mdi/js": "5.9.55",
     "@nuxt/typescript-build": "2.1.0",
     "@nuxtjs/eslint-config": "6.0.1",
@@ -64,7 +64,7 @@
     "@nuxtjs/vuetify": "1.12.1",
     "@types/chart.js": "2.9.34",
     "@types/lodash": "4.14.172",
-    "@types/node": "14.17.12",
+    "@types/node": "14.17.15",
     "core-js": "3.16.4",
     "danger": "10.6.6",
     "eslint": "7.32.0",
