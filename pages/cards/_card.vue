@@ -49,6 +49,7 @@ import Vaccine1264Card from '@/components/index/CardsReference/Vaccine1264/Card.
 import VaccinationCard from '@/components/index/CardsReference/VaccineInfo65/Card.vue'
 import { convertDateToSimpleFormat } from '@/utils/formatDate'
 import { getLinksLanguageAlternative } from '@/utils/i18nUtils'
+/* eslint-enable simple-import-sort/imports */
 
 @Component({
   components: {
