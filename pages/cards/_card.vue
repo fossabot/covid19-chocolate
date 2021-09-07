@@ -14,14 +14,14 @@ import type { NuxtConfig } from '@nuxt/types'
 import type { NuxtOptionsHead as MetaInfo } from '@nuxt/types/config/head'
 import { Component, Vue } from 'nuxt-property-decorator'
 
+// 検査陽性者の状況
+import ConfirmedCasesDetailsCard from '@/components/index/CardsMonitoring/ConfirmedCasesDetails/Card.vue'
+// 新規陽性者数
+import MonitoringConfirmedCasesNumberCard from '@/components/index/CardsMonitoring/MonitoringConfirmedCasesNumber/Card.vue'
 /* eslint-disable simple-import-sort/imports -- ブラウザでの表示順に合わせて各 card の component を import する */
 // ---- モニタリング項目
 // 報告日別による陽性者数の推移
 import ConfirmedCasesNumberCard from '@/components/index/CardsMonitoring/ConfirmedCasesNumber/Card.vue'
-// 新規陽性者数
-import MonitoringConfirmedCasesNumberCard from '@/components/index/CardsMonitoring/MonitoringConfirmedCasesNumber/Card.vue'
-// 検査陽性者の状況
-import ConfirmedCasesDetailsCard from '@/components/index/CardsMonitoring/ConfirmedCasesDetails/Card.vue'
 // モニタリング状況
 import MonitoringItemsOverviewCard from '@/components/index/CardsMonitoring/MonitoringItemsOverview/Card.vue'
 // ---- その他 参考指標
@@ -48,6 +48,7 @@ import Vaccine1264Card from '@/components/index/CardsReference/Vaccine1264/Card.
 // 65歳以上のワクチン接種状況
 import VaccinationCard from '@/components/index/CardsReference/VaccineInfo65/Card.vue'
 import { convertDateToSimpleFormat } from '@/utils/formatDate'
+/* eslint-enable simple-import-sort/imports */
 import { getLinksLanguageAlternative } from '@/utils/i18nUtils'
 
 @Component({
