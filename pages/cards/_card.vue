@@ -9,12 +9,12 @@
 </template>
 
 <script lang="ts">
+/* eslint-disable simple-import-sort/imports -- ブラウザでの表示順に合わせて各 card の component を import する */
 import { mdiChartTimelineVariant } from '@mdi/js'
 import type { NuxtConfig } from '@nuxt/types'
 import type { NuxtOptionsHead as MetaInfo } from '@nuxt/types/config/head'
 import { Component, Vue } from 'nuxt-property-decorator'
 
-/* eslint-disable simple-import-sort/imports -- ブラウザでの表示順に合わせて各 card の component を import する */
 // ---- モニタリング項目
 // 報告日別による陽性者数の推移
 import ConfirmedCasesNumberCard from '@/components/index/CardsMonitoring/ConfirmedCasesNumber/Card.vue'
