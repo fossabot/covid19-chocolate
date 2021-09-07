@@ -76,7 +76,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { MetaInfo } from 'vue-meta'
+import { MetaInfo } from 'vue-meta' // eslint-disable-line import/named
 
 import AppLink from '@/components/_shared/AppLink.vue'
 import ExpantionPanel from '@/components/index/_shared/DataView/ExpantionPanel.vue'
