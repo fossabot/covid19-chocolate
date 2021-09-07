@@ -9,6 +9,11 @@
 </template>
 
 <script lang="ts">
+import { mdiChartTimelineVariant } from '@mdi/js'
+import type { NuxtConfig } from '@nuxt/types'
+import type { NuxtOptionsHead as MetaInfo } from '@nuxt/types/config/head'
+import { Component, Vue } from 'nuxt-property-decorator'
+
 /* eslint-disable simple-import-sort/imports -- ブラウザでの表示順に合わせて各 card の component を import する */
 // ---- モニタリング項目
 // 報告日別による陽性者数の推移
@@ -42,13 +47,9 @@ import VaccineAllCard from '@/components/index/CardsReference/VaccineAll/Card.vu
 import Vaccine1264Card from '@/components/index/CardsReference/Vaccine1264/Card.vue'
 // 65歳以上のワクチン接種状況
 import VaccinationCard from '@/components/index/CardsReference/VaccineInfo65/Card.vue'
-
-import { mdiChartTimelineVariant } from '@mdi/js'
-import { Vue, Component } from 'nuxt-property-decorator'
-import { getLinksLanguageAlternative } from '@/utils/i18nUtils'
 import { convertDateToSimpleFormat } from '@/utils/formatDate'
-import type { NuxtOptionsHead as MetaInfo } from '@nuxt/types/config/head'
-import type { NuxtConfig } from '@nuxt/types'
+/* eslint-enable simple-import-sort/imports */
+import { getLinksLanguageAlternative } from '@/utils/i18nUtils'
 
 @Component({
   components: {
