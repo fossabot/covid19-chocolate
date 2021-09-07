@@ -2,11 +2,11 @@
 import fs from 'fs'
 import path from 'path'
 import { NuxtConfig } from '@nuxt/types'
-import { Settings } from '@/types/cardRoutesSettings'
 /* eslint-enable simple-import-sort/imports */
 
 // eslint-disable-next-line no-restricted-imports
 import i18n from './nuxt-i18n.config'
+import { Settings } from '@/types/cardRoutesSettings'
 const environment = process.env.NODE_ENV || 'development'
 const cardData = JSON.parse(
   fs.readFileSync(
