@@ -48,7 +48,6 @@ import Vaccine1264Card from '@/components/index/CardsReference/Vaccine1264/Card.
 // 65歳以上のワクチン接種状況
 import VaccinationCard from '@/components/index/CardsReference/VaccineInfo65/Card.vue'
 import { convertDateToSimpleFormat } from '@/utils/formatDate'
-/* eslint-enable simple-import-sort/imports */
 import { getLinksLanguageAlternative } from '@/utils/i18nUtils'
 
 @Component({
