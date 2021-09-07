@@ -14,37 +14,37 @@ import type { NuxtConfig } from '@nuxt/types'
 import type { NuxtOptionsHead as MetaInfo } from '@nuxt/types/config/head'
 import { Component, Vue } from 'nuxt-property-decorator'
 
+// 検査陽性者の状況
+import ConfirmedCasesDetailsCard from '@/components/index/CardsMonitoring/ConfirmedCasesDetails/Card.vue'
 /* eslint-disable simple-import-sort/imports -- ブラウザでの表示順に合わせて各 card の component を import する */
 // ---- モニタリング項目
 // 報告日別による陽性者数の推移
 import ConfirmedCasesNumberCard from '@/components/index/CardsMonitoring/ConfirmedCasesNumber/Card.vue'
 // 新規陽性者数
 import MonitoringConfirmedCasesNumberCard from '@/components/index/CardsMonitoring/MonitoringConfirmedCasesNumber/Card.vue'
-// 検査陽性者の状況
-import ConfirmedCasesDetailsCard from '@/components/index/CardsMonitoring/ConfirmedCasesDetails/Card.vue'
 // モニタリング状況
 import MonitoringItemsOverviewCard from '@/components/index/CardsMonitoring/MonitoringItemsOverview/Card.vue'
 // ---- その他 参考指標
 // 年代別の陽性者数
 import ConfirmedCasesByAgeCard from '@/components/index/CardsReference/ConfirmedCasesByAge/Card.vue'
-// 死亡日別による死亡者数の推移
-import DeathsByDeathDateCard from '@/components/index/CardsReference/DeathsByDeathDate/Card.vue'
-// 確定日別による陽性者数の推移
-import PositiveNumberByDiagnosedDateCard from '@/components/index/CardsReference/PositiveNumberByDiagnosedDate/Card.vue'
-// 発症日別による陽性者数の推移
-import PositiveNumberByDevelopedDateCard from '@/components/index/CardsReference/PositiveNumberByDevelopedDate/Card.vue'
 // 陽性者数（区別・週報）
 import ConfirmedCasesByMunicipalitiesCard from '@/components/index/CardsReference/ConfirmedCasesByMunicipalities/Card.vue'
+// 死亡日別による死亡者数の推移
+import DeathsByDeathDateCard from '@/components/index/CardsReference/DeathsByDeathDate/Card.vue'
+// 発症日別による陽性者数の推移
+import PositiveNumberByDevelopedDateCard from '@/components/index/CardsReference/PositiveNumberByDevelopedDate/Card.vue'
+// 確定日別による陽性者数の推移
+import PositiveNumberByDiagnosedDateCard from '@/components/index/CardsReference/PositiveNumberByDiagnosedDate/Card.vue'
 // 検査数の状況
 import TestedNumberCard from '@/components/index/CardsReference/TestedNumber/Card.vue'
-// 新型コロナウイルスワクチン接種者数
-import VaccineInfoCard from '@/components/index/CardsReference/VaccineInfo/Card.vue'
 // ワクチン接種推移
 import Vaccine7Card from '@/components/index/CardsReference/Vaccine7/Card.vue'
-// 全世代のワクチン接種状況
-import VaccineAllCard from '@/components/index/CardsReference/VaccineAll/Card.vue'
 // 12～64歳のワクチン接種状況
 import Vaccine1264Card from '@/components/index/CardsReference/Vaccine1264/Card.vue'
+// 全世代のワクチン接種状況
+import VaccineAllCard from '@/components/index/CardsReference/VaccineAll/Card.vue'
+// 新型コロナウイルスワクチン接種者数
+import VaccineInfoCard from '@/components/index/CardsReference/VaccineInfo/Card.vue'
 // 65歳以上のワクチン接種状況
 import VaccinationCard from '@/components/index/CardsReference/VaccineInfo65/Card.vue'
 import { convertDateToSimpleFormat } from '@/utils/formatDate'
