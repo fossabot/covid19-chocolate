@@ -2,13 +2,29 @@
   <v-col cols="12" md="6" class="DataCard TestedNumber">
     <client-only>
       <data-view
-        :title="$t('検査数の状況')"
+        :title="$t('市衛生研究所におけるPCR検査実績')"
         :title-id="'tested-number'"
         :date="date"
       >
         <template #additionalDescription>
           <span>{{ $t('（注）') }}</span>
           <ul>
+            <li>
+              {{
+                $t(
+                  '協力医療機関等の協力により検体を採取し、市衛生研究所で検査を行っている'
+                )
+              }}
+            </li>
+            <li>
+              {{ $t('医療機関における保険適用での検査人数は含まれていない') }}
+            </li>
+            <li>
+              {{ $t('検査件数には同一人物に対する複数検体の計上を含む') }}
+            </li>
+            <li>
+              {{ $t('陰性確認（治癒確認）のための検査も含む') }}
+            </li>
             <li>
               {{ $t('土曜日、日曜日、祝日は更新しない') }}
             </li>
