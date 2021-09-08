@@ -2824,7 +2824,12 @@
             "diagnosed_date": "2021-09-07",
             "count": 55,
             "weekly_average_count": 87.9
+        },
+        {
+            "diagnosed_date": "2021-09-08",
+            "count": 63,
+            "weekly_average_count": 84.3
         }
     ],
-    "date": "2021\/09\/07 18:00"
+    "date": "2021\/09\/08 18:00"
 }
