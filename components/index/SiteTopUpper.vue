@@ -13,6 +13,7 @@
 <script lang="ts">
 import Vue from 'vue'
 
+import Attention from '@/components/index/SiteTopUpper/Attention.vue'
 import Consultation from '@/components/index/SiteTopUpper/Consultation.vue'
 import DetailA from '@/components/index/SiteTopUpper/DetailA.vue'
 import Fix from '@/components/index/SiteTopUpper/Fix.vue'
@@ -21,7 +22,6 @@ import {
   News as INews,
   NewsItem as INewsItem,
 } from '@/libraries/auto_generated/data_converter/convertNews'
-import Attention from '@/components/index/SiteTopUpper/Attention.vue'
 
 type Data = {}
 type Methods = {}
