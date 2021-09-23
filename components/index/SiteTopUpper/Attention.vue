@@ -1,8 +1,8 @@
 <template>
-  <div class="WhatsNew">
-    <div class="WhatsNew-heading">
-      <h3 class="WhatsNew-title">
-        <v-icon size="2.4rem" class="WhatsNew-title-icon">
+  <div class="Attention">
+    <div class="Attention-heading">
+      <h3 class="Attention-title">
+        <v-icon size="2.4rem" class="Attention-title-icon">
           {{ mdiAlertCircle }}
         </v-icon>
         {{ $t('重要なお知らせ') }}
@@ -33,19 +33,19 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-.WhatsNew {
+.Attention {
   @include card-container();
 
   padding: 5px 18px;
   margin-bottom: 10px;
 
-  .WhatsNew-heading {
+  .Attention-heading {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     margin-bottom: 8px;
 
-    .WhatsNew-title {
+    .Attention-title {
       display: flex;
       align-items: center;
       margin: 8px 12px 8px 0;
