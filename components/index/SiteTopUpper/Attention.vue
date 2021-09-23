@@ -7,6 +7,8 @@
         </v-icon>
         {{ $t('重要なお知らせ') }}
       </h3>
+    </div>
+    <div class="Attention-list">
       <app-link :to="localePath('/info/0924')" :icon-size="12">
         {{ $t('当サイト閉鎖に関するお知らせ') }}
       </app-link>
@@ -53,6 +55,22 @@ export default Vue.extend({
       &-icon {
         margin: 3px;
       }
+    }
+  }
+
+  .Attention-list{
+    padding-left: 0;
+    list-style-type: none;
+    text-decoration: none;
+    margin: 5px;
+
+    @include font-size(14);
+
+    @include lessThan($medium) {
+      display: flex;
+      flex-wrap: wrap;
+      flex: 0 1 auto;
+      padding-left: 8px;
     }
   }
 }
