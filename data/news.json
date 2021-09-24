@@ -2,9 +2,15 @@
     "newsItems": [
 
         {
-            "date": "2021\/09\/17",
-            "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/09\/0917.pdf",
-            "text": "新型コロナウイルス感染症による新たな患者の確認(11296～11363例目)について （PDF 343.4KB）"
+            "date": "2021\/09\/24",
+            "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/09\/0924.pdf",
+            "text": "新型コロナウイルス感染症による新たな患者の確認(11543～11569例目)について （PDF 159.4KB）"
+        },
+
+        {
+            "date": "2021\/09\/21",
+            "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/09\/0921_01.pdf",
+            "text": "新型コロナウイルスワクチン接種に係る「ワクチンロスふせぎ隊」の募集について （PDF 229.5KB）"
         },
 
         {
@@ -36,12 +42,6 @@
             "date": "2021\/08\/25",
             "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/08\/0825_01.pdf",
             "text": "新型コロナウイルスワクチン接種の更なる体制強化について （PDF 319.4KB）"
-        },
-
-        {
-            "date": "2021\/08\/24",
-            "url": "https:\/\/www.city.sagamihara.kanagawa.jp\/_res\/projects\/default_project\/_page_\/001\/019\/191\/08\/0824_02.pdf",
-            "text": "新型コロナウイルス感染症対策に係る人事異動について （PDF 147.0KB）"
         }
     ]
 }
