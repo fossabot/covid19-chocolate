@@ -2874,7 +2874,42 @@
             "diagnosed_date": "2021-09-17",
             "count": 68,
             "weekly_average_count": 52.0
+        },
+        {
+            "diagnosed_date": "2021-09-18",
+            "count": 47,
+            "weekly_average_count": 46.6
+        },
+        {
+            "diagnosed_date": "2021-09-19",
+            "count": 39,
+            "weekly_average_count": 44.1
+        },
+        {
+            "diagnosed_date": "2021-09-20",
+            "count": 24,
+            "weekly_average_count": 40.9
+        },
+        {
+            "diagnosed_date": "2021-09-21",
+            "count": 16,
+            "weekly_average_count": 37.3
+        },
+        {
+            "diagnosed_date": "2021-09-22",
+            "count": 18,
+            "weekly_average_count": 35.0
+        },
+        {
+            "diagnosed_date": "2021-09-23",
+            "count": 35,
+            "weekly_average_count": 35.3
+        },
+        {
+            "diagnosed_date": "2021-09-24",
+            "count": 27,
+            "weekly_average_count": 29.4
         }
     ],
-    "date": "2021\/09\/17 18:00"
+    "date": "2021\/09\/24 18:00"
 }
