@@ -1,6 +1,7 @@
 <template>
   <div class="SiteTopUpper">
-    <whats-new :items="newsItems" :is-emergency="true" />
+    <attention />
+    <whats-new :items="newsItems" :is-emergency="false" />
     <detail-a />
     <div class="row mb-4">
       <consultation />
@@ -12,6 +13,7 @@
 <script lang="ts">
 import Vue from 'vue'
 
+import Attention from '@/components/index/SiteTopUpper/Attention.vue'
 import Consultation from '@/components/index/SiteTopUpper/Consultation.vue'
 import DetailA from '@/components/index/SiteTopUpper/DetailA.vue'
 import Fix from '@/components/index/SiteTopUpper/Fix.vue'
@@ -31,6 +33,7 @@ type Props = {}
 
 export default Vue.extend<Data, Methods, Computed, Props>({
   components: {
+    Attention,
     WhatsNew,
     DetailA,
     Consultation,
